@@ -1,0 +1,30 @@
+---- cli Matches (6 in 4 files) ----
+Compiler_avr.h (inc):#define AVR_ENTER_CRITICAL_REGION( ) {uint8_t volatile saved_sreg = SREG; cli( );
+Compiler_avr.h (inc):#define cli( ) (__disable_interrupt( ))
+Compiler_avr32.h (inc):#define cli( ) __disable_interrupt( )
+Compiler_sam7.h (inc):#define cli( ) (__disable_interrupt( ))
+Wireless_uart_extended.c:            cli( );
+Wireless_uart_extended.c:            cli();
+---- AVR_ENTER_CRITICAL_REGION Matches (22 in 2 files) ----
+Compiler_avr.h (inc):#define AVR_ENTER_CRITICAL_REGION( ) {uint8_t volatile saved_sreg = SREG; cli( );
+Compiler_avr.h (inc):/** This macro must always be used in conjunction with AVR_ENTER_CRITICAL_REGION
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );    
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION();
+Hal_avr.c:    AVR_ENTER_CRITICAL_REGION( );
