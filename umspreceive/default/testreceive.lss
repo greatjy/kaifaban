@@ -1,0 +1,4436 @@
+
+testreceive.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000066  00800100  0000140e  000014a2  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000140e  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000315  00800166  00800166  00001508  2**0
+                  ALLOC
+  3 .debug_aranges 000000e0  00000000  00000000  00001508  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 0000081c  00000000  00000000  000015e8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000267f  00000000  00000000  00001e04  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000887  00000000  00000000  00004483  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00001d2d  00000000  00000000  00004d0a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000580  00000000  00000000  00006a38  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00001213  00000000  00000000  00006fb8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00001061  00000000  00000000  000081cb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000018  00000000  00000000  0000922c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+       4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+       8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+       c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      2c:	0c 94 ab 03 	jmp	0x756	; 0x756 <__vector_11>
+      30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      38:	0c 94 50 04 	jmp	0x8a0	; 0x8a0 <__vector_14>
+      3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      40:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      48:	0c 94 be 00 	jmp	0x17c	; 0x17c <__vector_18>
+      4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      54:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+      8c:	11 24       	eor	r1, r1
+      8e:	1f be       	out	0x3f, r1	; 63
+      90:	cf ef       	ldi	r28, 0xFF	; 255
+      92:	d0 e1       	ldi	r29, 0x10	; 16
+      94:	de bf       	out	0x3e, r29	; 62
+      96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+      98:	11 e0       	ldi	r17, 0x01	; 1
+      9a:	a0 e0       	ldi	r26, 0x00	; 0
+      9c:	b1 e0       	ldi	r27, 0x01	; 1
+      9e:	ee e0       	ldi	r30, 0x0E	; 14
+      a0:	f4 e1       	ldi	r31, 0x14	; 20
+      a2:	00 e0       	ldi	r16, 0x00	; 0
+      a4:	0b bf       	out	0x3b, r16	; 59
+      a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+      a8:	07 90       	elpm	r0, Z+
+      aa:	0d 92       	st	X+, r0
+      ac:	a6 36       	cpi	r26, 0x66	; 102
+      ae:	b1 07       	cpc	r27, r17
+      b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+      b2:	14 e0       	ldi	r17, 0x04	; 4
+      b4:	a6 e6       	ldi	r26, 0x66	; 102
+      b6:	b1 e0       	ldi	r27, 0x01	; 1
+      b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+      ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+      bc:	ab 37       	cpi	r26, 0x7B	; 123
+      be:	b1 07       	cpc	r27, r17
+      c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+      c2:	0e 94 67 04 	call	0x8ce	; 0x8ce <main>
+      c6:	0c 94 05 0a 	jmp	0x140a	; 0x140a <_exit>
+
+000000ca <__bad_interrupt>:
+      ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <atmel_start_init>:
+/**
+ * Initializes MCU, drivers and middleware in the project
+ **/
+void atmel_start_init(void)
+{
+	system_init();
+      ce:	0e 94 d5 09 	call	0x13aa	; 0x13aa <system_init>
+}
+      d2:	08 95       	ret
+
+000000d4 <com_init>:
+ *  \param[in] rate Baudrate used by the AVR's USART.
+ */
+void com_init( baud_rate_t rate ){
+  
+
+    UBRR0H = 0x00;
+      d4:	10 92 90 00 	sts	0x0090, r1
+    UBRR0L = rate;
+      d8:	89 b9       	out	0x09, r24	; 9
+  
+    //Enable USART transmitter module. Always on.
+    ENABLE_RECEIVER;
+      da:	54 9a       	sbi	0x0a, 4	; 10
+    ENABLE_TRANSMITTER;
+      dc:	53 9a       	sbi	0x0a, 3	; 10
+	
+    //8-N-1.
+    UCSR0C |= ( 1 << UCSZ01 ) | ( 1 << UCSZ00 ); 
+      de:	e5 e9       	ldi	r30, 0x95	; 149
+      e0:	f0 e0       	ldi	r31, 0x00	; 0
+      e2:	80 81       	ld	r24, Z
+      e4:	86 60       	ori	r24, 0x06	; 6
+      e6:	80 83       	st	Z, r24
+  
+    com_number_of_received_bytes = 0;
+      e8:	10 92 53 02 	sts	0x0253, r1
+    com_data_reception_finished = false;
+      ec:	10 92 56 02 	sts	0x0256, r1
+    //ENABLE_RECEIVE_COMPLETE_INTERRUPT;
+
+}
+      f0:	08 95       	ret
+
+000000f2 <com_send_string>:
+/*! \brief This function sends data on the chosen communication interface (USB or USART).
+ *  
+ *  \param[in] data Pointer to data that is to be sent on the communication interface.
+ *  \param[in] data_length Number of bytes to read from the array pointed to by data.
+ */
+void com_send_string( uint8_t *data, uint8_t data_length ){
+      f2:	fc 01       	movw	r30, r24
+      f4:	04 c0       	rjmp	.+8      	; 0xfe <com_send_string+0xc>
+    
+    while (--data_length > 0) {
+        
+#if defined( RZ502 )        
+        for(; !(UCSR0A & (1 << UDRE0));) {;}
+      f6:	5d 9b       	sbis	0x0b, 5	; 11
+      f8:	fe cf       	rjmp	.-4      	; 0xf6 <com_send_string+0x4>
+  	    UDR0 = *data++; //Put symbol in data register.
+      fa:	81 91       	ld	r24, Z+
+      fc:	8c b9       	out	0x0c, r24	; 12
+ *  \param[in] data Pointer to data that is to be sent on the communication interface.
+ *  \param[in] data_length Number of bytes to read from the array pointed to by data.
+ */
+void com_send_string( uint8_t *data, uint8_t data_length ){
+    
+    while (--data_length > 0) {
+      fe:	61 50       	subi	r22, 0x01	; 1
+     100:	d1 f7       	brne	.-12     	; 0xf6 <com_send_string+0x4>
+	    *FTDI_Fifo = ( *data++ );
+#else
+    #error "Board Option Not Supported."
+#endif
+    }    
+}
+     102:	08 95       	ret
+
+00000104 <com_send_hex>:
+
+/*! \brief This function prints the supplied argument as a hex number.
+ *  
+ *  \param[in] nmbr Number to be printed as a hexadescimal number.
+ */
+	void com_send_hex( uint8_t nmbr ){
+     104:	98 2f       	mov	r25, r24
+	
+
+			for(; !(UCSR0A & (1 << UDRE0));) {;}
+     106:	5d 9b       	sbis	0x0b, 5	; 11
+     108:	fe cf       	rjmp	.-4      	; 0x106 <com_send_hex+0x2>
+			//UDR0 = '0'; //Put symbol in data register.
+		
+			for(; !(UCSR0A & (1 << UDRE0));) {;}
+     10a:	5d 9b       	sbis	0x0b, 5	; 11
+     10c:	fe cf       	rjmp	.-4      	; 0x10a <com_send_hex+0x6>
+			//UDR0 = 'x'; //Put symbol in data register.
+			
+			for(; !(UCSR0A & (1 << UDRE0));) {;}
+     10e:	5d 9b       	sbis	0x0b, 5	; 11
+     110:	fe cf       	rjmp	.-4      	; 0x10e <com_send_hex+0xa>
+			UDR0 = hex_lookup[ ( nmbr >> 4 ) & 0x0F ];
+     112:	e9 2f       	mov	r30, r25
+     114:	e2 95       	swap	r30
+     116:	ef 70       	andi	r30, 0x0F	; 15
+     118:	f0 e0       	ldi	r31, 0x00	; 0
+     11a:	ee 5f       	subi	r30, 0xFE	; 254
+     11c:	fe 4f       	sbci	r31, 0xFE	; 254
+     11e:	80 81       	ld	r24, Z
+     120:	8c b9       	out	0x0c, r24	; 12
+			
+			for(; !(UCSR0A & (1 << UDRE0));) {;}
+     122:	5d 9b       	sbis	0x0b, 5	; 11
+     124:	fe cf       	rjmp	.-4      	; 0x122 <com_send_hex+0x1e>
+			UDR0 = hex_lookup[ ( nmbr & 0x0F ) ];
+     126:	e9 2f       	mov	r30, r25
+     128:	f0 e0       	ldi	r31, 0x00	; 0
+     12a:	ef 70       	andi	r30, 0x0F	; 15
+     12c:	f0 70       	andi	r31, 0x00	; 0
+     12e:	ee 5f       	subi	r30, 0xFE	; 254
+     130:	fe 4f       	sbci	r31, 0xFE	; 254
+     132:	80 81       	ld	r24, Z
+     134:	8c b9       	out	0x0c, r24	; 12
+	}
+     136:	08 95       	ret
+
+00000138 <com_get_received_data>:
+    return &com_buffer[0];
+}*/
+
+uint8_t * com_get_received_data( void ){
+
+	if(ori_buf_flag){
+     138:	80 91 66 01 	lds	r24, 0x0166
+     13c:	88 23       	and	r24, r24
+     13e:	19 f4       	brne	.+6      	; 0x146 <com_get_received_data+0xe>
+     140:	2d ed       	ldi	r18, 0xDD	; 221
+     142:	31 e0       	ldi	r19, 0x01	; 1
+     144:	02 c0       	rjmp	.+4      	; 0x14a <com_get_received_data+0x12>
+     146:	27 e6       	ldi	r18, 0x67	; 103
+     148:	31 e0       	ldi	r19, 0x01	; 1
+		return com_buffer0;
+	}else{
+		return com_buffer1;
+	}
+}
+     14a:	c9 01       	movw	r24, r18
+     14c:	08 95       	ret
+
+0000014e <com_get_number_of_received_bytes>:
+ *  \retval 1 Error: Typed Frame Too Long.
+ *  \return Any non zero value returned indicatest that data is available and should be read.
+ */
+uint8_t com_get_number_of_received_bytes( void ){
+    
+    if (com_data_reception_finished == true) {
+     14e:	80 91 56 02 	lds	r24, 0x0256
+     152:	88 23       	and	r24, r24
+     154:	49 f0       	breq	.+18     	; 0x168 <com_get_number_of_received_bytes+0x1a>
+		if(ori_buf_flag)
+     156:	80 91 66 01 	lds	r24, 0x0166
+     15a:	88 23       	and	r24, r24
+     15c:	19 f0       	breq	.+6      	; 0x164 <com_get_number_of_received_bytes+0x16>
+        		return com_number_of_received_bytesA; 
+     15e:	80 91 54 02 	lds	r24, 0x0254
+     162:	08 95       	ret
+		else
+			return com_number_of_received_bytesB; 
+     164:	80 91 55 02 	lds	r24, 0x0255
+    } else { return 0; }
+}
+     168:	08 95       	ret
+
+0000016a <com_reset_receiver>:
+ *         data reception is done, and the end-user has read data.
+ *  
+ */
+void com_reset_receiver( void ){
+    
+    DISABLE_RECEIVE_COMPLETE_INTERRUPT;
+     16a:	57 98       	cbi	0x0a, 7	; 10
+    
+//    com_number_of_received_bytes = 0;
+    com_data_reception_finished = false;
+     16c:	10 92 56 02 	sts	0x0256, r1
+     170:	01 c0       	rjmp	.+2      	; 0x174 <com_reset_receiver+0xa>
+    uint8_t dummy = 0;
+    //Following loop is used to ensure that the rx FIFO is flushed.
+	//Sometimes it gets cloged up with old data.
+	for( ;  UCSR0A & ( 1 << RXC0 ); )
+	{
+		dummy = UDR0;  
+     172:	8c b1       	in	r24, 0x0c	; 12
+    com_data_reception_finished = false;
+    
+    uint8_t dummy = 0;
+    //Following loop is used to ensure that the rx FIFO is flushed.
+	//Sometimes it gets cloged up with old data.
+	for( ;  UCSR0A & ( 1 << RXC0 ); )
+     174:	5f 99       	sbic	0x0b, 7	; 11
+     176:	fd cf       	rjmp	.-6      	; 0x172 <com_reset_receiver+0x8>
+	{
+		dummy = UDR0;  
+	}
+    
+    ENABLE_RECEIVE_COMPLETE_INTERRUPT;
+     178:	57 9a       	sbi	0x0a, 7	; 10
+}
+     17a:	08 95       	ret
+
+0000017c <__vector_18>:
+        com_data_reception_finished = true;
+    }
+}*/
+
+ISR( USART0_RX_vect )
+{
+     17c:	1f 92       	push	r1
+     17e:	0f 92       	push	r0
+     180:	0f b6       	in	r0, 0x3f	; 63
+     182:	0f 92       	push	r0
+     184:	0b b6       	in	r0, 0x3b	; 59
+     186:	0f 92       	push	r0
+     188:	11 24       	eor	r1, r1
+     18a:	2f 93       	push	r18
+     18c:	8f 93       	push	r24
+     18e:	9f 93       	push	r25
+     190:	af 93       	push	r26
+     192:	bf 93       	push	r27
+     194:	ef 93       	push	r30
+     196:	ff 93       	push	r31
+	uint8_t receivedData;
+
+//	TCCR0B = 0x00;
+//	TCNT0 = Timer0_Initvalue;//0x19; //reset timer0 Value
+//	hal_clear_timer0_flag();
+	receivedData = ( uint8_t )UDR0;	//Collect data.
+     198:	9c b1       	in	r25, 0x0c	; 12
+
+	if (com_number_of_received_bytes < COM_RX_MAX_BYTES) 
+     19a:	80 91 53 02 	lds	r24, 0x0253
+     19e:	84 37       	cpi	r24, 0x74	; 116
+     1a0:	d8 f5       	brcc	.+118    	; 0x218 <__vector_18+0x9c>
+	{
+	//End of data stream.
+			if( (receivedData == '\n') ||(receivedData == 0x0D) )
+     1a2:	9a 30       	cpi	r25, 0x0A	; 10
+     1a4:	11 f0       	breq	.+4      	; 0x1aa <__vector_18+0x2e>
+     1a6:	9d 30       	cpi	r25, 0x0D	; 13
+     1a8:	51 f5       	brne	.+84     	; 0x1fe <__vector_18+0x82>
+				{
+					Set_com_Rx_Finished_flag();
+					//DISABLE_RECEIVE_COMPLETE_INTERRUPT0;
+				}*/
+				com_number_of_received_bytes++;
+				*com_buffer++= receivedData;
+     1aa:	e0 91 00 01 	lds	r30, 0x0100
+     1ae:	f0 91 01 01 	lds	r31, 0x0101
+     1b2:	df 01       	movw	r26, r30
+     1b4:	9d 93       	st	X+, r25
+				com_number_of_received_bytes++;
+				*com_buffer++=0;
+     1b6:	11 82       	std	Z+1, r1	; 0x01
+				com_number_of_received_bytes++;
+     1b8:	28 2f       	mov	r18, r24
+     1ba:	2d 5f       	subi	r18, 0xFD	; 253
+				*com_buffer++=0;
+     1bc:	11 96       	adiw	r26, 0x01	; 1
+     1be:	1c 92       	st	X, r1
+				com_data_reception_finished = true;
+     1c0:	91 e0       	ldi	r25, 0x01	; 1
+     1c2:	90 93 56 02 	sts	0x0256, r25
+				if(ori_buf_flag){
+     1c6:	80 91 66 01 	lds	r24, 0x0166
+     1ca:	88 23       	and	r24, r24
+     1cc:	59 f0       	breq	.+22     	; 0x1e4 <__vector_18+0x68>
+					ori_buf_flag=false;
+     1ce:	10 92 66 01 	sts	0x0166, r1
+					com_buffer=com_buffer0;
+     1d2:	87 e6       	ldi	r24, 0x67	; 103
+     1d4:	91 e0       	ldi	r25, 0x01	; 1
+     1d6:	90 93 01 01 	sts	0x0101, r25
+     1da:	80 93 00 01 	sts	0x0100, r24
+					com_number_of_received_bytesB = com_number_of_received_bytes;
+     1de:	20 93 55 02 	sts	0x0255, r18
+     1e2:	0a c0       	rjmp	.+20     	; 0x1f8 <__vector_18+0x7c>
+					//return com_buffer1;
+				}else{
+					ori_buf_flag=true;
+     1e4:	90 93 66 01 	sts	0x0166, r25
+					com_buffer=com_buffer1;
+     1e8:	8d ed       	ldi	r24, 0xDD	; 221
+     1ea:	91 e0       	ldi	r25, 0x01	; 1
+     1ec:	90 93 01 01 	sts	0x0101, r25
+     1f0:	80 93 00 01 	sts	0x0100, r24
+					com_number_of_received_bytesA = com_number_of_received_bytes;
+     1f4:	20 93 54 02 	sts	0x0254, r18
+					//return com_buffer0;
+				}
+					com_number_of_received_bytes=0;
+     1f8:	10 92 53 02 	sts	0x0253, r1
+     1fc:	12 c0       	rjmp	.+36     	; 0x222 <__vector_18+0xa6>
+			}
+			else
+			{
+				com_number_of_received_bytes++;
+     1fe:	8f 5f       	subi	r24, 0xFF	; 255
+     200:	80 93 53 02 	sts	0x0253, r24
+				*com_buffer++= receivedData;
+     204:	e0 91 00 01 	lds	r30, 0x0100
+     208:	f0 91 01 01 	lds	r31, 0x0101
+     20c:	91 93       	st	Z+, r25
+     20e:	f0 93 01 01 	sts	0x0101, r31
+     212:	e0 93 00 01 	sts	0x0100, r30
+     216:	05 c0       	rjmp	.+10     	; 0x222 <__vector_18+0xa6>
+			}
+		
+	}
+	else
+	{
+	        com_number_of_received_bytes = 1;
+     218:	81 e0       	ldi	r24, 0x01	; 1
+     21a:	80 93 53 02 	sts	0x0253, r24
+	        com_data_reception_finished = true;
+     21e:	80 93 56 02 	sts	0x0256, r24
+	}
+	TCCR0B = 0x04;
+	
+*/
+	}
+}
+     222:	ff 91       	pop	r31
+     224:	ef 91       	pop	r30
+     226:	bf 91       	pop	r27
+     228:	af 91       	pop	r26
+     22a:	9f 91       	pop	r25
+     22c:	8f 91       	pop	r24
+     22e:	2f 91       	pop	r18
+     230:	0f 90       	pop	r0
+     232:	0b be       	out	0x3b, r0	; 59
+     234:	0f 90       	pop	r0
+     236:	0f be       	out	0x3f, r0	; 63
+     238:	0f 90       	pop	r0
+     23a:	1f 90       	pop	r1
+     23c:	18 95       	reti
+
+0000023e <hal_reset_flags>:
+/*! \brief  This function reset the interrupt flags and interrupt event handlers 
+ *          (Callbacks) to their default value.
+ *
+ *  \ingroup hal_avr_api
+ */
+void hal_reset_flags( void ){
+     23e:	df 93       	push	r29
+     240:	cf 93       	push	r28
+     242:	0f 92       	push	r0
+     244:	cd b7       	in	r28, 0x3d	; 61
+     246:	de b7       	in	r29, 0x3e	; 62
+    
+    AVR_ENTER_CRITICAL_REGION( );
+     248:	8f b7       	in	r24, 0x3f	; 63
+     24a:	89 83       	std	Y+1, r24	; 0x01
+    
+    //Reset Flags.
+    hal_bat_low_flag     = 0;
+     24c:	10 92 59 02 	sts	0x0259, r1
+    hal_trx_ur_flag      = 0;
+     250:	10 92 5a 02 	sts	0x025A, r1
+    hal_trx_end_flag     = 0;
+     254:	10 92 5b 02 	sts	0x025B, r1
+    hal_rx_start_flag    = 0;  
+     258:	10 92 5c 02 	sts	0x025C, r1
+    hal_unknown_isr_flag = 0;
+     25c:	10 92 5d 02 	sts	0x025D, r1
+    hal_pll_unlock_flag  = 0;
+     260:	10 92 5e 02 	sts	0x025E, r1
+    hal_pll_lock_flag    = 0;
+     264:	10 92 5f 02 	sts	0x025F, r1
+    
+    //Reset Associated Event Handlers.
+    rx_start_callback = NULL;
+     268:	10 92 61 02 	sts	0x0261, r1
+     26c:	10 92 60 02 	sts	0x0260, r1
+    trx_end_callback  = NULL;
+     270:	10 92 63 02 	sts	0x0263, r1
+     274:	10 92 62 02 	sts	0x0262, r1
+    
+    AVR_LEAVE_CRITICAL_REGION( );
+     278:	89 81       	ldd	r24, Y+1	; 0x01
+     27a:	8f bf       	out	0x3f, r24	; 63
+}
+     27c:	0f 90       	pop	r0
+     27e:	cf 91       	pop	r28
+     280:	df 91       	pop	r29
+     282:	08 95       	ret
+
+00000284 <hal_init>:
+ *  \ingroup hal_avr_api
+ */
+void hal_init( void ){
+    
+    /*Reset variables used in file.*/
+    hal_system_time = 0;
+     284:	10 92 58 02 	sts	0x0258, r1
+     288:	10 92 57 02 	sts	0x0257, r1
+    hal_reset_flags( );
+     28c:	0e 94 1f 01 	call	0x23e	; 0x23e <hal_reset_flags>
+    
+    /*IO Specific Initialization.*/
+    DDR_SLP_TR |= (1 << SLP_TR); //Enable SLP_TR as output.
+     290:	bd 9a       	sbi	0x17, 5	; 23
+    DDR_RST    |= (1 << RST);    //Enable RST as output.
+     292:	bc 9a       	sbi	0x17, 4	; 23
+ 	HAL_DDR_DATA_LED |= (1 << DATA_LED);
+     294:	e1 e6       	ldi	r30, 0x61	; 97
+     296:	f0 e0       	ldi	r31, 0x00	; 0
+     298:	80 81       	ld	r24, Z
+     29a:	81 60       	ori	r24, 0x01	; 1
+     29c:	80 83       	st	Z, r24
+	HAL_DDR_NET_LED |= (1<< NET_LED);
+     29e:	80 81       	ld	r24, Z
+     2a0:	82 60       	ori	r24, 0x02	; 2
+     2a2:	80 83       	st	Z, r24
+   
+    /*SPI Specific Initialization.*/    
+    //Set SS, CLK and MOSI as output.
+    HAL_DDR_SPI  |= (1 << HAL_DD_SS) | (1 << HAL_DD_SCK) | (1 << HAL_DD_MOSI);
+     2a4:	87 b3       	in	r24, 0x17	; 23
+     2a6:	87 60       	ori	r24, 0x07	; 7
+     2a8:	87 bb       	out	0x17, r24	; 23
+    HAL_PORT_SPI |= (1 << HAL_DD_SS) | (1 << HAL_DD_SCK); //Set SS and CLK high
+     2aa:	88 b3       	in	r24, 0x18	; 24
+     2ac:	83 60       	ori	r24, 0x03	; 3
+     2ae:	88 bb       	out	0x18, r24	; 24
+    SPCR         = (1 << SPE) | (1 << MSTR); //Enable SPI module and master operation.
+     2b0:	80 e5       	ldi	r24, 0x50	; 80
+     2b2:	8d b9       	out	0x0d, r24	; 13
+    SPSR         = (1 << SPI2X); //Enable doubled SPI speed in master mode.
+     2b4:	81 e0       	ldi	r24, 0x01	; 1
+     2b6:	8e b9       	out	0x0e, r24	; 14
+
+    /*TIMER1 Specific Initialization.*/    
+    TCCR1B = HAL_TCCR1B_CONFIG;       //Set clock prescaler  
+     2b8:	83 e4       	ldi	r24, 0x43	; 67
+     2ba:	8e bd       	out	0x2e, r24	; 46
+    TIFR |= (1 << ICF1);             //Clear Input Capture Flag. uploaded by wjy
+     2bc:	86 b7       	in	r24, 0x36	; 54
+     2be:	80 62       	ori	r24, 0x20	; 32
+     2c0:	86 bf       	out	0x36, r24	; 54
+    HAL_ENABLE_OVERFLOW_INTERRUPT( ); //Enable Timer1 overflow interrupt. uploaded by wjy
+     2c2:	87 b7       	in	r24, 0x37	; 55
+     2c4:	84 60       	ori	r24, 0x04	; 4
+     2c6:	87 bf       	out	0x37, r24	; 55
+    hal_enable_trx_interrupt( );    //Enable interrupts from the radio transceiver. uploaded by wjy
+     2c8:	87 b7       	in	r24, 0x37	; 55
+     2ca:	80 62       	ori	r24, 0x20	; 32
+     2cc:	87 bf       	out	0x37, r24	; 55
+
+	SREG |= 0x80;
+     2ce:	8f b7       	in	r24, 0x3f	; 63
+     2d0:	80 68       	ori	r24, 0x80	; 128
+     2d2:	8f bf       	out	0x3f, r24	; 63
+}
+     2d4:	08 95       	ret
+
+000002d6 <hal_get_bat_low_flag>:
+ *  for new event occurances. 
+ *
+ *  \ingroup hal_avr_api
+ */
+uint8_t hal_get_bat_low_flag( void ){
+    return hal_bat_low_flag;
+     2d6:	80 91 59 02 	lds	r24, 0x0259
+}
+     2da:	08 95       	ret
+
+000002dc <hal_clear_bat_low_flag>:
+
+/*! \brief  This function clears the BAT_LOW flag.
+ *
+ *  \ingroup hal_avr_api
+ */
+void hal_clear_bat_low_flag( void ){
+     2dc:	df 93       	push	r29
+     2de:	cf 93       	push	r28
+     2e0:	0f 92       	push	r0
+     2e2:	cd b7       	in	r28, 0x3d	; 61
+     2e4:	de b7       	in	r29, 0x3e	; 62
+    
+    AVR_ENTER_CRITICAL_REGION( );
+     2e6:	8f b7       	in	r24, 0x3f	; 63
+     2e8:	89 83       	std	Y+1, r24	; 0x01
+    hal_bat_low_flag = 0;
+     2ea:	10 92 59 02 	sts	0x0259, r1
+    AVR_LEAVE_CRITICAL_REGION( );
+     2ee:	89 81       	ldd	r24, Y+1	; 0x01
+     2f0:	8f bf       	out	0x3f, r24	; 63
+}
+     2f2:	0f 90       	pop	r0
+     2f4:	cf 91       	pop	r28
+     2f6:	df 91       	pop	r29
+     2f8:	08 95       	ret
+
+000002fa <hal_get_trx_ur_flag>:
+ *  for new event occurances. 
+ *
+ *  \ingroup hal_avr_api
+ */
+uint8_t hal_get_trx_ur_flag( void ){
+    return hal_trx_ur_flag;
+     2fa:	80 91 5a 02 	lds	r24, 0x025A
+}
+     2fe:	08 95       	ret
+
+00000300 <hal_clear_trx_ur_flag>:
+
+/*! \brief  This function clears the TRX_UR flag.
+ *
+ *  \ingroup hal_avr_api
+ */
+void hal_clear_trx_ur_flag( void ){
+     300:	df 93       	push	r29
+     302:	cf 93       	push	r28
+     304:	0f 92       	push	r0
+     306:	cd b7       	in	r28, 0x3d	; 61
+     308:	de b7       	in	r29, 0x3e	; 62
+    
+    AVR_ENTER_CRITICAL_REGION( );
+     30a:	8f b7       	in	r24, 0x3f	; 63
+     30c:	89 83       	std	Y+1, r24	; 0x01
+    hal_trx_ur_flag = 0;
+     30e:	10 92 5a 02 	sts	0x025A, r1
+    AVR_LEAVE_CRITICAL_REGION( );
+     312:	89 81       	ldd	r24, Y+1	; 0x01
+     314:	8f bf       	out	0x3f, r24	; 63
+}
+     316:	0f 90       	pop	r0
+     318:	cf 91       	pop	r28
+     31a:	df 91       	pop	r29
+     31c:	08 95       	ret
+
+0000031e <hal_get_trx_end_flag>:
+ *  for new event occurances. 
+ *
+ *  \ingroup hal_avr_api
+ */
+uint8_t hal_get_trx_end_flag( void ){
+    return hal_trx_end_flag;
+     31e:	80 91 5b 02 	lds	r24, 0x025B
+}
+     322:	08 95       	ret
+
+00000324 <hal_clear_trx_end_flag>:
+
+/*! \brief  This function clears the TRX_END flag.
+ *
+ *  \ingroup hal_avr_api
+ */
+void hal_clear_trx_end_flag( void ){
+     324:	df 93       	push	r29
+     326:	cf 93       	push	r28
+     328:	0f 92       	push	r0
+     32a:	cd b7       	in	r28, 0x3d	; 61
+     32c:	de b7       	in	r29, 0x3e	; 62
+    
+    AVR_ENTER_CRITICAL_REGION( );
+     32e:	8f b7       	in	r24, 0x3f	; 63
+     330:	89 83       	std	Y+1, r24	; 0x01
+    hal_trx_end_flag = 0;
+     332:	10 92 5b 02 	sts	0x025B, r1
+    AVR_LEAVE_CRITICAL_REGION( );
+     336:	89 81       	ldd	r24, Y+1	; 0x01
+     338:	8f bf       	out	0x3f, r24	; 63
+}
+     33a:	0f 90       	pop	r0
+     33c:	cf 91       	pop	r28
+     33e:	df 91       	pop	r29
+     340:	08 95       	ret
+
+00000342 <hal_get_trx_end_event_handler>:
+ *
+ *  \ingroup hal_avr_api
+ */
+hal_trx_end_isr_event_handler_t hal_get_trx_end_event_handler( void ){
+    return trx_end_callback;
+}
+     342:	80 91 62 02 	lds	r24, 0x0262
+     346:	90 91 63 02 	lds	r25, 0x0263
+     34a:	08 95       	ret
+
+0000034c <hal_set_trx_end_event_handler>:
+/*! \brief  This function is used to set new TRX_END event handler, overriding 
+ *          old handler reference.
+ *
+ *  \ingroup hal_avr_api
+ */
+void hal_set_trx_end_event_handler( hal_trx_end_isr_event_handler_t trx_end_callback_handle ){
+     34c:	df 93       	push	r29
+     34e:	cf 93       	push	r28
+     350:	0f 92       	push	r0
+     352:	cd b7       	in	r28, 0x3d	; 61
+     354:	de b7       	in	r29, 0x3e	; 62
+    
+    AVR_ENTER_CRITICAL_REGION( );
+     356:	2f b7       	in	r18, 0x3f	; 63
+     358:	29 83       	std	Y+1, r18	; 0x01
+    trx_end_callback = trx_end_callback_handle;
+     35a:	90 93 63 02 	sts	0x0263, r25
+     35e:	80 93 62 02 	sts	0x0262, r24
+    AVR_LEAVE_CRITICAL_REGION( );
+     362:	89 81       	ldd	r24, Y+1	; 0x01
+     364:	8f bf       	out	0x3f, r24	; 63
+}
+     366:	0f 90       	pop	r0
+     368:	cf 91       	pop	r28
+     36a:	df 91       	pop	r29
+     36c:	08 95       	ret
+
+0000036e <hal_clear_trx_end_event_handler>:
+
+/*! \brief  Remove event handler reference.
+ *
+ *  \ingroup hal_avr_api
+ */
+void hal_clear_trx_end_event_handler( void ){
+     36e:	df 93       	push	r29
+     370:	cf 93       	push	r28
+     372:	0f 92       	push	r0
+     374:	cd b7       	in	r28, 0x3d	; 61
+     376:	de b7       	in	r29, 0x3e	; 62
+    
+    AVR_ENTER_CRITICAL_REGION( );
+     378:	8f b7       	in	r24, 0x3f	; 63
+     37a:	89 83       	std	Y+1, r24	; 0x01
+    trx_end_callback = NULL;
+     37c:	10 92 63 02 	sts	0x0263, r1
+     380:	10 92 62 02 	sts	0x0262, r1
+    AVR_LEAVE_CRITICAL_REGION( );
+     384:	89 81       	ldd	r24, Y+1	; 0x01
+     386:	8f bf       	out	0x3f, r24	; 63
+}
+     388:	0f 90       	pop	r0
+     38a:	cf 91       	pop	r28
+     38c:	df 91       	pop	r29
+     38e:	08 95       	ret
+
+00000390 <hal_get_rx_start_flag>:
+ *  for new event occurances. 
+ *
+ *  \ingroup hal_avr_api
+ */
+uint8_t hal_get_rx_start_flag( void ){
+    return hal_rx_start_flag;
+     390:	80 91 5c 02 	lds	r24, 0x025C
+}
+     394:	08 95       	ret
+
+00000396 <hal_clear_rx_start_flag>:
+
+/*! \brief  This function clears the RX_START flag.
+ *
+ *  \ingroup hal_avr_api
+ */
+void hal_clear_rx_start_flag( void ){
+     396:	df 93       	push	r29
+     398:	cf 93       	push	r28
+     39a:	0f 92       	push	r0
+     39c:	cd b7       	in	r28, 0x3d	; 61
+     39e:	de b7       	in	r29, 0x3e	; 62
+    
+    AVR_ENTER_CRITICAL_REGION( );
+     3a0:	8f b7       	in	r24, 0x3f	; 63
+     3a2:	89 83       	std	Y+1, r24	; 0x01
+    hal_rx_start_flag = 0;
+     3a4:	10 92 5c 02 	sts	0x025C, r1
+    AVR_LEAVE_CRITICAL_REGION( );
+     3a8:	89 81       	ldd	r24, Y+1	; 0x01
+     3aa:	8f bf       	out	0x3f, r24	; 63
+}
+     3ac:	0f 90       	pop	r0
+     3ae:	cf 91       	pop	r28
+     3b0:	df 91       	pop	r29
+     3b2:	08 95       	ret
+
+000003b4 <hal_get_rx_start_event_handler>:
+ *  \return Current RX_START event handler registered.
+ *  \ingroup hal_avr_api
+ */
+hal_rx_start_isr_event_handler_t hal_get_rx_start_event_handler( void ){
+    return rx_start_callback;    
+}
+     3b4:	80 91 60 02 	lds	r24, 0x0260
+     3b8:	90 91 61 02 	lds	r25, 0x0261
+     3bc:	08 95       	ret
+
+000003be <hal_set_rx_start_event_handler>:
+/*! \brief  This function is used to set new RX_START event handler, overriding 
+ *          old handler reference.
+ *
+ *  \ingroup hal_avr_api
+ */
+void hal_set_rx_start_event_handler( hal_rx_start_isr_event_handler_t rx_start_callback_handle ){
+     3be:	df 93       	push	r29
+     3c0:	cf 93       	push	r28
+     3c2:	0f 92       	push	r0
+     3c4:	cd b7       	in	r28, 0x3d	; 61
+     3c6:	de b7       	in	r29, 0x3e	; 62
+    
+    AVR_ENTER_CRITICAL_REGION( );
+     3c8:	2f b7       	in	r18, 0x3f	; 63
+     3ca:	29 83       	std	Y+1, r18	; 0x01
+    rx_start_callback = rx_start_callback_handle;
+     3cc:	90 93 61 02 	sts	0x0261, r25
+     3d0:	80 93 60 02 	sts	0x0260, r24
+    AVR_LEAVE_CRITICAL_REGION( );
+     3d4:	89 81       	ldd	r24, Y+1	; 0x01
+     3d6:	8f bf       	out	0x3f, r24	; 63
+}
+     3d8:	0f 90       	pop	r0
+     3da:	cf 91       	pop	r28
+     3dc:	df 91       	pop	r29
+     3de:	08 95       	ret
+
+000003e0 <hal_clear_rx_start_event_handler>:
+
+/*! \brief  Remove event handler reference.
+ *
+ *  \ingroup hal_avr_api
+ */
+void hal_clear_rx_start_event_handler( void ){
+     3e0:	df 93       	push	r29
+     3e2:	cf 93       	push	r28
+     3e4:	0f 92       	push	r0
+     3e6:	cd b7       	in	r28, 0x3d	; 61
+     3e8:	de b7       	in	r29, 0x3e	; 62
+    
+    AVR_ENTER_CRITICAL_REGION( );
+     3ea:	8f b7       	in	r24, 0x3f	; 63
+     3ec:	89 83       	std	Y+1, r24	; 0x01
+    rx_start_callback = NULL;
+     3ee:	10 92 61 02 	sts	0x0261, r1
+     3f2:	10 92 60 02 	sts	0x0260, r1
+    AVR_LEAVE_CRITICAL_REGION( );
+     3f6:	89 81       	ldd	r24, Y+1	; 0x01
+     3f8:	8f bf       	out	0x3f, r24	; 63
+}
+     3fa:	0f 90       	pop	r0
+     3fc:	cf 91       	pop	r28
+     3fe:	df 91       	pop	r29
+     400:	08 95       	ret
+
+00000402 <hal_get_unknown_isr_flag>:
+ *  for new event occurances. 
+ *
+ *  \ingroup hal_avr_api
+ */
+uint8_t hal_get_unknown_isr_flag( void ){
+    return hal_unknown_isr_flag;
+     402:	80 91 5d 02 	lds	r24, 0x025D
+}
+     406:	08 95       	ret
+
+00000408 <hal_clear_unknown_isr_flag>:
+
+/*! \brief  This function clears the UNKNOWN_ISR flag.
+ *
+ *  \ingroup hal_avr_api
+ */
+void hal_clear_unknown_isr_flag( void ){
+     408:	df 93       	push	r29
+     40a:	cf 93       	push	r28
+     40c:	0f 92       	push	r0
+     40e:	cd b7       	in	r28, 0x3d	; 61
+     410:	de b7       	in	r29, 0x3e	; 62
+    
+    AVR_ENTER_CRITICAL_REGION( );
+     412:	8f b7       	in	r24, 0x3f	; 63
+     414:	89 83       	std	Y+1, r24	; 0x01
+    hal_unknown_isr_flag = 0;
+     416:	10 92 5d 02 	sts	0x025D, r1
+    AVR_LEAVE_CRITICAL_REGION( );
+     41a:	89 81       	ldd	r24, Y+1	; 0x01
+     41c:	8f bf       	out	0x3f, r24	; 63
+}
+     41e:	0f 90       	pop	r0
+     420:	cf 91       	pop	r28
+     422:	df 91       	pop	r29
+     424:	08 95       	ret
+
+00000426 <hal_get_pll_unlock_flag>:
+ *  for new event occurances. 
+ *
+ *  \ingroup hal_avr_api
+ */
+uint8_t hal_get_pll_unlock_flag( void ){
+    return hal_pll_unlock_flag;
+     426:	80 91 5e 02 	lds	r24, 0x025E
+}
+     42a:	08 95       	ret
+
+0000042c <hal_clear_pll_unlock_flag>:
+
+/*! \brief  This function clears the PLL_UNLOCK flag.
+ *
+ *  \ingroup hal_avr_api
+ */
+void hal_clear_pll_unlock_flag( void ){
+     42c:	df 93       	push	r29
+     42e:	cf 93       	push	r28
+     430:	0f 92       	push	r0
+     432:	cd b7       	in	r28, 0x3d	; 61
+     434:	de b7       	in	r29, 0x3e	; 62
+    
+    AVR_ENTER_CRITICAL_REGION( );
+     436:	8f b7       	in	r24, 0x3f	; 63
+     438:	89 83       	std	Y+1, r24	; 0x01
+    hal_pll_unlock_flag = 0;
+     43a:	10 92 5e 02 	sts	0x025E, r1
+    AVR_LEAVE_CRITICAL_REGION( );
+     43e:	89 81       	ldd	r24, Y+1	; 0x01
+     440:	8f bf       	out	0x3f, r24	; 63
+}
+     442:	0f 90       	pop	r0
+     444:	cf 91       	pop	r28
+     446:	df 91       	pop	r29
+     448:	08 95       	ret
+
+0000044a <hal_get_pll_lock_flag>:
+ *  for new event occurances. 
+ *
+ *  \ingroup hal_avr_api
+ */
+uint8_t hal_get_pll_lock_flag( void ){
+    return hal_pll_lock_flag;
+     44a:	80 91 5f 02 	lds	r24, 0x025F
+}
+     44e:	08 95       	ret
+
+00000450 <hal_clear_pll_lock_flag>:
+
+/*! \brief  This function clears the PLL_LOCK flag.
+ *
+ *  \ingroup hal_avr_api
+ */
+void hal_clear_pll_lock_flag( void ){
+     450:	df 93       	push	r29
+     452:	cf 93       	push	r28
+     454:	0f 92       	push	r0
+     456:	cd b7       	in	r28, 0x3d	; 61
+     458:	de b7       	in	r29, 0x3e	; 62
+    
+    AVR_ENTER_CRITICAL_REGION( );
+     45a:	8f b7       	in	r24, 0x3f	; 63
+     45c:	89 83       	std	Y+1, r24	; 0x01
+    hal_pll_lock_flag = 0;
+     45e:	10 92 5f 02 	sts	0x025F, r1
+    AVR_LEAVE_CRITICAL_REGION( );
+     462:	89 81       	ldd	r24, Y+1	; 0x01
+     464:	8f bf       	out	0x3f, r24	; 63
+}
+     466:	0f 90       	pop	r0
+     468:	cf 91       	pop	r28
+     46a:	df 91       	pop	r29
+     46c:	08 95       	ret
+
+0000046e <hal_register_read>:
+ *
+ *  \returns The actual value of the read register.
+ *
+ *  \ingroup hal_avr_api
+ */
+uint8_t hal_register_read( uint8_t address ){
+     46e:	df 93       	push	r29
+     470:	cf 93       	push	r28
+     472:	0f 92       	push	r0
+     474:	cd b7       	in	r28, 0x3d	; 61
+     476:	de b7       	in	r29, 0x3e	; 62
+    
+    //Add the register read command to the register address.
+    address &= HAL_TRX_CMD_RADDRM;
+    address |= HAL_TRX_CMD_RR;
+     478:	80 68       	ori	r24, 0x80	; 128
+    
+    uint8_t register_value = 0;
+    
+    AVR_ENTER_CRITICAL_REGION( );
+     47a:	9f b7       	in	r25, 0x3f	; 63
+     47c:	99 83       	std	Y+1, r25	; 0x01
+    
+    HAL_SS_LOW( ); //Start the SPI transaction by pulling the Slave Select low.
+     47e:	c0 98       	cbi	0x18, 0	; 24
+    
+    /*Send Register address and read register content.*/
+    SPDR = address;
+     480:	8f b9       	out	0x0f, r24	; 15
+    while ((SPSR & (1 << SPIF)) == 0) {;}
+     482:	77 9b       	sbis	0x0e, 7	; 14
+     484:	fe cf       	rjmp	.-4      	; 0x482 <hal_register_read+0x14>
+    register_value = SPDR;
+     486:	8f b1       	in	r24, 0x0f	; 15
+    
+    SPDR = register_value;
+     488:	8f b9       	out	0x0f, r24	; 15
+    while ((SPSR & (1 << SPIF)) == 0) {;}
+     48a:	77 9b       	sbis	0x0e, 7	; 14
+     48c:	fe cf       	rjmp	.-4      	; 0x48a <hal_register_read+0x1c>
+    register_value = SPDR;
+     48e:	8f b1       	in	r24, 0x0f	; 15
+
+    HAL_SS_HIGH( ); //End the transaction by pulling the Slave Select High.  
+     490:	c0 9a       	sbi	0x18, 0	; 24
+    
+    AVR_LEAVE_CRITICAL_REGION( );
+     492:	99 81       	ldd	r25, Y+1	; 0x01
+     494:	9f bf       	out	0x3f, r25	; 63
+    
+    return register_value;
+}
+     496:	0f 90       	pop	r0
+     498:	cf 91       	pop	r28
+     49a:	df 91       	pop	r29
+     49c:	08 95       	ret
+
+0000049e <hal_register_write>:
+ *  \param  address Address of register to write.
+ *  \param  value   Value to write.
+ *
+ *  \ingroup hal_avr_api
+ */
+void hal_register_write( uint8_t address, uint8_t value ){
+     49e:	df 93       	push	r29
+     4a0:	cf 93       	push	r28
+     4a2:	0f 92       	push	r0
+     4a4:	cd b7       	in	r28, 0x3d	; 61
+     4a6:	de b7       	in	r29, 0x3e	; 62
+                                       
+    //Add the Register Write command to the address.
+    address = HAL_TRX_CMD_RW | (HAL_TRX_CMD_RADDRM & address);
+     4a8:	80 6c       	ori	r24, 0xC0	; 192
+    
+    AVR_ENTER_CRITICAL_REGION( );    
+     4aa:	9f b7       	in	r25, 0x3f	; 63
+     4ac:	99 83       	std	Y+1, r25	; 0x01
+    
+    HAL_SS_LOW( ); //Start the SPI transaction by pulling the Slave Select low.
+     4ae:	c0 98       	cbi	0x18, 0	; 24
+    
+    /*Send Register address and write register content.*/
+    SPDR = address;
+     4b0:	8f b9       	out	0x0f, r24	; 15
+    while ((SPSR & (1 << SPIF)) == 0) {;}
+     4b2:	77 9b       	sbis	0x0e, 7	; 14
+     4b4:	fe cf       	rjmp	.-4      	; 0x4b2 <hal_register_write+0x14>
+    uint8_t dummy_read = SPDR;
+     4b6:	8f b1       	in	r24, 0x0f	; 15
+    
+    SPDR = value;
+     4b8:	6f b9       	out	0x0f, r22	; 15
+    while ((SPSR & (1 << SPIF)) == 0) {;}
+     4ba:	77 9b       	sbis	0x0e, 7	; 14
+     4bc:	fe cf       	rjmp	.-4      	; 0x4ba <hal_register_write+0x1c>
+    dummy_read = SPDR;
+     4be:	8f b1       	in	r24, 0x0f	; 15
+    
+    HAL_SS_HIGH( ); //End the transaction by pulling the Slave Slect High.
+     4c0:	c0 9a       	sbi	0x18, 0	; 24
+    
+    AVR_LEAVE_CRITICAL_REGION( );
+     4c2:	89 81       	ldd	r24, Y+1	; 0x01
+     4c4:	8f bf       	out	0x3f, r24	; 63
+}
+     4c6:	0f 90       	pop	r0
+     4c8:	cf 91       	pop	r28
+     4ca:	df 91       	pop	r29
+     4cc:	08 95       	ret
+
+000004ce <hal_subregister_read>:
+ *  \param  position   Bit position of the subregister
+ *  \retval Value of the read subregister.
+ *
+ *  \ingroup hal_avr_api
+ */
+uint8_t hal_subregister_read( uint8_t address, uint8_t mask, uint8_t position ){
+     4ce:	ff 92       	push	r15
+     4d0:	0f 93       	push	r16
+     4d2:	1f 93       	push	r17
+     4d4:	06 2f       	mov	r16, r22
+     4d6:	f4 2e       	mov	r15, r20
+    
+    //Read current register value and mask out subregister.
+    uint8_t register_value = hal_register_read( address );
+     4d8:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+    register_value &= mask;
+    register_value >>= position; //Align subregister value.
+     4dc:	08 23       	and	r16, r24
+     4de:	10 e0       	ldi	r17, 0x00	; 0
+     4e0:	02 c0       	rjmp	.+4      	; 0x4e6 <hal_subregister_read+0x18>
+     4e2:	15 95       	asr	r17
+     4e4:	07 95       	ror	r16
+     4e6:	fa 94       	dec	r15
+     4e8:	e2 f7       	brpl	.-8      	; 0x4e2 <hal_subregister_read+0x14>
+    
+    return register_value;
+}
+     4ea:	80 2f       	mov	r24, r16
+     4ec:	1f 91       	pop	r17
+     4ee:	0f 91       	pop	r16
+     4f0:	ff 90       	pop	r15
+     4f2:	08 95       	ret
+
+000004f4 <hal_subregister_write>:
+ *  \param  value  Value to write into the subregister.
+ *
+ *  \ingroup hal_avr_api
+ */
+void hal_subregister_write( uint8_t address, uint8_t mask, uint8_t position, 
+                            uint8_t value ){
+     4f4:	df 92       	push	r13
+     4f6:	ef 92       	push	r14
+     4f8:	ff 92       	push	r15
+     4fa:	0f 93       	push	r16
+     4fc:	1f 93       	push	r17
+     4fe:	d8 2e       	mov	r13, r24
+     500:	f6 2e       	mov	r15, r22
+     502:	e4 2e       	mov	r14, r20
+     504:	02 2f       	mov	r16, r18
+    
+    //Read current register value and mask area outside the subregister.
+    uint8_t register_value = hal_register_read( address );
+     506:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+    register_value &= ~mask;
+     50a:	6f 2d       	mov	r22, r15
+     50c:	60 95       	com	r22
+     50e:	68 23       	and	r22, r24
+    
+    //Start preparing the new subregister value. shift in place and mask.
+    value <<= position;
+     510:	10 e0       	ldi	r17, 0x00	; 0
+     512:	02 c0       	rjmp	.+4      	; 0x518 <hal_subregister_write+0x24>
+     514:	00 0f       	add	r16, r16
+     516:	11 1f       	adc	r17, r17
+     518:	ea 94       	dec	r14
+     51a:	e2 f7       	brpl	.-8      	; 0x514 <hal_subregister_write+0x20>
+    value &= mask;
+     51c:	f0 22       	and	r15, r16
+    
+    value |= register_value; //Set the new subregister value.
+
+    //Write the modified register value.
+    hal_register_write( address, value );
+     51e:	6f 29       	or	r22, r15
+     520:	8d 2d       	mov	r24, r13
+     522:	0e 94 4f 02 	call	0x49e	; 0x49e <hal_register_write>
+}
+     526:	1f 91       	pop	r17
+     528:	0f 91       	pop	r16
+     52a:	ff 90       	pop	r15
+     52c:	ef 90       	pop	r14
+     52e:	df 90       	pop	r13
+     530:	08 95       	ret
+
+00000532 <hal_frame_read>:
+ *
+ *  \param  rx_frame    Pointer to the data structure where the frame is stored.
+ *
+ *  \ingroup hal_avr_api
+ */
+__z void hal_frame_read( hal_rx_frame_t *rx_frame ){
+     532:	df 93       	push	r29
+     534:	cf 93       	push	r28
+     536:	0f 92       	push	r0
+     538:	cd b7       	in	r28, 0x3d	; 61
+     53a:	de b7       	in	r29, 0x3e	; 62
+     53c:	fc 01       	movw	r30, r24
+     DDRF |= 1<<3;
+     53e:	80 91 61 00 	lds	r24, 0x0061
+     542:	88 60       	ori	r24, 0x08	; 8
+     544:	80 93 61 00 	sts	0x0061, r24
+     PORTF &= ~(1<<3);
+     548:	80 91 62 00 	lds	r24, 0x0062
+     54c:	87 7f       	andi	r24, 0xF7	; 247
+     54e:	80 93 62 00 	sts	0x0062, r24
+    AVR_ENTER_CRITICAL_REGION( );
+     552:	8f b7       	in	r24, 0x3f	; 63
+     554:	89 83       	std	Y+1, r24	; 0x01
+    
+    HAL_SS_LOW( );
+     556:	c0 98       	cbi	0x18, 0	; 24
+    
+    /*Send frame read command.*/
+    SPDR = HAL_TRX_CMD_FR;
+     558:	80 e2       	ldi	r24, 0x20	; 32
+     55a:	8f b9       	out	0x0f, r24	; 15
+    while ((SPSR & (1 << SPIF)) == 0) {;}
+     55c:	77 9b       	sbis	0x0e, 7	; 14
+     55e:	fe cf       	rjmp	.-4      	; 0x55c <hal_frame_read+0x2a>
+    uint8_t frame_length = SPDR;
+     560:	8f b1       	in	r24, 0x0f	; 15
+    
+    /*Read frame length.*/    
+    SPDR = frame_length;
+     562:	8f b9       	out	0x0f, r24	; 15
+    while ((SPSR & (1 << SPIF)) == 0) {;}
+     564:	77 9b       	sbis	0x0e, 7	; 14
+     566:	fe cf       	rjmp	.-4      	; 0x564 <hal_frame_read+0x32>
+    frame_length = SPDR;
+     568:	9f b1       	in	r25, 0x0f	; 15
+    
+    /*Check for correct frame length.*/
+    if ((frame_length >= HAL_MIN_FRAME_LENGTH) && (frame_length <= HAL_MAX_FRAME_LENGTH)) {
+     56a:	89 2f       	mov	r24, r25
+     56c:	83 50       	subi	r24, 0x03	; 3
+     56e:	8d 37       	cpi	r24, 0x7D	; 125
+     570:	50 f5       	brcc	.+84     	; 0x5c6 <hal_frame_read+0x94>
+        
+        uint16_t crc = 0;
+        uint8_t *rx_data = (rx_frame->data);
+        
+        rx_frame->length = frame_length; //Store frame length.
+     572:	90 83       	st	Z, r25
+        
+        /*Upload frame buffer to data pointer. Calculate CRC.*/
+        SPDR = frame_length;
+     574:	9f b9       	out	0x0f, r25	; 15
+        while ((SPSR & (1 << SPIF)) == 0) {;}
+     576:	77 9b       	sbis	0x0e, 7	; 14
+     578:	fe cf       	rjmp	.-4      	; 0x576 <hal_frame_read+0x44>
+    
+    /*Check for correct frame length.*/
+    if ((frame_length >= HAL_MIN_FRAME_LENGTH) && (frame_length <= HAL_MAX_FRAME_LENGTH)) {
+        
+        uint16_t crc = 0;
+        uint8_t *rx_data = (rx_frame->data);
+     57a:	df 01       	movw	r26, r30
+     57c:	11 96       	adiw	r26, 0x01	; 1
+     57e:	20 e0       	ldi	r18, 0x00	; 0
+     580:	30 e0       	ldi	r19, 0x00	; 0
+        SPDR = frame_length;
+        while ((SPSR & (1 << SPIF)) == 0) {;}
+            
+        do {
+            
+            uint8_t const tempData = SPDR;
+     582:	8f b1       	in	r24, 0x0f	; 15
+            SPDR = tempData; // Any data will do, and tempData is readily available. Saving cycles.
+     584:	8f b9       	out	0x0f, r24	; 15
+            
+            *rx_data++ = tempData;      
+     586:	8d 93       	st	X+, r24
+static __inline__ uint16_t
+_crc_ccitt_update (uint16_t __crc, uint8_t __data)
+{
+    uint16_t __ret;
+
+    __asm__ __volatile__ (
+     588:	28 27       	eor	r18, r24
+     58a:	02 2e       	mov	r0, r18
+     58c:	22 95       	swap	r18
+     58e:	20 7f       	andi	r18, 0xF0	; 240
+     590:	20 25       	eor	r18, r0
+     592:	03 2e       	mov	r0, r19
+     594:	32 2f       	mov	r19, r18
+     596:	22 95       	swap	r18
+     598:	2f 70       	andi	r18, 0x0F	; 15
+     59a:	02 26       	eor	r0, r18
+     59c:	26 95       	lsr	r18
+     59e:	32 27       	eor	r19, r18
+     5a0:	23 27       	eor	r18, r19
+     5a2:	22 0f       	add	r18, r18
+     5a4:	22 0f       	add	r18, r18
+     5a6:	22 0f       	add	r18, r18
+     5a8:	20 25       	eor	r18, r0
+            
+            crc = crc_ccitt_update( crc, tempData );
+            
+            while ((SPSR & (1 << SPIF)) == 0) {;}
+     5aa:	77 9b       	sbis	0x0e, 7	; 14
+     5ac:	fe cf       	rjmp	.-4      	; 0x5aa <hal_frame_read+0x78>
+        } while (--frame_length > 0);
+     5ae:	91 50       	subi	r25, 0x01	; 1
+     5b0:	41 f7       	brne	.-48     	; 0x582 <hal_frame_read+0x50>
+        
+        /*Read LQI value for this frame.*/
+        rx_frame->lqi = SPDR;
+     5b2:	8f b1       	in	r24, 0x0f	; 15
+     5b4:	e0 58       	subi	r30, 0x80	; 128
+     5b6:	ff 4f       	sbci	r31, 0xFF	; 255
+     5b8:	81 93       	st	Z+, r24
+        
+        HAL_SS_HIGH( );
+     5ba:	c0 9a       	sbi	0x18, 0	; 24
+        
+        /*Check calculated crc, and set crc field in hal_rx_frame_t accordingly.*/
+        if (crc == HAL_CALCULATED_CRC_OK) {
+     5bc:	23 2b       	or	r18, r19
+     5be:	41 f4       	brne	.+16     	; 0x5d0 <hal_frame_read+0x9e>
+            rx_frame->crc = true; 
+     5c0:	81 e0       	ldi	r24, 0x01	; 1
+     5c2:	80 83       	st	Z, r24
+     5c4:	06 c0       	rjmp	.+12     	; 0x5d2 <hal_frame_read+0xa0>
+        } else { rx_frame->crc = false; }
+    } else {
+        
+        HAL_SS_HIGH( );
+     5c6:	c0 9a       	sbi	0x18, 0	; 24
+        
+        rx_frame->length = 0;
+     5c8:	10 82       	st	Z, r1
+        rx_frame->lqi    = 0;
+     5ca:	e0 58       	subi	r30, 0x80	; 128
+     5cc:	ff 4f       	sbci	r31, 0xFF	; 255
+     5ce:	11 92       	st	Z+, r1
+        rx_frame->crc    = false;    
+     5d0:	10 82       	st	Z, r1
+    }
+    
+    AVR_LEAVE_CRITICAL_REGION( );
+     5d2:	89 81       	ldd	r24, Y+1	; 0x01
+     5d4:	8f bf       	out	0x3f, r24	; 63
+}
+     5d6:	0f 90       	pop	r0
+     5d8:	cf 91       	pop	r28
+     5da:	df 91       	pop	r29
+     5dc:	08 95       	ret
+
+000005de <hal_frame_write>:
+ *  \param  write_buffer    Pointer to data that is to be written to frame buffer.
+ *  \param  length          Length of data. The maximum length is 127 bytes.
+ *
+ *  \ingroup hal_avr_api
+ */
+__z void hal_frame_write( uint8_t *write_buffer, uint8_t length ){
+     5de:	df 93       	push	r29
+     5e0:	cf 93       	push	r28
+     5e2:	0f 92       	push	r0
+     5e4:	cd b7       	in	r28, 0x3d	; 61
+     5e6:	de b7       	in	r29, 0x3e	; 62
+     5e8:	fc 01       	movw	r30, r24
+    
+    length &= HAL_TRX_CMD_RADDRM; //Truncate length to maximum frame length.
+     5ea:	6f 77       	andi	r22, 0x7F	; 127
+    
+    AVR_ENTER_CRITICAL_REGION( );
+     5ec:	8f b7       	in	r24, 0x3f	; 63
+     5ee:	89 83       	std	Y+1, r24	; 0x01
+    
+    HAL_SS_LOW( ); //Initiate the SPI transaction.
+     5f0:	c0 98       	cbi	0x18, 0	; 24
+    
+    /*SEND FRAME WRITE COMMAND AND FRAME LENGTH.*/
+    SPDR = HAL_TRX_CMD_FW;
+     5f2:	80 e6       	ldi	r24, 0x60	; 96
+     5f4:	8f b9       	out	0x0f, r24	; 15
+    while ((SPSR & (1 << SPIF)) == 0) {;}
+     5f6:	77 9b       	sbis	0x0e, 7	; 14
+     5f8:	fe cf       	rjmp	.-4      	; 0x5f6 <hal_frame_write+0x18>
+    uint8_t dummy_read = SPDR;
+     5fa:	8f b1       	in	r24, 0x0f	; 15
+        
+    SPDR = length;
+     5fc:	6f b9       	out	0x0f, r22	; 15
+    while ((SPSR & (1 << SPIF)) == 0) {;}
+     5fe:	77 9b       	sbis	0x0e, 7	; 14
+     600:	fe cf       	rjmp	.-4      	; 0x5fe <hal_frame_write+0x20>
+    dummy_read = SPDR;
+     602:	8f b1       	in	r24, 0x0f	; 15
+    
+    //Download to the Frame Buffer.
+    do {
+        
+        SPDR = *write_buffer++;
+     604:	81 91       	ld	r24, Z+
+     606:	8f b9       	out	0x0f, r24	; 15
+        --length;
+     608:	61 50       	subi	r22, 0x01	; 1
+        
+        while ((SPSR & (1 << SPIF)) == 0) {;}
+     60a:	77 9b       	sbis	0x0e, 7	; 14
+     60c:	fe cf       	rjmp	.-4      	; 0x60a <hal_frame_write+0x2c>
+        
+        dummy_read = SPDR;
+     60e:	8f b1       	in	r24, 0x0f	; 15
+    } while (length > 0);
+     610:	66 23       	and	r22, r22
+     612:	c1 f7       	brne	.-16     	; 0x604 <hal_frame_write+0x26>
+    
+    HAL_SS_HIGH( ); //Terminate SPI transaction.
+     614:	c0 9a       	sbi	0x18, 0	; 24
+    
+    AVR_LEAVE_CRITICAL_REGION( );
+     616:	89 81       	ldd	r24, Y+1	; 0x01
+     618:	8f bf       	out	0x3f, r24	; 63
+}
+     61a:	0f 90       	pop	r0
+     61c:	cf 91       	pop	r28
+     61e:	df 91       	pop	r29
+     620:	08 95       	ret
+
+00000622 <hal_sram_read>:
+ * \param length Length of the read burst
+ * \param data Pointer to buffer where data is stored.
+ *
+ * \ingroup hal_avr_api
+ */
+__z void hal_sram_read( uint8_t address, uint8_t length, uint8_t *data ){
+     622:	df 93       	push	r29
+     624:	cf 93       	push	r28
+     626:	0f 92       	push	r0
+     628:	cd b7       	in	r28, 0x3d	; 61
+     62a:	de b7       	in	r29, 0x3e	; 62
+     62c:	98 2f       	mov	r25, r24
+     62e:	fa 01       	movw	r30, r20
+    
+    AVR_ENTER_CRITICAL_REGION( );
+     630:	8f b7       	in	r24, 0x3f	; 63
+     632:	89 83       	std	Y+1, r24	; 0x01
+    
+    HAL_SS_LOW( ); //Initiate the SPI transaction.
+     634:	c0 98       	cbi	0x18, 0	; 24
+    
+    /*Send SRAM read command.*/
+    SPDR = HAL_TRX_CMD_SR;
+     636:	1f b8       	out	0x0f, r1	; 15
+    while ((SPSR & (1 << SPIF)) == 0) {;}
+     638:	77 9b       	sbis	0x0e, 7	; 14
+     63a:	fe cf       	rjmp	.-4      	; 0x638 <hal_sram_read+0x16>
+    uint8_t dummy_read = SPDR;
+     63c:	8f b1       	in	r24, 0x0f	; 15
+    
+    /*Send address where to start reading.*/    
+    SPDR = address;
+     63e:	9f b9       	out	0x0f, r25	; 15
+    while ((SPSR & (1 << SPIF)) == 0) {;}
+     640:	77 9b       	sbis	0x0e, 7	; 14
+     642:	fe cf       	rjmp	.-4      	; 0x640 <hal_sram_read+0x1e>
+    dummy_read = SPDR;
+     644:	8f b1       	in	r24, 0x0f	; 15
+    
+    /*Upload the chosen memory area.*/
+    do {
+        
+        SPDR = HAL_DUMMY_READ;
+     646:	1f b8       	out	0x0f, r1	; 15
+        while ((SPSR & (1 << SPIF)) == 0) {;}
+     648:	77 9b       	sbis	0x0e, 7	; 14
+     64a:	fe cf       	rjmp	.-4      	; 0x648 <hal_sram_read+0x26>
+        *data++ = SPDR;
+     64c:	8f b1       	in	r24, 0x0f	; 15
+     64e:	80 83       	st	Z, r24
+    } while (--length > 0);
+     650:	61 50       	subi	r22, 0x01	; 1
+     652:	11 f0       	breq	.+4      	; 0x658 <hal_sram_read+0x36>
+    /*Upload the chosen memory area.*/
+    do {
+        
+        SPDR = HAL_DUMMY_READ;
+        while ((SPSR & (1 << SPIF)) == 0) {;}
+        *data++ = SPDR;
+     654:	31 96       	adiw	r30, 0x01	; 1
+     656:	f7 cf       	rjmp	.-18     	; 0x646 <hal_sram_read+0x24>
+    } while (--length > 0);
+
+    HAL_SS_HIGH( );
+     658:	c0 9a       	sbi	0x18, 0	; 24
+    
+    AVR_LEAVE_CRITICAL_REGION( );
+     65a:	89 81       	ldd	r24, Y+1	; 0x01
+     65c:	8f bf       	out	0x3f, r24	; 63
+}
+     65e:	0f 90       	pop	r0
+     660:	cf 91       	pop	r28
+     662:	df 91       	pop	r29
+     664:	08 95       	ret
+
+00000666 <hal_sram_write>:
+ * \param length  Length of the write burst
+ * \param data    Pointer to an array of bytes that should be written
+ *
+ * \ingroup hal_avr_api
+ */
+__z void hal_sram_write( uint8_t address, uint8_t length, uint8_t *data ){
+     666:	df 93       	push	r29
+     668:	cf 93       	push	r28
+     66a:	0f 92       	push	r0
+     66c:	cd b7       	in	r28, 0x3d	; 61
+     66e:	de b7       	in	r29, 0x3e	; 62
+     670:	98 2f       	mov	r25, r24
+     672:	fa 01       	movw	r30, r20
+    
+    AVR_ENTER_CRITICAL_REGION( );
+     674:	8f b7       	in	r24, 0x3f	; 63
+     676:	89 83       	std	Y+1, r24	; 0x01
+        
+    HAL_SS_LOW( );
+     678:	c0 98       	cbi	0x18, 0	; 24
+    
+    /*Send SRAM write command.*/
+    SPDR = HAL_TRX_CMD_SW;
+     67a:	80 e4       	ldi	r24, 0x40	; 64
+     67c:	8f b9       	out	0x0f, r24	; 15
+    while ((SPSR & (1 << SPIF)) == 0) {;}
+     67e:	77 9b       	sbis	0x0e, 7	; 14
+     680:	fe cf       	rjmp	.-4      	; 0x67e <hal_sram_write+0x18>
+    uint8_t dummy_read = SPDR;
+     682:	8f b1       	in	r24, 0x0f	; 15
+    
+    /*Send address where to start writing to.*/
+    SPDR = address;
+     684:	9f b9       	out	0x0f, r25	; 15
+    while ((SPSR & (1 << SPIF)) == 0) {;}
+     686:	77 9b       	sbis	0x0e, 7	; 14
+     688:	fe cf       	rjmp	.-4      	; 0x686 <hal_sram_write+0x20>
+    dummy_read = SPDR;
+     68a:	8f b1       	in	r24, 0x0f	; 15
+    
+    /*Upload the chosen memory area.*/
+    do {
+        
+        SPDR = *data++;
+     68c:	81 91       	ld	r24, Z+
+     68e:	8f b9       	out	0x0f, r24	; 15
+        while ((SPSR & (1 << SPIF)) == 0) {;}
+     690:	77 9b       	sbis	0x0e, 7	; 14
+     692:	fe cf       	rjmp	.-4      	; 0x690 <hal_sram_write+0x2a>
+        dummy_read = SPDR;
+     694:	8f b1       	in	r24, 0x0f	; 15
+    } while (--length > 0);
+     696:	61 50       	subi	r22, 0x01	; 1
+     698:	c9 f7       	brne	.-14     	; 0x68c <hal_sram_write+0x26>
+    
+    HAL_SS_HIGH( );
+     69a:	c0 9a       	sbi	0x18, 0	; 24
+    
+    AVR_LEAVE_CRITICAL_REGION( );
+     69c:	89 81       	ldd	r24, Y+1	; 0x01
+     69e:	8f bf       	out	0x3f, r24	; 63
+}
+     6a0:	0f 90       	pop	r0
+     6a2:	cf 91       	pop	r28
+     6a4:	df 91       	pop	r29
+     6a6:	08 95       	ret
+
+000006a8 <hal_trx_aes_wrrd>:
+
+__z void hal_trx_aes_wrrd(uint8_t addr, uint8_t *idata, uint8_t length)
+{
+     6a8:	df 93       	push	r29
+     6aa:	cf 93       	push	r28
+     6ac:	0f 92       	push	r0
+     6ae:	cd b7       	in	r28, 0x3d	; 61
+     6b0:	de b7       	in	r29, 0x3e	; 62
+     6b2:	98 2f       	mov	r25, r24
+     6b4:	db 01       	movw	r26, r22
+    can be achieved.
+*/
+void
+_delay_loop_1(uint8_t __count)
+{
+	__asm__ volatile (
+     6b6:	82 e0       	ldi	r24, 0x02	; 2
+     6b8:	8a 95       	dec	r24
+     6ba:	f1 f7       	brne	.-4      	; 0x6b8 <hal_trx_aes_wrrd+0x10>
+    uint8_t *odata;
+
+    delay_us(1);
+
+    AVR_ENTER_CRITICAL_REGION();
+     6bc:	8f b7       	in	r24, 0x3f	; 63
+     6be:	89 83       	std	Y+1, r24	; 0x01
+    /* Start SPI transaction by pulling SEL low */
+    HAL_SS_LOW();
+     6c0:	c0 98       	cbi	0x18, 0	; 24
+
+    /* Send the command byte */
+    SPDR = HAL_TRX_CMD_SW;
+     6c2:	80 e4       	ldi	r24, 0x40	; 64
+     6c4:	8f b9       	out	0x0f, r24	; 15
+    while ((SPSR & (1 << SPIF)) == 0) {;}
+     6c6:	77 9b       	sbis	0x0e, 7	; 14
+     6c8:	fe cf       	rjmp	.-4      	; 0x6c6 <hal_trx_aes_wrrd+0x1e>
+
+    /* write SRAM start address */
+    SPDR = addr;
+     6ca:	9f b9       	out	0x0f, r25	; 15
+    while ((SPSR & (1 << SPIF)) == 0) {;}
+     6cc:	77 9b       	sbis	0x0e, 7	; 14
+     6ce:	fe cf       	rjmp	.-4      	; 0x6cc <hal_trx_aes_wrrd+0x24>
+
+    /* now transfer data */
+    odata = idata;
+
+    /* write data byte 0 - the obtained value in SPDR is meaningless */
+    SPDR = *idata++;
+     6d0:	8c 91       	ld	r24, X
+     6d2:	8f b9       	out	0x0f, r24	; 15
+    while ((SPSR & (1 << SPIF)) == 0) {;}
+     6d4:	77 9b       	sbis	0x0e, 7	; 14
+     6d6:	fe cf       	rjmp	.-4      	; 0x6d4 <hal_trx_aes_wrrd+0x2c>
+     6d8:	94 2f       	mov	r25, r20
+     6da:	fd 01       	movw	r30, r26
+     6dc:	06 c0       	rjmp	.+12     	; 0x6ea <hal_trx_aes_wrrd+0x42>
+
+    /* process data bytes 1...length-1: write and read */
+    while (--length)
+    {
+        SPDR = *idata++;
+     6de:	81 81       	ldd	r24, Z+1	; 0x01
+     6e0:	8f b9       	out	0x0f, r24	; 15
+        while ((SPSR & (1 << SPIF)) == 0) {;}
+     6e2:	77 9b       	sbis	0x0e, 7	; 14
+     6e4:	fe cf       	rjmp	.-4      	; 0x6e2 <hal_trx_aes_wrrd+0x3a>
+        *odata++ = SPDR;
+     6e6:	8f b1       	in	r24, 0x0f	; 15
+     6e8:	81 93       	st	Z+, r24
+    /* write data byte 0 - the obtained value in SPDR is meaningless */
+    SPDR = *idata++;
+    while ((SPSR & (1 << SPIF)) == 0) {;}
+
+    /* process data bytes 1...length-1: write and read */
+    while (--length)
+     6ea:	91 50       	subi	r25, 0x01	; 1
+     6ec:	c1 f7       	brne	.-16     	; 0x6de <hal_trx_aes_wrrd+0x36>
+     6ee:	41 50       	subi	r20, 0x01	; 1
+     6f0:	fd 01       	movw	r30, r26
+     6f2:	e4 0f       	add	r30, r20
+     6f4:	f1 1d       	adc	r31, r1
+        while ((SPSR & (1 << SPIF)) == 0) {;}
+        *odata++ = SPDR;
+    }
+
+    /* to get the last data byte, write some dummy byte */
+    SPDR = SPI_DUMMY_VALUE;
+     6f6:	1f b8       	out	0x0f, r1	; 15
+    while ((SPSR & (1 << SPIF)) == 0) {;}
+     6f8:	77 9b       	sbis	0x0e, 7	; 14
+     6fa:	fe cf       	rjmp	.-4      	; 0x6f8 <hal_trx_aes_wrrd+0x50>
+    *odata++ = SPDR;
+     6fc:	8f b1       	in	r24, 0x0f	; 15
+     6fe:	80 83       	st	Z, r24
+
+    /* Stop the SPI transaction by setting SEL high */
+    HAL_SS_HIGH();
+     700:	c0 9a       	sbi	0x18, 0	; 24
+    AVR_LEAVE_CRITICAL_REGION();
+     702:	89 81       	ldd	r24, Y+1	; 0x01
+     704:	8f bf       	out	0x3f, r24	; 63
+}
+     706:	0f 90       	pop	r0
+     708:	cf 91       	pop	r28
+     70a:	df 91       	pop	r29
+     70c:	08 95       	ret
+
+0000070e <hal_get_system_time>:
+ *
+ * \returns The system time with symbol resolution.
+ *
+ * \ingroup hal_avr_api
+ */
+uint32_t hal_get_system_time( void ){
+     70e:	df 93       	push	r29
+     710:	cf 93       	push	r28
+     712:	0f 92       	push	r0
+     714:	cd b7       	in	r28, 0x3d	; 61
+     716:	de b7       	in	r29, 0x3e	; 62
+    
+    uint32_t system_time = hal_system_time; //Read current system time (MSB).
+     718:	20 91 57 02 	lds	r18, 0x0257
+     71c:	30 91 58 02 	lds	r19, 0x0258
+     720:	40 e0       	ldi	r20, 0x00	; 0
+     722:	50 e0       	ldi	r21, 0x00	; 0
+    system_time <<= 16;
+     724:	a9 01       	movw	r20, r18
+     726:	33 27       	eor	r19, r19
+     728:	22 27       	eor	r18, r18
+    
+    /*Disable interrupts. This is done since the TCNT1 value should not 
+      be read when the timer is running.*/
+    AVR_ENTER_CRITICAL_REGION( );
+     72a:	8f b7       	in	r24, 0x3f	; 63
+     72c:	89 83       	std	Y+1, r24	; 0x01
+    
+    system_time |= TCNT1; //Add 16 LSB. 
+     72e:	8c b5       	in	r24, 0x2c	; 44
+     730:	9d b5       	in	r25, 0x2d	; 45
+    
+    AVR_LEAVE_CRITICAL_REGION( );
+     732:	69 81       	ldd	r22, Y+1	; 0x01
+     734:	6f bf       	out	0x3f, r22	; 63
+     736:	a0 e0       	ldi	r26, 0x00	; 0
+     738:	b0 e0       	ldi	r27, 0x00	; 0
+     73a:	28 2b       	or	r18, r24
+     73c:	39 2b       	or	r19, r25
+     73e:	4a 2b       	or	r20, r26
+     740:	5b 2b       	or	r21, r27
+     742:	56 95       	lsr	r21
+     744:	47 95       	ror	r20
+     746:	37 95       	ror	r19
+     748:	27 95       	ror	r18
+    
+    //Return the system time in symbols.
+    return ((system_time / HAL_US_PER_SYMBOL) & HAL_SYMBOL_MASK);
+}
+     74a:	b9 01       	movw	r22, r18
+     74c:	ca 01       	movw	r24, r20
+     74e:	0f 90       	pop	r0
+     750:	cf 91       	pop	r28
+     752:	df 91       	pop	r29
+     754:	08 95       	ret
+
+00000756 <__vector_11>:
+ *  This is the interrupt service routine for timer1.ICIE1 input capture.
+ *  It is triggered of a rising edge on the radio transceivers IRQ line.
+ */
+void TIMER1_CAPT_vect( void );
+#else  /* !DOXYGEN */
+ISR( TIMER1_CAPT_vect ){
+     756:	1f 92       	push	r1
+     758:	0f 92       	push	r0
+     75a:	0f b6       	in	r0, 0x3f	; 63
+     75c:	0f 92       	push	r0
+     75e:	0b b6       	in	r0, 0x3b	; 59
+     760:	0f 92       	push	r0
+     762:	11 24       	eor	r1, r1
+     764:	0f 93       	push	r16
+     766:	1f 93       	push	r17
+     768:	2f 93       	push	r18
+     76a:	3f 93       	push	r19
+     76c:	4f 93       	push	r20
+     76e:	5f 93       	push	r21
+     770:	6f 93       	push	r22
+     772:	7f 93       	push	r23
+     774:	8f 93       	push	r24
+     776:	9f 93       	push	r25
+     778:	af 93       	push	r26
+     77a:	bf 93       	push	r27
+     77c:	ef 93       	push	r30
+     77e:	ff 93       	push	r31
+    
+    /*The following code reads the current system time. This is done by first 
+      reading the hal_system_time and then adding the 16 LSB directly from the
+      TCNT1 register.
+     */
+    uint32_t isr_timestamp = hal_system_time;
+     780:	80 91 57 02 	lds	r24, 0x0257
+     784:	90 91 58 02 	lds	r25, 0x0258
+     788:	a0 e0       	ldi	r26, 0x00	; 0
+     78a:	b0 e0       	ldi	r27, 0x00	; 0
+    isr_timestamp <<= 16;
+     78c:	9c 01       	movw	r18, r24
+     78e:	11 27       	eor	r17, r17
+     790:	00 27       	eor	r16, r16
+    isr_timestamp |= TCNT1; 
+     792:	8c b5       	in	r24, 0x2c	; 44
+     794:	9d b5       	in	r25, 0x2d	; 45
+     796:	a0 e0       	ldi	r26, 0x00	; 0
+     798:	b0 e0       	ldi	r27, 0x00	; 0
+     79a:	08 2b       	or	r16, r24
+     79c:	19 2b       	or	r17, r25
+     79e:	2a 2b       	or	r18, r26
+     7a0:	3b 2b       	or	r19, r27
+    
+    /*Read Interrupt source.*/
+    HAL_SS_LOW( );
+     7a2:	c0 98       	cbi	0x18, 0	; 24
+    
+    /*Send Register address and read register content.*/
+    SPDR = RG_IRQ_STATUS | HAL_TRX_CMD_RR;
+     7a4:	8f e8       	ldi	r24, 0x8F	; 143
+     7a6:	8f b9       	out	0x0f, r24	; 15
+    /* This is the second part of the convertion of system time to a 16 us time 
+       base. The division is moved here so we can spend less time waiting for SPI
+       data.    
+     */
+    isr_timestamp /= HAL_US_PER_SYMBOL; //Divide so that we get time in 16us resolution.
+    isr_timestamp &= HAL_SYMBOL_MASK;  
+     7a8:	36 95       	lsr	r19
+     7aa:	27 95       	ror	r18
+     7ac:	17 95       	ror	r17
+     7ae:	07 95       	ror	r16
+    
+    while ((SPSR & (1 << SPIF)) == 0) {;}
+     7b0:	77 9b       	sbis	0x0e, 7	; 14
+     7b2:	fe cf       	rjmp	.-4      	; 0x7b0 <__vector_11+0x5a>
+    uint8_t interrupt_source = SPDR; //The interrupt variable is used as a dummy read.
+     7b4:	8f b1       	in	r24, 0x0f	; 15
+    
+    SPDR = interrupt_source;
+     7b6:	8f b9       	out	0x0f, r24	; 15
+    while ((SPSR & (1 << SPIF)) == 0) {;}	
+     7b8:	77 9b       	sbis	0x0e, 7	; 14
+     7ba:	fe cf       	rjmp	.-4      	; 0x7b8 <__vector_11+0x62>
+    interrupt_source = SPDR; //The interrupt source is read.
+     7bc:	9f b1       	in	r25, 0x0f	; 15
+
+    HAL_SS_HIGH( );
+     7be:	c0 9a       	sbi	0x18, 0	; 24
+
+    /*Handle the incomming interrupt. Prioritized.*/
+    if ((interrupt_source & HAL_RX_START_MASK)) {
+     7c0:	92 ff       	sbrs	r25, 2
+     7c2:	1b c0       	rjmp	.+54     	; 0x7fa <__vector_11+0xa4>
+        
+        hal_rx_start_flag++; //Increment RX_START flag.
+     7c4:	80 91 5c 02 	lds	r24, 0x025C
+     7c8:	8f 5f       	subi	r24, 0xFF	; 255
+     7ca:	80 93 5c 02 	sts	0x025C, r24
+        
+        if( rx_start_callback != NULL ){
+     7ce:	e0 91 60 02 	lds	r30, 0x0260
+     7d2:	f0 91 61 02 	lds	r31, 0x0261
+     7d6:	30 97       	sbiw	r30, 0x00	; 0
+     7d8:	09 f4       	brne	.+2      	; 0x7dc <__vector_11+0x86>
+     7da:	4d c0       	rjmp	.+154    	; 0x876 <__vector_11+0x120>
+            
+            /*Read Frame length and call rx_start callback.*/
+            HAL_SS_LOW( );
+     7dc:	c0 98       	cbi	0x18, 0	; 24
+    
+            SPDR = HAL_TRX_CMD_FR;
+     7de:	80 e2       	ldi	r24, 0x20	; 32
+     7e0:	8f b9       	out	0x0f, r24	; 15
+            while ((SPSR & (1 << SPIF)) == 0) {;}
+     7e2:	77 9b       	sbis	0x0e, 7	; 14
+     7e4:	fe cf       	rjmp	.-4      	; 0x7e2 <__vector_11+0x8c>
+            uint8_t frame_length = SPDR;
+     7e6:	8f b1       	in	r24, 0x0f	; 15
+        
+            SPDR = frame_length; //Any data will do, so frame_length is used.
+     7e8:	8f b9       	out	0x0f, r24	; 15
+            while ((SPSR & (1 << SPIF)) == 0) {;}
+     7ea:	77 9b       	sbis	0x0e, 7	; 14
+     7ec:	fe cf       	rjmp	.-4      	; 0x7ea <__vector_11+0x94>
+            frame_length = SPDR;
+     7ee:	4f b1       	in	r20, 0x0f	; 15
+            
+            HAL_SS_HIGH( );
+     7f0:	c0 9a       	sbi	0x18, 0	; 24
+            
+            rx_start_callback( isr_timestamp, frame_length );
+     7f2:	c9 01       	movw	r24, r18
+     7f4:	b8 01       	movw	r22, r16
+     7f6:	09 95       	icall
+     7f8:	3e c0       	rjmp	.+124    	; 0x876 <__vector_11+0x120>
+        }
+    } else if (interrupt_source & HAL_TRX_END_MASK) {
+     7fa:	93 ff       	sbrs	r25, 3
+     7fc:	0f c0       	rjmp	.+30     	; 0x81c <__vector_11+0xc6>
+        
+        hal_trx_end_flag++; //Increment TRX_END flag.
+     7fe:	80 91 5b 02 	lds	r24, 0x025B
+     802:	8f 5f       	subi	r24, 0xFF	; 255
+     804:	80 93 5b 02 	sts	0x025B, r24
+        
+        if( trx_end_callback != NULL ){
+     808:	e0 91 62 02 	lds	r30, 0x0262
+     80c:	f0 91 63 02 	lds	r31, 0x0263
+     810:	30 97       	sbiw	r30, 0x00	; 0
+     812:	89 f1       	breq	.+98     	; 0x876 <__vector_11+0x120>
+            trx_end_callback( isr_timestamp );
+     814:	c9 01       	movw	r24, r18
+     816:	b8 01       	movw	r22, r16
+     818:	09 95       	icall
+     81a:	2d c0       	rjmp	.+90     	; 0x876 <__vector_11+0x120>
+        }
+    } else if (interrupt_source & HAL_TRX_UR_MASK) {
+     81c:	96 ff       	sbrs	r25, 6
+     81e:	06 c0       	rjmp	.+12     	; 0x82c <__vector_11+0xd6>
+        hal_trx_ur_flag++; //Increment TRX_UR flag.    
+     820:	80 91 5a 02 	lds	r24, 0x025A
+     824:	8f 5f       	subi	r24, 0xFF	; 255
+     826:	80 93 5a 02 	sts	0x025A, r24
+     82a:	25 c0       	rjmp	.+74     	; 0x876 <__vector_11+0x120>
+    } else if (interrupt_source & HAL_PLL_UNLOCK_MASK) {
+     82c:	91 ff       	sbrs	r25, 1
+     82e:	06 c0       	rjmp	.+12     	; 0x83c <__vector_11+0xe6>
+        hal_pll_unlock_flag++; //Increment PLL_UNLOCK flag.   
+     830:	80 91 5e 02 	lds	r24, 0x025E
+     834:	8f 5f       	subi	r24, 0xFF	; 255
+     836:	80 93 5e 02 	sts	0x025E, r24
+     83a:	1d c0       	rjmp	.+58     	; 0x876 <__vector_11+0x120>
+    } else if (interrupt_source & HAL_PLL_LOCK_MASK) {
+     83c:	90 ff       	sbrs	r25, 0
+     83e:	06 c0       	rjmp	.+12     	; 0x84c <__vector_11+0xf6>
+        hal_pll_lock_flag++; //Increment PLL_LOCK flag.
+     840:	80 91 5f 02 	lds	r24, 0x025F
+     844:	8f 5f       	subi	r24, 0xFF	; 255
+     846:	80 93 5f 02 	sts	0x025F, r24
+     84a:	15 c0       	rjmp	.+42     	; 0x876 <__vector_11+0x120>
+    } else if (interrupt_source & HAL_BAT_LOW_MASK) {
+     84c:	97 ff       	sbrs	r25, 7
+     84e:	0e c0       	rjmp	.+28     	; 0x86c <__vector_11+0x116>
+
+        //Disable BAT_LOW interrupt to prevent interrupt storm. The interrupt 
+        //will continously be signaled when the supply voltage is less than the 
+        //user defined voltage threshold.
+        uint8_t trx_isr_mask = hal_register_read( RG_IRQ_MASK );
+     850:	8e e0       	ldi	r24, 0x0E	; 14
+     852:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+        trx_isr_mask &= ~HAL_BAT_LOW_MASK;
+        hal_register_write( RG_IRQ_MASK, trx_isr_mask );
+     856:	68 2f       	mov	r22, r24
+     858:	6f 77       	andi	r22, 0x7F	; 127
+     85a:	8e e0       	ldi	r24, 0x0E	; 14
+     85c:	0e 94 4f 02 	call	0x49e	; 0x49e <hal_register_write>
+        hal_bat_low_flag++; //Increment BAT_LOW flag.
+     860:	80 91 59 02 	lds	r24, 0x0259
+     864:	8f 5f       	subi	r24, 0xFF	; 255
+     866:	80 93 59 02 	sts	0x0259, r24
+     86a:	05 c0       	rjmp	.+10     	; 0x876 <__vector_11+0x120>
+    } else {
+        hal_unknown_isr_flag++;  //Increment UNKNOWN_ISR flag.
+     86c:	80 91 5d 02 	lds	r24, 0x025D
+     870:	8f 5f       	subi	r24, 0xFF	; 255
+     872:	80 93 5d 02 	sts	0x025D, r24
+    } 
+}
+     876:	ff 91       	pop	r31
+     878:	ef 91       	pop	r30
+     87a:	bf 91       	pop	r27
+     87c:	af 91       	pop	r26
+     87e:	9f 91       	pop	r25
+     880:	8f 91       	pop	r24
+     882:	7f 91       	pop	r23
+     884:	6f 91       	pop	r22
+     886:	5f 91       	pop	r21
+     888:	4f 91       	pop	r20
+     88a:	3f 91       	pop	r19
+     88c:	2f 91       	pop	r18
+     88e:	1f 91       	pop	r17
+     890:	0f 91       	pop	r16
+     892:	0f 90       	pop	r0
+     894:	0b be       	out	0x3b, r0	; 59
+     896:	0f 90       	pop	r0
+     898:	0f be       	out	0x3f, r0	; 63
+     89a:	0f 90       	pop	r0
+     89c:	1f 90       	pop	r1
+     89e:	18 95       	reti
+
+000008a0 <__vector_14>:
+/*! \brief Timer Overflow ISR
+ * This is the interrupt service routine for timer1 overflow.
+ */
+void TIMER1_OVF_vect( void );
+#else  /* !DOXYGEN */
+ISR( TIMER1_OVF_vect ){
+     8a0:	1f 92       	push	r1
+     8a2:	0f 92       	push	r0
+     8a4:	0f b6       	in	r0, 0x3f	; 63
+     8a6:	0f 92       	push	r0
+     8a8:	11 24       	eor	r1, r1
+     8aa:	8f 93       	push	r24
+     8ac:	9f 93       	push	r25
+    hal_system_time++;
+     8ae:	80 91 57 02 	lds	r24, 0x0257
+     8b2:	90 91 58 02 	lds	r25, 0x0258
+     8b6:	01 96       	adiw	r24, 0x01	; 1
+     8b8:	90 93 58 02 	sts	0x0258, r25
+     8bc:	80 93 57 02 	sts	0x0257, r24
+}
+     8c0:	9f 91       	pop	r25
+     8c2:	8f 91       	pop	r24
+     8c4:	0f 90       	pop	r0
+     8c6:	0f be       	out	0x3f, r0	; 63
+     8c8:	0f 90       	pop	r0
+     8ca:	1f 90       	pop	r1
+     8cc:	18 95       	reti
+
+000008ce <main>:
+	}                               /* end:  if (rx_flag == true) ... */
+}
+
+
+int main( void )
+{
+     8ce:	ff 92       	push	r15
+     8d0:	0f 93       	push	r16
+     8d2:	1f 93       	push	r17
+     8d4:	cf 93       	push	r28
+     8d6:	df 93       	push	r29
+	static uint8_t	length_of_received_data = 0;
+	static uint8_t	frame_sequence_number	= 0;
+	rx_flag = true;
+     8d8:	11 e0       	ldi	r17, 0x01	; 1
+     8da:	10 93 7a 04 	sts	0x047A, r17
+
+/*! \brief This function initialize the rx_pool. The rx_pool is in essence a FIFO.
+ */
+static void rx_pool_init( void )
+{
+	rx_pool_start	= rx_pool;
+     8de:	87 e6       	ldi	r24, 0x67	; 103
+     8e0:	92 e0       	ldi	r25, 0x02	; 2
+     8e2:	90 93 70 04 	sts	0x0470, r25
+     8e6:	80 93 6f 04 	sts	0x046F, r24
+	rx_pool_end	= &rx_pool[RX_POOL_SIZE - 1];
+     8ea:	2d ee       	ldi	r18, 0xED	; 237
+     8ec:	33 e0       	ldi	r19, 0x03	; 3
+     8ee:	30 93 72 04 	sts	0x0472, r19
+     8f2:	20 93 71 04 	sts	0x0471, r18
+
+	rx_pool_head	= rx_pool_start;
+     8f6:	90 93 74 04 	sts	0x0474, r25
+     8fa:	80 93 73 04 	sts	0x0473, r24
+	rx_pool_tail	= rx_pool_end;
+     8fe:	30 93 76 04 	sts	0x0476, r19
+     902:	20 93 75 04 	sts	0x0475, r18
+
+	rx_pool_items_free	= RX_POOL_SIZE;
+     906:	84 e0       	ldi	r24, 0x04	; 4
+     908:	80 93 77 04 	sts	0x0477, r24
+	rx_pool_items_used	= 0;
+     90c:	10 92 78 04 	sts	0x0478, r1
+
+	rx_pool_overflow_flag = false;
+     910:	10 92 79 04 	sts	0x0479, r1
+
+/*! \brief This function configure the necessary IO modules on the AVR.
+ */
+static void avr_init( void )
+{
+	com_init( BR_9600 );
+     914:	83 e3       	ldi	r24, 0x33	; 51
+     916:	0e 94 6a 00 	call	0xd4	; 0xd4 <com_init>
+ */
+static bool trx_init( void )
+{
+	static bool status;
+
+	if ( tat_init() != TAT_SUCCESS )
+     91a:	0e 94 a4 09 	call	0x1348	; 0x1348 <tat_init>
+     91e:	80 34       	cpi	r24, 0x40	; 64
+     920:	59 f4       	brne	.+22     	; 0x938 <main+0x6a>
+	{
+		status = false;
+	} else if ( tat_set_operating_channel( OPERATING_CHANNEL ) != TAT_SUCCESS )
+     922:	8b e0       	ldi	r24, 0x0B	; 11
+     924:	0e 94 fe 07 	call	0xffc	; 0xffc <tat_set_operating_channel>
+     928:	80 34       	cpi	r24, 0x40	; 64
+     92a:	31 f4       	brne	.+12     	; 0x938 <main+0x6a>
+	{
+		status = false;
+	} else if ( tat_set_clock_speed( true, CLKM_NO_CLOCK ) != TAT_SUCCESS )
+     92c:	81 e0       	ldi	r24, 0x01	; 1
+     92e:	60 e0       	ldi	r22, 0x00	; 0
+     930:	0e 94 8d 07 	call	0xf1a	; 0xf1a <tat_set_clock_speed>
+     934:	80 34       	cpi	r24, 0x40	; 64
+     936:	19 f0       	breq	.+6      	; 0x93e <main+0x70>
+	{
+		status = false;
+     938:	10 92 66 02 	sts	0x0266, r1
+     93c:	2a c0       	rjmp	.+84     	; 0x992 <main+0xc4>
+	} else{
+		/*Set up the extended modes:*/
+		/* RX_AACK: */
+		hal_subregister_write( SR_OQPSK_DATA_RATE, ALTRATE_250KBPS );
+     93e:	8c e0       	ldi	r24, 0x0C	; 12
+     940:	63 e0       	ldi	r22, 0x03	; 3
+     942:	40 e0       	ldi	r20, 0x00	; 0
+     944:	20 e0       	ldi	r18, 0x00	; 0
+     946:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+		hal_subregister_write( SR_ANT_DIV_EN, ANT_DIV_DISABLE );
+     94a:	8d e0       	ldi	r24, 0x0D	; 13
+     94c:	68 e0       	ldi	r22, 0x08	; 8
+     94e:	43 e0       	ldi	r20, 0x03	; 3
+     950:	20 e0       	ldi	r18, 0x00	; 0
+     952:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+		hal_subregister_write( SR_ANT_EXT_SW_EN, ANT_EXT_SW_SWITCH_DISABLE );
+     956:	8d e0       	ldi	r24, 0x0D	; 13
+     958:	64 e0       	ldi	r22, 0x04	; 4
+     95a:	42 e0       	ldi	r20, 0x02	; 2
+     95c:	20 e0       	ldi	r18, 0x00	; 0
+     95e:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+		tat_set_short_address( SHORT_ADDRESS );                 /* Short Address. */
+     962:	8c ed       	ldi	r24, 0xDC	; 220
+     964:	9c ea       	ldi	r25, 0xAC	; 172
+     966:	0e 94 b3 08 	call	0x1166	; 0x1166 <tat_set_short_address>
+		tat_set_pan_id( PAN_ID );                               /* PAN ID. */
+     96a:	8f ea       	ldi	r24, 0xAF	; 175
+     96c:	9e eb       	ldi	r25, 0xBE	; 190
+     96e:	0e 94 bf 08 	call	0x117e	; 0x117e <tat_set_pan_id>
+		tat_set_device_role( false );                           /* No Coordintor support is necessary. */
+     972:	80 e0       	ldi	r24, 0x00	; 0
+     974:	0e 94 dd 06 	call	0xdba	; 0xdba <tat_set_device_role>
+
+		/* TX_ARET: */
+		tat_configure_csma( 234, 0xE2 );                        /* Default CSMA_SEED_0, MIN_BE = 3, MAX_CSMA_RETRIES = , and CSMA_SEED_1 = */
+     978:	8a ee       	ldi	r24, 0xEA	; 234
+     97a:	62 ee       	ldi	r22, 0xE2	; 226
+     97c:	0e 94 2f 08 	call	0x105e	; 0x105e <tat_configure_csma>
+
+		/* Both Modes: */
+		tat_use_auto_tx_crc( true );                            /* Automatic CRC must be enabled. */
+     980:	81 e0       	ldi	r24, 0x01	; 1
+     982:	0e 94 e4 06 	call	0xdc8	; 0xdc8 <tat_use_auto_tx_crc>
+		hal_set_trx_end_event_handler( trx_end_handler );       /* Event handler for TRX_END events. */
+     986:	8e ec       	ldi	r24, 0xCE	; 206
+     988:	95 e0       	ldi	r25, 0x05	; 5
+     98a:	0e 94 a6 01 	call	0x34c	; 0x34c <hal_set_trx_end_event_handler>
+
+		status = true;
+     98e:	10 93 66 02 	sts	0x0266, r17
+	rx_pool_init();
+	avr_init();
+	trx_init();
+
+	/* Set system state to RX_AACK_ON */
+	if ( tat_set_trx_state( RX_AACK_ON ) != TAT_SUCCESS )
+     992:	86 e1       	ldi	r24, 0x16	; 22
+     994:	0e 94 12 07 	call	0xe24	; 0xe24 <tat_set_trx_state>
+     998:	80 34       	cpi	r24, 0x40	; 64
+     99a:	29 f0       	breq	.+10     	; 0x9a6 <main+0xd8>
+	{
+		com_send_string( debug_fatal_error, sizeof(debug_fatal_error) );
+     99c:	83 e1       	ldi	r24, 0x13	; 19
+     99e:	91 e0       	ldi	r25, 0x01	; 1
+     9a0:	67 e2       	ldi	r22, 0x27	; 39
+     9a2:	0e 94 79 00 	call	0xf2	; 0xf2 <com_send_string>
+	} /* end: if (tat_set_trx_state( RX_AACK_ON ) != TAT_SUCCESS) ... */
+
+	sei();
+     9a6:	78 94       	sei
+	hal_set_net_led();
+     9a8:	80 91 62 00 	lds	r24, 0x0062
+     9ac:	8d 7f       	andi	r24, 0xFD	; 253
+     9ae:	80 93 62 00 	sts	0x0062, r24
+
+	/* Give the user an indication that the system is ready. */
+	com_send_string( debug_type_message, sizeof(debug_type_message) );
+     9b2:	8a e3       	ldi	r24, 0x3A	; 58
+     9b4:	91 e0       	ldi	r25, 0x01	; 1
+     9b6:	65 e1       	ldi	r22, 0x15	; 21
+     9b8:	0e 94 79 00 	call	0xf2	; 0xf2 <com_send_string>
+	length_of_received_data = hal_register_read( RG_PART_NUM );
+     9bc:	8c e1       	ldi	r24, 0x1C	; 28
+     9be:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+     9c2:	80 93 65 02 	sts	0x0265, r24
+	frame_sequence_number	= hal_register_read( RG_VERSION_NUM );
+     9c6:	8d e1       	ldi	r24, 0x1D	; 29
+     9c8:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+     9cc:	80 93 64 02 	sts	0x0264, r24
+
+/*! \brief This function initialize the rx_pool. The rx_pool is in essence a FIFO.
+ */
+static void rx_pool_init( void )
+{
+	rx_pool_start	= rx_pool;
+     9d0:	07 e6       	ldi	r16, 0x67	; 103
+     9d2:	12 e0       	ldi	r17, 0x02	; 2
+	rx_pool_end	= &rx_pool[RX_POOL_SIZE - 1];
+     9d4:	cd ee       	ldi	r28, 0xED	; 237
+     9d6:	d3 e0       	ldi	r29, 0x03	; 3
+
+	rx_pool_head	= rx_pool_start;
+	rx_pool_tail	= rx_pool_end;
+
+	rx_pool_items_free	= RX_POOL_SIZE;
+     9d8:	84 e0       	ldi	r24, 0x04	; 4
+     9da:	f8 2e       	mov	r15, r24
+	 *   - Notify if the typed message was too long.
+	 */
+	while ( true )
+	{
+		/* Check if we have received something on the air interface. */
+		if ( rx_pool_items_used != 0 )
+     9dc:	80 91 78 04 	lds	r24, 0x0478
+     9e0:	88 23       	and	r24, r24
+     9e2:	09 f4       	brne	.+2      	; 0x9e6 <main+0x118>
+     9e4:	b8 c0       	rjmp	.+368    	; 0xb56 <main+0x288>
+		{
+			hal_set_data_led();
+     9e6:	80 91 62 00 	lds	r24, 0x0062
+     9ea:	8e 7f       	andi	r24, 0xFE	; 254
+     9ec:	80 93 62 00 	sts	0x0062, r24
+			/* Handle wrapping of rx_pool. */
+			if ( rx_pool_tail == rx_pool_end )
+     9f0:	20 91 75 04 	lds	r18, 0x0475
+     9f4:	30 91 76 04 	lds	r19, 0x0476
+     9f8:	80 91 71 04 	lds	r24, 0x0471
+     9fc:	90 91 72 04 	lds	r25, 0x0472
+     a00:	28 17       	cp	r18, r24
+     a02:	39 07       	cpc	r19, r25
+     a04:	49 f4       	brne	.+18     	; 0xa18 <main+0x14a>
+			{
+				rx_pool_tail = rx_pool_start;
+     a06:	80 91 6f 04 	lds	r24, 0x046F
+     a0a:	90 91 70 04 	lds	r25, 0x0470
+     a0e:	90 93 76 04 	sts	0x0476, r25
+     a12:	80 93 75 04 	sts	0x0475, r24
+     a16:	06 c0       	rjmp	.+12     	; 0xa24 <main+0x156>
+			} else {
+				++rx_pool_tail;
+     a18:	2e 57       	subi	r18, 0x7E	; 126
+     a1a:	3f 4f       	sbci	r19, 0xFF	; 255
+     a1c:	30 93 76 04 	sts	0x0476, r19
+     a20:	20 93 75 04 	sts	0x0475, r18
+
+			/*
+			 * Turn interrupts off for a short while to protect when status
+			 * information about the rx_pool is updated.
+			 */
+			cli();
+     a24:	f8 94       	cli
+
+			++rx_pool_items_free;
+     a26:	80 91 77 04 	lds	r24, 0x0477
+     a2a:	8f 5f       	subi	r24, 0xFF	; 255
+     a2c:	80 93 77 04 	sts	0x0477, r24
+			--rx_pool_items_used;
+     a30:	80 91 78 04 	lds	r24, 0x0478
+     a34:	81 50       	subi	r24, 0x01	; 1
+     a36:	80 93 78 04 	sts	0x0478, r24
+
+			sei();
+     a3a:	78 94       	sei
+
+			/* Send the frame to the user: */
+			static uint8_t space[] = "  ";
+			/* com_send_string( debug_data_received, sizeof( debug_data_received ) ); */
+			DDRF	|= 1 << 2;
+     a3c:	80 91 61 00 	lds	r24, 0x0061
+     a40:	84 60       	ori	r24, 0x04	; 4
+     a42:	80 93 61 00 	sts	0x0061, r24
+			PORTF	&= ~(1 << 2);
+     a46:	80 91 62 00 	lds	r24, 0x0062
+     a4a:	8b 7f       	andi	r24, 0xFB	; 251
+     a4c:	80 93 62 00 	sts	0x0062, r24
+			com_send_hex( rx_pool_tail->data[10] );
+     a50:	e0 91 75 04 	lds	r30, 0x0475
+     a54:	f0 91 76 04 	lds	r31, 0x0476
+     a58:	83 85       	ldd	r24, Z+11	; 0x0b
+     a5a:	0e 94 82 00 	call	0x104	; 0x104 <com_send_hex>
+			com_send_hex( rx_pool_tail->data[9] );
+     a5e:	e0 91 75 04 	lds	r30, 0x0475
+     a62:	f0 91 76 04 	lds	r31, 0x0476
+     a66:	82 85       	ldd	r24, Z+10	; 0x0a
+     a68:	0e 94 82 00 	call	0x104	; 0x104 <com_send_hex>
+			com_send_hex( rx_pool_tail->length );
+     a6c:	e0 91 75 04 	lds	r30, 0x0475
+     a70:	f0 91 76 04 	lds	r31, 0x0476
+     a74:	80 81       	ld	r24, Z
+     a76:	0e 94 82 00 	call	0x104	; 0x104 <com_send_hex>
+			com_send_hex( rx_pool_tail->data[4] );
+     a7a:	e0 91 75 04 	lds	r30, 0x0475
+     a7e:	f0 91 76 04 	lds	r31, 0x0476
+     a82:	85 81       	ldd	r24, Z+5	; 0x05
+     a84:	0e 94 82 00 	call	0x104	; 0x104 <com_send_hex>
+			com_send_hex( rx_pool_tail->data[3] );
+     a88:	e0 91 75 04 	lds	r30, 0x0475
+     a8c:	f0 91 76 04 	lds	r31, 0x0476
+     a90:	84 81       	ldd	r24, Z+4	; 0x04
+     a92:	0e 94 82 00 	call	0x104	; 0x104 <com_send_hex>
+			com_send_hex( rx_pool_tail->data[19] );
+     a96:	e0 91 75 04 	lds	r30, 0x0475
+     a9a:	f0 91 76 04 	lds	r31, 0x0476
+     a9e:	84 89       	ldd	r24, Z+20	; 0x14
+     aa0:	0e 94 82 00 	call	0x104	; 0x104 <com_send_hex>
+			com_send_hex( rx_pool_tail->data[2] );
+     aa4:	e0 91 75 04 	lds	r30, 0x0475
+     aa8:	f0 91 76 04 	lds	r31, 0x0476
+     aac:	83 81       	ldd	r24, Z+3	; 0x03
+     aae:	0e 94 82 00 	call	0x104	; 0x104 <com_send_hex>
+			com_send_hex( rx_pool_tail->data[6] );
+     ab2:	e0 91 75 04 	lds	r30, 0x0475
+     ab6:	f0 91 76 04 	lds	r31, 0x0476
+     aba:	87 81       	ldd	r24, Z+7	; 0x07
+     abc:	0e 94 82 00 	call	0x104	; 0x104 <com_send_hex>
+			com_send_hex( rx_pool_tail->data[5] );
+     ac0:	e0 91 75 04 	lds	r30, 0x0475
+     ac4:	f0 91 76 04 	lds	r31, 0x0476
+     ac8:	86 81       	ldd	r24, Z+6	; 0x06
+     aca:	0e 94 82 00 	call	0x104	; 0x104 <com_send_hex>
+			com_send_hex( rx_pool_tail->data[8] );
+     ace:	e0 91 75 04 	lds	r30, 0x0475
+     ad2:	f0 91 76 04 	lds	r31, 0x0476
+     ad6:	81 85       	ldd	r24, Z+9	; 0x09
+     ad8:	0e 94 82 00 	call	0x104	; 0x104 <com_send_hex>
+			com_send_hex( rx_pool_tail->data[7] );
+     adc:	e0 91 75 04 	lds	r30, 0x0475
+     ae0:	f0 91 76 04 	lds	r31, 0x0476
+     ae4:	80 85       	ldd	r24, Z+8	; 0x08
+     ae6:	0e 94 82 00 	call	0x104	; 0x104 <com_send_hex>
+			com_send_hex( rx_pool_tail->data[12] );
+     aea:	e0 91 75 04 	lds	r30, 0x0475
+     aee:	f0 91 76 04 	lds	r31, 0x0476
+     af2:	85 85       	ldd	r24, Z+13	; 0x0d
+     af4:	0e 94 82 00 	call	0x104	; 0x104 <com_send_hex>
+			com_send_hex( rx_pool_tail->data[13] );
+     af8:	e0 91 75 04 	lds	r30, 0x0475
+     afc:	f0 91 76 04 	lds	r31, 0x0476
+     b00:	86 85       	ldd	r24, Z+14	; 0x0e
+     b02:	0e 94 82 00 	call	0x104	; 0x104 <com_send_hex>
+			com_send_hex( rx_pool_tail->data[14] );
+     b06:	e0 91 75 04 	lds	r30, 0x0475
+     b0a:	f0 91 76 04 	lds	r31, 0x0476
+     b0e:	87 85       	ldd	r24, Z+15	; 0x0f
+     b10:	0e 94 82 00 	call	0x104	; 0x104 <com_send_hex>
+			com_send_hex( rx_pool_tail->data[16] );
+     b14:	e0 91 75 04 	lds	r30, 0x0475
+     b18:	f0 91 76 04 	lds	r31, 0x0476
+     b1c:	81 89       	ldd	r24, Z+17	; 0x11
+     b1e:	0e 94 82 00 	call	0x104	; 0x104 <com_send_hex>
+			com_send_hex( rx_pool_tail->data[15] );
+     b22:	e0 91 75 04 	lds	r30, 0x0475
+     b26:	f0 91 76 04 	lds	r31, 0x0476
+     b2a:	80 89       	ldd	r24, Z+16	; 0x10
+     b2c:	0e 94 82 00 	call	0x104	; 0x104 <com_send_hex>
+			com_send_hex( rx_pool_tail->data[18] );
+     b30:	e0 91 75 04 	lds	r30, 0x0475
+     b34:	f0 91 76 04 	lds	r31, 0x0476
+     b38:	83 89       	ldd	r24, Z+19	; 0x13
+     b3a:	0e 94 82 00 	call	0x104	; 0x104 <com_send_hex>
+			com_send_hex( rx_pool_tail->data[17] );
+     b3e:	e0 91 75 04 	lds	r30, 0x0475
+     b42:	f0 91 76 04 	lds	r31, 0x0476
+     b46:	82 89       	ldd	r24, Z+18	; 0x12
+     b48:	0e 94 82 00 	call	0x104	; 0x104 <com_send_hex>
+			hal_clear_data_led();
+     b4c:	80 91 62 00 	lds	r24, 0x0062
+     b50:	81 60       	ori	r24, 0x01	; 1
+     b52:	80 93 62 00 	sts	0x0062, r24
+		} /* end: if (rx_pool_items_used != 0) ... */
+
+		/* Check for rx_pool overflow. */
+		if ( rx_pool_overflow_flag == true )
+     b56:	80 91 79 04 	lds	r24, 0x0479
+     b5a:	88 23       	and	r24, r24
+     b5c:	09 f4       	brne	.+2      	; 0xb60 <main+0x292>
+     b5e:	3e cf       	rjmp	.-388    	; 0x9dc <main+0x10e>
+		{
+			cli();
+     b60:	f8 94       	cli
+
+/*! \brief This function initialize the rx_pool. The rx_pool is in essence a FIFO.
+ */
+static void rx_pool_init( void )
+{
+	rx_pool_start	= rx_pool;
+     b62:	10 93 70 04 	sts	0x0470, r17
+     b66:	00 93 6f 04 	sts	0x046F, r16
+	rx_pool_end	= &rx_pool[RX_POOL_SIZE - 1];
+     b6a:	d0 93 72 04 	sts	0x0472, r29
+     b6e:	c0 93 71 04 	sts	0x0471, r28
+
+	rx_pool_head	= rx_pool_start;
+     b72:	10 93 74 04 	sts	0x0474, r17
+     b76:	00 93 73 04 	sts	0x0473, r16
+	rx_pool_tail	= rx_pool_end;
+     b7a:	d0 93 76 04 	sts	0x0476, r29
+     b7e:	c0 93 75 04 	sts	0x0475, r28
+
+	rx_pool_items_free	= RX_POOL_SIZE;
+     b82:	f0 92 77 04 	sts	0x0477, r15
+	rx_pool_items_used	= 0;
+     b86:	10 92 78 04 	sts	0x0478, r1
+
+	rx_pool_overflow_flag = false;
+     b8a:	10 92 79 04 	sts	0x0479, r1
+		/* Check for rx_pool overflow. */
+		if ( rx_pool_overflow_flag == true )
+		{
+			cli();
+			rx_pool_init();
+			com_send_string( debug_rx_pool_overflow, sizeof(debug_rx_pool_overflow) );
+     b8e:	8f e4       	ldi	r24, 0x4F	; 79
+     b90:	91 e0       	ldi	r25, 0x01	; 1
+     b92:	66 e1       	ldi	r22, 0x16	; 22
+     b94:	0e 94 79 00 	call	0xf2	; 0xf2 <com_send_string>
+			sei();
+     b98:	78 94       	sei
+     b9a:	20 cf       	rjmp	.-448    	; 0x9dc <main+0x10e>
+
+00000b9c <trx_end_handler>:
+ *
+ *  \param[in] time_stamp Interrupt timestamp in IEEE 802.15.4 symbols.
+ */
+static void trx_end_handler( uint32_t time_stamp )
+{
+	if ( rx_flag == true )
+     b9c:	80 91 7a 04 	lds	r24, 0x047A
+     ba0:	88 23       	and	r24, r24
+     ba2:	c9 f1       	breq	.+114    	; 0xc16 <trx_end_handler+0x7a>
+	{
+		/* Check if these is space left in the rx_pool. */
+		if ( rx_pool_items_free == 0 )
+     ba4:	80 91 77 04 	lds	r24, 0x0477
+     ba8:	88 23       	and	r24, r24
+     baa:	21 f4       	brne	.+8      	; 0xbb4 <trx_end_handler+0x18>
+		{
+			rx_pool_overflow_flag = true;
+     bac:	81 e0       	ldi	r24, 0x01	; 1
+     bae:	80 93 79 04 	sts	0x0479, r24
+     bb2:	08 95       	ret
+		} else {
+			/* Space left, so upload the received frame. */
+			hal_frame_read( rx_pool_head );
+     bb4:	80 91 73 04 	lds	r24, 0x0473
+     bb8:	90 91 74 04 	lds	r25, 0x0474
+     bbc:	0e 94 99 02 	call	0x532	; 0x532 <hal_frame_read>
+
+			/* Then check the CRC. Will not store frames with invalid CRC. */
+			if ( rx_pool_head->crc == true )
+     bc0:	e0 91 73 04 	lds	r30, 0x0473
+     bc4:	f0 91 74 04 	lds	r31, 0x0474
+     bc8:	ef 57       	subi	r30, 0x7F	; 127
+     bca:	ff 4f       	sbci	r31, 0xFF	; 255
+     bcc:	80 81       	ld	r24, Z
+     bce:	e1 58       	subi	r30, 0x81	; 129
+     bd0:	f0 40       	sbci	r31, 0x00	; 0
+     bd2:	88 23       	and	r24, r24
+     bd4:	01 f1       	breq	.+64     	; 0xc16 <trx_end_handler+0x7a>
+			{
+				/* Handle wrapping of rx_pool. */
+				if ( rx_pool_head == rx_pool_end )
+     bd6:	80 91 71 04 	lds	r24, 0x0471
+     bda:	90 91 72 04 	lds	r25, 0x0472
+     bde:	e8 17       	cp	r30, r24
+     be0:	f9 07       	cpc	r31, r25
+     be2:	49 f4       	brne	.+18     	; 0xbf6 <trx_end_handler+0x5a>
+				{
+					rx_pool_head = rx_pool_start;
+     be4:	80 91 6f 04 	lds	r24, 0x046F
+     be8:	90 91 70 04 	lds	r25, 0x0470
+     bec:	90 93 74 04 	sts	0x0474, r25
+     bf0:	80 93 73 04 	sts	0x0473, r24
+     bf4:	06 c0       	rjmp	.+12     	; 0xc02 <trx_end_handler+0x66>
+				} else {
+					++rx_pool_head;
+     bf6:	ee 57       	subi	r30, 0x7E	; 126
+     bf8:	ff 4f       	sbci	r31, 0xFF	; 255
+     bfa:	f0 93 74 04 	sts	0x0474, r31
+     bfe:	e0 93 73 04 	sts	0x0473, r30
+				}       /* end: if (rx_pool_head == rx_pool_end) ... */
+
+				--rx_pool_items_free;
+     c02:	80 91 77 04 	lds	r24, 0x0477
+     c06:	81 50       	subi	r24, 0x01	; 1
+     c08:	80 93 77 04 	sts	0x0477, r24
+				++rx_pool_items_used;
+     c0c:	80 91 78 04 	lds	r24, 0x0478
+     c10:	8f 5f       	subi	r24, 0xFF	; 255
+     c12:	80 93 78 04 	sts	0x0478, r24
+     c16:	08 95       	ret
+
+00000c18 <tat_reset_trx>:
+ *
+ *  \ingroup tat
+ */
+void tat_reset_trx( void ){
+
+    hal_set_rst_low( );
+     c18:	c4 98       	cbi	0x18, 4	; 24
+    hal_set_slptr_low( );
+     c1a:	c5 98       	cbi	0x18, 5	; 24
+     c1c:	80 e1       	ldi	r24, 0x10	; 16
+     c1e:	8a 95       	dec	r24
+     c20:	f1 f7       	brne	.-4      	; 0xc1e <tat_reset_trx+0x6>
+    delay_us( TIME_RESET );    
+    hal_set_rst_high( );
+     c22:	c4 9a       	sbi	0x18, 4	; 24
+}
+     c24:	08 95       	ret
+
+00000c26 <tat_get_device_role>:
+ *  \retval 1 Coordinator role enabled.
+ *
+ *  \ingroup tat
+ */
+uint8_t tat_get_device_role( void ){
+    return hal_subregister_read( SR_I_AM_COORD);
+     c26:	8e e2       	ldi	r24, 0x2E	; 46
+     c28:	68 e0       	ldi	r22, 0x08	; 8
+     c2a:	43 e0       	ldi	r20, 0x03	; 3
+     c2c:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+}
+     c30:	08 95       	ret
+
+00000c32 <tat_get_trx_state>:
+ *                                 transition between two states.
+ *   
+ *  \ingroup tat
+ */
+uint8_t tat_get_trx_state( void ){
+    return hal_subregister_read( SR_TRX_STATUS );
+     c32:	81 e0       	ldi	r24, 0x01	; 1
+     c34:	6f e1       	ldi	r22, 0x1F	; 31
+     c36:	40 e0       	ldi	r20, 0x00	; 0
+     c38:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+}
+     c3c:	08 95       	ret
+
+00000c3e <tat_send_data_with_retry>:
+ *  \retval TAT_WRONG_STATE if the radio transceiver is not in TX_ARET_ON.
+ *
+ *  \ingroup tat
+ */
+__x tat_status_t tat_send_data_with_retry( uint8_t frame_length, uint8_t *frame, 
+                                       uint8_t retries ){ 
+     c3e:	0f 93       	push	r16
+     c40:	1f 93       	push	r17
+     c42:	cf 93       	push	r28
+     c44:	df 93       	push	r29
+     c46:	08 2f       	mov	r16, r24
+     c48:	eb 01       	movw	r28, r22
+     c4a:	14 2f       	mov	r17, r20
+    
+    tat_status_t task_status = TAT_CHANNEL_ACCESS_FAILURE;          
+    
+    /*Do sanity check on function parameters and current state.*/
+    if ((frame_length > RF231_MAX_TX_FRAME_LENGTH) || 
+     c4c:	85 50       	subi	r24, 0x05	; 5
+     c4e:	8b 37       	cpi	r24, 0x7B	; 123
+     c50:	10 f0       	brcs	.+4      	; 0xc56 <tat_send_data_with_retry+0x18>
+     c52:	82 e4       	ldi	r24, 0x42	; 66
+     c54:	31 c0       	rjmp	.+98     	; 0xcb8 <tat_send_data_with_retry+0x7a>
+ *                                 transition between two states.
+ *   
+ *  \ingroup tat
+ */
+uint8_t tat_get_trx_state( void ){
+    return hal_subregister_read( SR_TRX_STATUS );
+     c56:	81 e0       	ldi	r24, 0x01	; 1
+     c58:	6f e1       	ldi	r22, 0x1F	; 31
+     c5a:	40 e0       	ldi	r20, 0x00	; 0
+     c5c:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+    if ((frame_length > RF231_MAX_TX_FRAME_LENGTH) || 
+        (frame_length < TAT_MIN_IEEE_FRAME_LENGTH)) { 
+        return TAT_INVALID_ARGUMENT; 
+    }
+    
+    if (tat_get_trx_state( ) != TX_ARET_ON) { return TAT_WRONG_STATE; }
+     c60:	89 31       	cpi	r24, 0x19	; 25
+     c62:	11 f0       	breq	.+4      	; 0xc68 <tat_send_data_with_retry+0x2a>
+     c64:	84 e4       	ldi	r24, 0x44	; 68
+     c66:	28 c0       	rjmp	.+80     	; 0xcb8 <tat_send_data_with_retry+0x7a>
+    
+    hal_clear_trx_end_flag( );
+     c68:	0e 94 92 01 	call	0x324	; 0x324 <hal_clear_trx_end_flag>
+    
+    /*Do initial frame transmission.*/
+    hal_set_slptr_high( );
+     c6c:	c5 9a       	sbi	0x18, 5	; 24
+    hal_set_slptr_low( );
+     c6e:	c5 98       	cbi	0x18, 5	; 24
+    hal_frame_write( frame, frame_length ); //Then write data to the frame buffer.
+     c70:	ce 01       	movw	r24, r28
+     c72:	60 2f       	mov	r22, r16
+     c74:	0e 94 ef 02 	call	0x5de	; 0x5de <hal_frame_write>
+    
+    /*Do retry if requested.*/
+    do{
+        
+        //Wait for TRX_END interrupt.
+        while (hal_get_trx_end_flag( ) == 0) {;}
+     c78:	0e 94 8f 01 	call	0x31e	; 0x31e <hal_get_trx_end_flag>
+     c7c:	88 23       	and	r24, r24
+     c7e:	e1 f3       	breq	.-8      	; 0xc78 <tat_send_data_with_retry+0x3a>
+        
+        //Check status.
+        uint8_t transaction_status = hal_subregister_read( SR_TRAC_STATUS );
+     c80:	82 e0       	ldi	r24, 0x02	; 2
+     c82:	60 ee       	ldi	r22, 0xE0	; 224
+     c84:	45 e0       	ldi	r20, 0x05	; 5
+     c86:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+        
+        //Check for failure.
+        if ((transaction_status != TAT_TRANSMISSION_SUCCESS)) {
+     c8a:	88 23       	and	r24, r24
+     c8c:	a1 f0       	breq	.+40     	; 0xcb6 <tat_send_data_with_retry+0x78>
+            
+            if (transaction_status == TAT_BUSY_CHANNEL) {
+     c8e:	83 30       	cpi	r24, 0x03	; 3
+     c90:	11 f0       	breq	.+4      	; 0xc96 <tat_send_data_with_retry+0x58>
+     c92:	8e e4       	ldi	r24, 0x4E	; 78
+     c94:	01 c0       	rjmp	.+2      	; 0xc98 <tat_send_data_with_retry+0x5a>
+     c96:	8d e4       	ldi	r24, 0x4D	; 77
+                task_status = TAT_CHANNEL_ACCESS_FAILURE;
+            } else {
+                task_status = TAT_NO_ACK;
+            }
+            
+            if ((retries--) > 0) {
+     c98:	11 23       	and	r17, r17
+     c9a:	71 f0       	breq	.+28     	; 0xcb8 <tat_send_data_with_retry+0x7a>
+ *                                 transition between two states.
+ *   
+ *  \ingroup tat
+ */
+uint8_t tat_get_trx_state( void ){
+    return hal_subregister_read( SR_TRX_STATUS );
+     c9c:	81 e0       	ldi	r24, 0x01	; 1
+     c9e:	6f e1       	ldi	r22, 0x1F	; 31
+     ca0:	40 e0       	ldi	r20, 0x00	; 0
+     ca2:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+            if ((retries--) > 0) {
+                
+                retry = true;
+                
+                //Wait for the TRX to go back to TX_ARET_ON.
+                while (tat_get_trx_state() != TX_ARET_ON) {;}
+     ca6:	89 31       	cpi	r24, 0x19	; 25
+     ca8:	c9 f7       	brne	.-14     	; 0xc9c <tat_send_data_with_retry+0x5e>
+                task_status = TAT_CHANNEL_ACCESS_FAILURE;
+            } else {
+                task_status = TAT_NO_ACK;
+            }
+            
+            if ((retries--) > 0) {
+     caa:	11 50       	subi	r17, 0x01	; 1
+                retry = true;
+                
+                //Wait for the TRX to go back to TX_ARET_ON.
+                while (tat_get_trx_state() != TX_ARET_ON) {;}
+            
+                hal_clear_trx_end_flag( );
+     cac:	0e 94 92 01 	call	0x324	; 0x324 <hal_clear_trx_end_flag>
+                hal_set_slptr_high( );
+     cb0:	c5 9a       	sbi	0x18, 5	; 24
+                hal_set_slptr_low( );
+     cb2:	c5 98       	cbi	0x18, 5	; 24
+     cb4:	e1 cf       	rjmp	.-62     	; 0xc78 <tat_send_data_with_retry+0x3a>
+     cb6:	80 e4       	ldi	r24, 0x40	; 64
+            retry = false;            
+        } // end: if ((transaction_status != TAT_TRANSMISSION_SUCCESS)) ...
+    } while (retry == true);
+    
+    return task_status;                                       
+}
+     cb8:	df 91       	pop	r29
+     cba:	cf 91       	pop	r28
+     cbc:	1f 91       	pop	r17
+     cbe:	0f 91       	pop	r16
+     cc0:	08 95       	ret
+
+00000cc2 <tat_send_data>:
+ *                          PLL_ON and TX_ARET_ON state. If any other state is 
+ *                          detected this error message will be returned.
+ *
+ *  \ingroup tat
+ */
+__x tat_status_t tat_send_data( uint8_t data_length, uint8_t *data ){
+     cc2:	1f 93       	push	r17
+     cc4:	cf 93       	push	r28
+     cc6:	df 93       	push	r29
+     cc8:	18 2f       	mov	r17, r24
+     cca:	eb 01       	movw	r28, r22
+    
+    /*Check function parameters and current state.*/
+    if (data_length > RF231_MAX_TX_FRAME_LENGTH) { return TAT_INVALID_ARGUMENT; }
+     ccc:	87 ff       	sbrs	r24, 7
+     cce:	02 c0       	rjmp	.+4      	; 0xcd4 <tat_send_data+0x12>
+     cd0:	82 e4       	ldi	r24, 0x42	; 66
+     cd2:	10 c0       	rjmp	.+32     	; 0xcf4 <tat_send_data+0x32>
+ *                                 transition between two states.
+ *   
+ *  \ingroup tat
+ */
+uint8_t tat_get_trx_state( void ){
+    return hal_subregister_read( SR_TRX_STATUS );
+     cd4:	81 e0       	ldi	r24, 0x01	; 1
+     cd6:	6f e1       	ldi	r22, 0x1F	; 31
+     cd8:	40 e0       	ldi	r20, 0x00	; 0
+     cda:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+__x tat_status_t tat_send_data( uint8_t data_length, uint8_t *data ){
+    
+    /*Check function parameters and current state.*/
+    if (data_length > RF231_MAX_TX_FRAME_LENGTH) { return TAT_INVALID_ARGUMENT; }
+    
+    if ((tat_get_trx_state( ) != PLL_ON)) { return TAT_WRONG_STATE; }
+     cde:	89 30       	cpi	r24, 0x09	; 9
+     ce0:	11 f0       	breq	.+4      	; 0xce6 <tat_send_data+0x24>
+     ce2:	84 e4       	ldi	r24, 0x44	; 68
+     ce4:	07 c0       	rjmp	.+14     	; 0xcf4 <tat_send_data+0x32>
+      
+    /*Do frame transmission.*/
+    //Toggle the SLP_TR pin to initiate the frame transmission.
+    hal_set_slptr_high( );
+     ce6:	c5 9a       	sbi	0x18, 5	; 24
+    hal_set_slptr_low( );
+     ce8:	c5 98       	cbi	0x18, 5	; 24
+            
+    hal_frame_write( data, data_length ); //Then write data to the frame buffer.
+     cea:	ce 01       	movw	r24, r28
+     cec:	61 2f       	mov	r22, r17
+     cee:	0e 94 ef 02 	call	0x5de	; 0x5de <hal_frame_write>
+     cf2:	80 e4       	ldi	r24, 0x40	; 64
+           
+    return TAT_SUCCESS; 
+}
+     cf4:	df 91       	pop	r29
+     cf6:	cf 91       	pop	r28
+     cf8:	1f 91       	pop	r17
+     cfa:	08 95       	ret
+
+00000cfc <tat_leave_sleep_mode>:
+    
+    bool sleeping = false;
+    
+    //The radio transceiver will be at SLEEP or one of the *_NOCLK states only if
+    //the SLP_TR pin is high.
+    if (hal_get_slptr( ) != 0) {
+     cfc:	b5 99       	sbic	0x16, 5	; 22
+     cfe:	02 c0       	rjmp	.+4      	; 0xd04 <tat_leave_sleep_mode+0x8>
+     d00:	80 e4       	ldi	r24, 0x40	; 64
+    if (tat_get_trx_state( ) == TRX_OFF) {
+        leave_sleep_status = TAT_SUCCESS;
+    }
+    
+    return leave_sleep_status;
+}
+     d02:	08 95       	ret
+tat_status_t tat_leave_sleep_mode( void ){
+    
+    //Check if the radio transceiver is actually sleeping.
+    if (is_sleeping( ) == false) { return TAT_SUCCESS; }
+    
+    hal_set_slptr_low( );
+     d04:	c5 98       	cbi	0x18, 5	; 24
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+     d06:	80 ee       	ldi	r24, 0xE0	; 224
+     d08:	96 e0       	ldi	r25, 0x06	; 6
+     d0a:	01 97       	sbiw	r24, 0x01	; 1
+     d0c:	f1 f7       	brne	.-4      	; 0xd0a <tat_leave_sleep_mode+0xe>
+ *                                 transition between two states.
+ *   
+ *  \ingroup tat
+ */
+uint8_t tat_get_trx_state( void ){
+    return hal_subregister_read( SR_TRX_STATUS );
+     d0e:	81 e0       	ldi	r24, 0x01	; 1
+     d10:	6f e1       	ldi	r22, 0x1F	; 31
+     d12:	40 e0       	ldi	r20, 0x00	; 0
+     d14:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+    delay_us( TIME_SLEEP_TO_TRX_OFF );
+    
+    tat_status_t leave_sleep_status = TAT_TIMED_OUT;
+    
+    //Ensure that the radio transceiver is in the TRX_OFF state.
+    if (tat_get_trx_state( ) == TRX_OFF) {
+     d18:	88 30       	cpi	r24, 0x08	; 8
+     d1a:	91 f3       	breq	.-28     	; 0xd00 <tat_leave_sleep_mode+0x4>
+     d1c:	83 e4       	ldi	r24, 0x43	; 67
+     d1e:	08 95       	ret
+
+00000d20 <tat_get_clock_speed>:
+ *  \retval CLKM_16MHZ CLKM pin is not prescaled. Output is 16 MHz.
+ *
+ *  \ingroup tat
+ */
+uint8_t tat_get_clock_speed( void ){
+    return hal_subregister_read( SR_CLKM_CTRL );
+     d20:	83 e0       	ldi	r24, 0x03	; 3
+     d22:	67 e0       	ldi	r22, 0x07	; 7
+     d24:	40 e0       	ldi	r20, 0x00	; 0
+     d26:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+}
+     d2a:	08 95       	ret
+
+00000d2c <tat_batmon_get_status>:
+ */
+tat_status_t tat_batmon_get_status( void ){
+    
+    tat_status_t batmon_status = TAT_BAT_LOW;
+    
+    if (hal_subregister_read( SR_BATMON_OK ) != 
+     d2c:	81 e1       	ldi	r24, 0x11	; 17
+     d2e:	60 e2       	ldi	r22, 0x20	; 32
+     d30:	45 e0       	ldi	r20, 0x05	; 5
+     d32:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+     d36:	88 23       	and	r24, r24
+     d38:	11 f0       	breq	.+4      	; 0xd3e <tat_batmon_get_status+0x12>
+     d3a:	8b e4       	ldi	r24, 0x4B	; 75
+     d3c:	08 95       	ret
+     d3e:	8a e4       	ldi	r24, 0x4A	; 74
+        BATTERY_MONITOR_VOLTAGE_UNDER_THRESHOLD) {
+        batmon_status = TAT_BAT_OK;
+    }
+    
+    return batmon_status;
+}
+     d40:	08 95       	ret
+
+00000d42 <tat_batmon_get_voltage_range>:
+ *  \retval 1 High voltage range selected.
+ *
+ *  \ingroup tat
+ */
+uint8_t tat_batmon_get_voltage_range( void ){
+    return hal_subregister_read( SR_BATMON_HR );
+     d42:	81 e1       	ldi	r24, 0x11	; 17
+     d44:	60 e1       	ldi	r22, 0x10	; 16
+     d46:	44 e0       	ldi	r20, 0x04	; 4
+     d48:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+}
+     d4c:	08 95       	ret
+
+00000d4e <tat_batmon_get_voltage_threshold>:
+ *  \return Current threshold voltage, 0 to 15.
+ *
+ *  \ingroup tat
+ */
+uint8_t tat_batmon_get_voltage_threshold( void ){
+    return hal_subregister_read( SR_BATMON_VTH );
+     d4e:	81 e1       	ldi	r24, 0x11	; 17
+     d50:	6f e0       	ldi	r22, 0x0F	; 15
+     d52:	40 e0       	ldi	r20, 0x00	; 0
+     d54:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+}
+     d58:	08 95       	ret
+
+00000d5a <tat_get_rssi_value>:
+ *  \retval TAT_SUCCESS The RSSI measurement was successful.
+ *  \retval TAT_WRONG_STATE The radio transceiver is not in RX_ON or BUSY_RX.
+ *
+ *  \ingroup tat
+ */
+tat_status_t tat_get_rssi_value( uint8_t *rssi ){
+     d5a:	cf 93       	push	r28
+     d5c:	df 93       	push	r29
+     d5e:	ec 01       	movw	r28, r24
+ *                                 transition between two states.
+ *   
+ *  \ingroup tat
+ */
+uint8_t tat_get_trx_state( void ){
+    return hal_subregister_read( SR_TRX_STATUS );
+     d60:	81 e0       	ldi	r24, 0x01	; 1
+     d62:	6f e1       	ldi	r22, 0x1F	; 31
+     d64:	40 e0       	ldi	r20, 0x00	; 0
+     d66:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+    
+    uint8_t current_state = tat_get_trx_state( );
+    tat_status_t retval = TAT_WRONG_STATE;
+    
+    /*The RSSI measurement should only be done in RX_ON or BUSY_RX.*/
+    if ((current_state == RX_ON) || (current_state == BUSY_RX)) {
+     d6a:	86 30       	cpi	r24, 0x06	; 6
+     d6c:	21 f0       	breq	.+8      	; 0xd76 <tat_get_rssi_value+0x1c>
+     d6e:	81 30       	cpi	r24, 0x01	; 1
+     d70:	11 f0       	breq	.+4      	; 0xd76 <tat_get_rssi_value+0x1c>
+     d72:	84 e4       	ldi	r24, 0x44	; 68
+     d74:	07 c0       	rjmp	.+14     	; 0xd84 <tat_get_rssi_value+0x2a>
+        
+        *rssi = hal_subregister_read( SR_RSSI );
+     d76:	86 e0       	ldi	r24, 0x06	; 6
+     d78:	6f e1       	ldi	r22, 0x1F	; 31
+     d7a:	40 e0       	ldi	r20, 0x00	; 0
+     d7c:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+     d80:	88 83       	st	Y, r24
+     d82:	80 e4       	ldi	r24, 0x40	; 64
+        retval = TAT_SUCCESS;
+    }
+    
+    return retval;
+}
+     d84:	df 91       	pop	r29
+     d86:	cf 91       	pop	r28
+     d88:	08 95       	ret
+
+00000d8a <tat_get_ed_threshold>:
+ *  \return Current ED threshold, 0 to 15.
+ *
+ *  \ingroup tat
+ */
+uint8_t tat_get_ed_threshold( void ){
+    return hal_subregister_read( SR_CCA_ED_THRES );
+     d8a:	89 e0       	ldi	r24, 0x09	; 9
+     d8c:	6f e0       	ldi	r22, 0x0F	; 15
+     d8e:	40 e0       	ldi	r20, 0x00	; 0
+     d90:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+}
+     d94:	08 95       	ret
+
+00000d96 <tat_get_cca_mode>:
+ *  \return CCA mode currently used, 0 to 3.
+ *
+ *  \ingroup tat
+ */
+uint8_t tat_get_cca_mode( void ){           
+    return hal_subregister_read( SR_CCA_MODE );
+     d96:	88 e0       	ldi	r24, 0x08	; 8
+     d98:	60 e6       	ldi	r22, 0x60	; 96
+     d9a:	45 e0       	ldi	r20, 0x05	; 5
+     d9c:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+}
+     da0:	08 95       	ret
+
+00000da2 <tat_get_tx_power_level>:
+ *          the radio transceiver's datasheet
+ *
+ *  \ingroup tat
+ */
+uint8_t tat_get_tx_power_level( void ){
+    return hal_subregister_read( SR_TX_PWR );
+     da2:	85 e0       	ldi	r24, 0x05	; 5
+     da4:	6f e0       	ldi	r22, 0x0F	; 15
+     da6:	40 e0       	ldi	r20, 0x00	; 0
+     da8:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+}
+     dac:	08 95       	ret
+
+00000dae <tat_get_operating_channel>:
+ *  \return Current channel, 11 to 26.
+ *
+ *  \ingroup tat
+ */
+uint8_t tat_get_operating_channel( void ){
+    return hal_subregister_read( SR_CHANNEL );
+     dae:	88 e0       	ldi	r24, 0x08	; 8
+     db0:	6f e1       	ldi	r22, 0x1F	; 31
+     db2:	40 e0       	ldi	r20, 0x00	; 0
+     db4:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+}
+     db8:	08 95       	ret
+
+00000dba <tat_set_device_role>:
+void tat_set_device_role( bool i_am_coordinator ){
+    
+    if (i_am_coordinator == true) {
+        hal_subregister_write( SR_I_AM_COORD, 0);
+    } else {
+        hal_subregister_write( SR_I_AM_COORD, 0);
+     dba:	8e e2       	ldi	r24, 0x2E	; 46
+     dbc:	68 e0       	ldi	r22, 0x08	; 8
+     dbe:	43 e0       	ldi	r20, 0x03	; 3
+     dc0:	20 e0       	ldi	r18, 0x00	; 0
+     dc2:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+     dc6:	08 95       	ret
+
+00000dc8 <tat_use_auto_tx_crc>:
+ *
+ *  \ingroup tat
+ */
+void tat_use_auto_tx_crc( bool auto_crc_on ){
+    
+    if (auto_crc_on == true) {
+     dc8:	88 23       	and	r24, r24
+     dca:	29 f0       	breq	.+10     	; 0xdd6 <tat_use_auto_tx_crc+0xe>
+        hal_subregister_write( SR_TX_AUTO_CRC_ON, 1 );
+     dcc:	84 e0       	ldi	r24, 0x04	; 4
+     dce:	60 e2       	ldi	r22, 0x20	; 32
+     dd0:	45 e0       	ldi	r20, 0x05	; 5
+     dd2:	21 e0       	ldi	r18, 0x01	; 1
+     dd4:	04 c0       	rjmp	.+8      	; 0xdde <tat_use_auto_tx_crc+0x16>
+    } else {
+        hal_subregister_write( SR_TX_AUTO_CRC_ON, 0 );
+     dd6:	84 e0       	ldi	r24, 0x04	; 4
+     dd8:	60 e2       	ldi	r22, 0x20	; 32
+     dda:	45 e0       	ldi	r20, 0x05	; 5
+     ddc:	20 e0       	ldi	r18, 0x00	; 0
+     dde:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+     de2:	08 95       	ret
+
+00000de4 <tat_reset_state_machine>:
+ *
+ *  \ingroup tat
+ */
+void tat_reset_state_machine( void ){
+    
+    hal_set_slptr_low( );
+     de4:	c5 98       	cbi	0x18, 5	; 24
+    can be achieved.
+*/
+void
+_delay_loop_1(uint8_t __count)
+{
+	__asm__ volatile (
+     de6:	80 e1       	ldi	r24, 0x10	; 16
+     de8:	8a 95       	dec	r24
+     dea:	f1 f7       	brne	.-4      	; 0xde8 <tat_reset_state_machine+0x4>
+    delay_us( TIME_NOCLK_TO_WAKE );
+    hal_subregister_write( SR_TRX_CMD, CMD_FORCE_TRX_OFF );
+     dec:	82 e0       	ldi	r24, 0x02	; 2
+     dee:	6f e1       	ldi	r22, 0x1F	; 31
+     df0:	40 e0       	ldi	r20, 0x00	; 0
+     df2:	23 e0       	ldi	r18, 0x03	; 3
+     df4:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+     df8:	82 e0       	ldi	r24, 0x02	; 2
+     dfa:	8a 95       	dec	r24
+     dfc:	f1 f7       	brne	.-4      	; 0xdfa <tat_reset_state_machine+0x16>
+    delay_us( TIME_CMD_FORCE_TRX_OFF );
+}
+     dfe:	08 95       	ret
+
+00000e00 <tat_enter_sleep_mode>:
+    
+    bool sleeping = false;
+    
+    //The radio transceiver will be at SLEEP or one of the *_NOCLK states only if
+    //the SLP_TR pin is high.
+    if (hal_get_slptr( ) != 0) {
+     e00:	b5 9b       	sbis	0x16, 5	; 22
+     e02:	02 c0       	rjmp	.+4      	; 0xe08 <tat_enter_sleep_mode+0x8>
+     e04:	80 e4       	ldi	r24, 0x40	; 64
+     e06:	08 95       	ret
+ */
+tat_status_t tat_enter_sleep_mode( void ){
+    
+    if (is_sleeping( ) == true) { return TAT_SUCCESS; }
+
+    tat_reset_state_machine( ); //Force the device into TRX_OFF.
+     e08:	0e 94 f2 06 	call	0xde4	; 0xde4 <tat_reset_state_machine>
+ *                                 transition between two states.
+ *   
+ *  \ingroup tat
+ */
+uint8_t tat_get_trx_state( void ){
+    return hal_subregister_read( SR_TRX_STATUS );
+     e0c:	81 e0       	ldi	r24, 0x01	; 1
+     e0e:	6f e1       	ldi	r22, 0x1F	; 31
+     e10:	40 e0       	ldi	r20, 0x00	; 0
+     e12:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+
+    tat_reset_state_machine( ); //Force the device into TRX_OFF.
+    
+    tat_status_t enter_sleep_status = TAT_TIMED_OUT;
+    
+    if (tat_get_trx_state( ) == TRX_OFF) {
+     e16:	88 30       	cpi	r24, 0x08	; 8
+     e18:	11 f0       	breq	.+4      	; 0xe1e <tat_enter_sleep_mode+0x1e>
+     e1a:	83 e4       	ldi	r24, 0x43	; 67
+     e1c:	08 95       	ret
+            
+        //Enter Sleep.
+        hal_set_slptr_high( );    
+     e1e:	c5 9a       	sbi	0x18, 5	; 24
+     e20:	80 e4       	ldi	r24, 0x40	; 64
+        enter_sleep_status = TAT_SUCCESS;
+    }
+    
+    return enter_sleep_status;  
+}
+     e22:	08 95       	ret
+
+00000e24 <tat_set_trx_state>:
+ *  \retval    TAT_TIMED_OUT        The state transition could not be completed 
+ *                                  within resonable time.
+ *
+ *  \ingroup tat
+ */
+tat_status_t tat_set_trx_state( uint8_t new_state ){
+     e24:	0f 93       	push	r16
+     e26:	1f 93       	push	r17
+     e28:	08 2f       	mov	r16, r24
+    
+    /*Check function paramter and current state of the radio transceiver.*/
+    if (!((new_state == TRX_OFF ) || (new_state == RX_ON) || (new_state == PLL_ON) || 
+     e2a:	88 30       	cpi	r24, 0x08	; 8
+     e2c:	51 f0       	breq	.+20     	; 0xe42 <tat_set_trx_state+0x1e>
+     e2e:	86 30       	cpi	r24, 0x06	; 6
+     e30:	41 f0       	breq	.+16     	; 0xe42 <tat_set_trx_state+0x1e>
+     e32:	89 30       	cpi	r24, 0x09	; 9
+     e34:	31 f0       	breq	.+12     	; 0xe42 <tat_set_trx_state+0x1e>
+     e36:	86 31       	cpi	r24, 0x16	; 22
+     e38:	21 f0       	breq	.+8      	; 0xe42 <tat_set_trx_state+0x1e>
+     e3a:	89 31       	cpi	r24, 0x19	; 25
+     e3c:	11 f0       	breq	.+4      	; 0xe42 <tat_set_trx_state+0x1e>
+     e3e:	82 e4       	ldi	r24, 0x42	; 66
+     e40:	4b c0       	rjmp	.+150    	; 0xed8 <tat_set_trx_state+0xb4>
+    
+    bool sleeping = false;
+    
+    //The radio transceiver will be at SLEEP or one of the *_NOCLK states only if
+    //the SLP_TR pin is high.
+    if (hal_get_slptr( ) != 0) {
+     e42:	b5 9b       	sbis	0x16, 5	; 22
+     e44:	02 c0       	rjmp	.+4      	; 0xe4a <tat_set_trx_state+0x26>
+     e46:	84 e4       	ldi	r24, 0x44	; 68
+     e48:	47 c0       	rjmp	.+142    	; 0xed8 <tat_set_trx_state+0xb4>
+ *                                 transition between two states.
+ *   
+ *  \ingroup tat
+ */
+uint8_t tat_get_trx_state( void ){
+    return hal_subregister_read( SR_TRX_STATUS );
+     e4a:	81 e0       	ldi	r24, 0x01	; 1
+     e4c:	6f e1       	ldi	r22, 0x1F	; 31
+     e4e:	40 e0       	ldi	r20, 0x00	; 0
+     e50:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+     e54:	18 2f       	mov	r17, r24
+    
+    if (is_sleeping( ) == true) { return TAT_WRONG_STATE; }
+    
+    uint8_t original_state = tat_get_trx_state( );
+    
+    if ((original_state == BUSY_RX ) || (original_state == BUSY_TX) || 
+     e56:	81 50       	subi	r24, 0x01	; 1
+     e58:	82 30       	cpi	r24, 0x02	; 2
+     e5a:	08 f4       	brcc	.+2      	; 0xe5e <tat_set_trx_state+0x3a>
+     e5c:	3a c0       	rjmp	.+116    	; 0xed2 <tat_set_trx_state+0xae>
+     e5e:	11 31       	cpi	r17, 0x11	; 17
+     e60:	c1 f1       	breq	.+112    	; 0xed2 <tat_set_trx_state+0xae>
+     e62:	12 31       	cpi	r17, 0x12	; 18
+     e64:	b1 f1       	breq	.+108    	; 0xed2 <tat_set_trx_state+0xae>
+        (original_state == BUSY_RX_AACK) || (original_state == BUSY_TX_ARET)) { 
+        return TAT_BUSY_STATE;
+    }
+    
+    if (new_state == original_state) { return TAT_SUCCESS; }
+     e66:	01 17       	cp	r16, r17
+     e68:	b1 f1       	breq	.+108    	; 0xed6 <tat_set_trx_state+0xb2>
+    //At this point it is clear that the requested new_state is:
+    //TRX_OFF, RX_ON, PLL_ON, RX_AACK_ON or TX_ARET_ON.
+                
+    //The radio transceiver can be in one of the following states:
+    //TRX_OFF, RX_ON, PLL_ON, RX_AACK_ON, TX_ARET_ON.
+    if( new_state == TRX_OFF ){
+     e6a:	08 30       	cpi	r16, 0x08	; 8
+     e6c:	19 f4       	brne	.+6      	; 0xe74 <tat_set_trx_state+0x50>
+        tat_reset_state_machine( ); //Go to TRX_OFF from any state.
+     e6e:	0e 94 f2 06 	call	0xde4	; 0xde4 <tat_reset_state_machine>
+     e72:	26 c0       	rjmp	.+76     	; 0xec0 <tat_set_trx_state+0x9c>
+    } else {
+        
+        //It is not allowed to go from RX_AACK_ON or TX_AACK_ON and directly to
+        //TX_AACK_ON or RX_AACK_ON respectively. Need to go via RX_ON or PLL_ON.
+        if ((new_state == TX_ARET_ON) && (original_state == RX_AACK_ON)) {
+     e74:	09 31       	cpi	r16, 0x19	; 25
+     e76:	39 f4       	brne	.+14     	; 0xe86 <tat_set_trx_state+0x62>
+     e78:	16 31       	cpi	r17, 0x16	; 22
+     e7a:	91 f4       	brne	.+36     	; 0xea0 <tat_set_trx_state+0x7c>
+            
+            //First do intermediate state transition to PLL_ON, then to TX_ARET_ON.
+            //The final state transition to TX_ARET_ON is handled after the if-else if.
+            hal_subregister_write( SR_TRX_CMD, PLL_ON );
+     e7c:	82 e0       	ldi	r24, 0x02	; 2
+     e7e:	6f e1       	ldi	r22, 0x1F	; 31
+     e80:	40 e0       	ldi	r20, 0x00	; 0
+     e82:	29 e0       	ldi	r18, 0x09	; 9
+     e84:	08 c0       	rjmp	.+16     	; 0xe96 <tat_set_trx_state+0x72>
+            delay_us( TIME_STATE_TRANSITION_PLL_ACTIVE );
+        } else if ((new_state == RX_AACK_ON) && (original_state == TX_ARET_ON)) {
+     e86:	06 31       	cpi	r16, 0x16	; 22
+     e88:	59 f4       	brne	.+22     	; 0xea0 <tat_set_trx_state+0x7c>
+     e8a:	19 31       	cpi	r17, 0x19	; 25
+     e8c:	49 f4       	brne	.+18     	; 0xea0 <tat_set_trx_state+0x7c>
+            
+            //First do intermediate state transition to RX_ON, then to RX_AACK_ON.
+            //The final state transition to RX_AACK_ON is handled after the if-else if.
+            hal_subregister_write( SR_TRX_CMD, RX_ON );
+     e8e:	82 e0       	ldi	r24, 0x02	; 2
+     e90:	6f e1       	ldi	r22, 0x1F	; 31
+     e92:	40 e0       	ldi	r20, 0x00	; 0
+     e94:	26 e0       	ldi	r18, 0x06	; 6
+     e96:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+     e9a:	82 e0       	ldi	r24, 0x02	; 2
+     e9c:	8a 95       	dec	r24
+     e9e:	f1 f7       	brne	.-4      	; 0xe9c <tat_set_trx_state+0x78>
+            delay_us( TIME_STATE_TRANSITION_PLL_ACTIVE );
+        }
+            
+        //Any other state transition can be done directly.    
+        hal_subregister_write( SR_TRX_CMD, new_state );
+     ea0:	82 e0       	ldi	r24, 0x02	; 2
+     ea2:	6f e1       	ldi	r22, 0x1F	; 31
+     ea4:	40 e0       	ldi	r20, 0x00	; 0
+     ea6:	20 2f       	mov	r18, r16
+     ea8:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+        
+        //When the PLL is active most states can be reached in 1us. However, from
+        //TRX_OFF the PLL needs time to activate.
+        if (original_state == TRX_OFF) {
+     eac:	18 30       	cpi	r17, 0x08	; 8
+     eae:	29 f4       	brne	.+10     	; 0xeba <tat_set_trx_state+0x96>
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+     eb0:	88 e6       	ldi	r24, 0x68	; 104
+     eb2:	91 e0       	ldi	r25, 0x01	; 1
+     eb4:	01 97       	sbiw	r24, 0x01	; 1
+     eb6:	f1 f7       	brne	.-4      	; 0xeb4 <tat_set_trx_state+0x90>
+     eb8:	03 c0       	rjmp	.+6      	; 0xec0 <tat_set_trx_state+0x9c>
+    can be achieved.
+*/
+void
+_delay_loop_1(uint8_t __count)
+{
+	__asm__ volatile (
+     eba:	82 e0       	ldi	r24, 0x02	; 2
+     ebc:	8a 95       	dec	r24
+     ebe:	f1 f7       	brne	.-4      	; 0xebc <tat_set_trx_state+0x98>
+ *                                 transition between two states.
+ *   
+ *  \ingroup tat
+ */
+uint8_t tat_get_trx_state( void ){
+    return hal_subregister_read( SR_TRX_STATUS );
+     ec0:	81 e0       	ldi	r24, 0x01	; 1
+     ec2:	6f e1       	ldi	r22, 0x1F	; 31
+     ec4:	40 e0       	ldi	r20, 0x00	; 0
+     ec6:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+    } // end: if( new_state == TRX_OFF ) ...
+        
+    /*Verify state transition.*/
+    tat_status_t set_state_status = TAT_TIMED_OUT;
+    
+    if( tat_get_trx_state( ) == new_state ){ set_state_status = TAT_SUCCESS; }
+     eca:	80 17       	cp	r24, r16
+     ecc:	21 f0       	breq	.+8      	; 0xed6 <tat_set_trx_state+0xb2>
+     ece:	83 e4       	ldi	r24, 0x43	; 67
+     ed0:	03 c0       	rjmp	.+6      	; 0xed8 <tat_set_trx_state+0xb4>
+     ed2:	85 e4       	ldi	r24, 0x45	; 69
+     ed4:	01 c0       	rjmp	.+2      	; 0xed8 <tat_set_trx_state+0xb4>
+     ed6:	80 e4       	ldi	r24, 0x40	; 64
+    
+    return set_state_status;
+}
+     ed8:	1f 91       	pop	r17
+     eda:	0f 91       	pop	r16
+     edc:	08 95       	ret
+
+00000ede <tat_calibrate_filter>:
+ *                                 transition between two states.
+ *   
+ *  \ingroup tat
+ */
+uint8_t tat_get_trx_state( void ){
+    return hal_subregister_read( SR_TRX_STATUS );
+     ede:	81 e0       	ldi	r24, 0x01	; 1
+     ee0:	6f e1       	ldi	r22, 0x1F	; 31
+     ee2:	40 e0       	ldi	r20, 0x00	; 0
+     ee4:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+tat_status_t tat_calibrate_filter( void ){
+    
+    /*Check current state. Only possible to do filter calibration from TRX_OFF or PLL_ON.*/
+    uint8_t trx_state = tat_get_trx_state( );
+    
+    if ((trx_state != TRX_OFF ) && (trx_state != PLL_ON)) { return TAT_WRONG_STATE; }
+     ee8:	88 50       	subi	r24, 0x08	; 8
+     eea:	82 30       	cpi	r24, 0x02	; 2
+     eec:	10 f0       	brcs	.+4      	; 0xef2 <tat_calibrate_filter+0x14>
+     eee:	84 e4       	ldi	r24, 0x44	; 68
+     ef0:	08 95       	ret
+        
+    //Start the tuning algorithm by writing one to the FTN_START subregister.
+    hal_subregister_write( SR_FTN_START, 1 );   
+     ef2:	88 e1       	ldi	r24, 0x18	; 24
+     ef4:	60 e8       	ldi	r22, 0x80	; 128
+     ef6:	47 e0       	ldi	r20, 0x07	; 7
+     ef8:	21 e0       	ldi	r18, 0x01	; 1
+     efa:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+     efe:	82 e4       	ldi	r24, 0x42	; 66
+     f00:	8a 95       	dec	r24
+     f02:	f1 f7       	brne	.-4      	; 0xf00 <tat_calibrate_filter+0x22>
+    delay_us( TIME_FTN_TUNING ); //Wait for the calibration to finish.
+    
+    tat_status_t filter_calibration_status = TAT_TIMED_OUT;    
+    
+    //Verify the calibration result.
+    if (hal_subregister_read( SR_FTN_START ) == FTN_CALIBRATION_DONE) {
+     f04:	88 e1       	ldi	r24, 0x18	; 24
+     f06:	60 e8       	ldi	r22, 0x80	; 128
+     f08:	47 e0       	ldi	r20, 0x07	; 7
+     f0a:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+     f0e:	88 23       	and	r24, r24
+     f10:	11 f4       	brne	.+4      	; 0xf16 <tat_calibrate_filter+0x38>
+     f12:	80 e4       	ldi	r24, 0x40	; 64
+     f14:	08 95       	ret
+     f16:	83 e4       	ldi	r24, 0x43	; 67
+        filter_calibration_status = TAT_SUCCESS;
+    }
+    
+    return filter_calibration_status;
+}
+     f18:	08 95       	ret
+
+00000f1a <tat_set_clock_speed>:
+ *  \retval TAT_SUCCESS Clock speed updated. New state is TRX_OFF.
+ *  \retval TAT_INVALID_ARGUMENT Requested clock speed is out of bounds.
+ *  
+ * \ingroup tat
+ */
+tat_status_t tat_set_clock_speed( bool direct, uint8_t clock_speed ){
+     f1a:	0f 93       	push	r16
+     f1c:	1f 93       	push	r17
+     f1e:	08 2f       	mov	r16, r24
+     f20:	16 2f       	mov	r17, r22
+    
+    /*Check function parameter and current clock speed.*/
+    if (clock_speed > CLKM_16MHZ) { return TAT_INVALID_ARGUMENT; }
+     f22:	66 30       	cpi	r22, 0x06	; 6
+     f24:	10 f0       	brcs	.+4      	; 0xf2a <tat_set_clock_speed+0x10>
+     f26:	82 e4       	ldi	r24, 0x42	; 66
+     f28:	1b c0       	rjmp	.+54     	; 0xf60 <tat_set_clock_speed+0x46>
+ *  \retval CLKM_16MHZ CLKM pin is not prescaled. Output is 16 MHz.
+ *
+ *  \ingroup tat
+ */
+uint8_t tat_get_clock_speed( void ){
+    return hal_subregister_read( SR_CLKM_CTRL );
+     f2a:	83 e0       	ldi	r24, 0x03	; 3
+     f2c:	67 e0       	ldi	r22, 0x07	; 7
+     f2e:	40 e0       	ldi	r20, 0x00	; 0
+     f30:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+tat_status_t tat_set_clock_speed( bool direct, uint8_t clock_speed ){
+    
+    /*Check function parameter and current clock speed.*/
+    if (clock_speed > CLKM_16MHZ) { return TAT_INVALID_ARGUMENT; }
+        
+    if (tat_get_clock_speed( ) == clock_speed) { return TAT_SUCCESS; }
+     f34:	81 17       	cp	r24, r17
+     f36:	99 f0       	breq	.+38     	; 0xf5e <tat_set_clock_speed+0x44>
+    
+    /*Select to change the CLKM frequency directly or after returning from SLEEP.*/
+    if (direct == false) {
+     f38:	00 23       	and	r16, r16
+     f3a:	29 f4       	brne	.+10     	; 0xf46 <tat_set_clock_speed+0x2c>
+        hal_subregister_write( SR_CLKM_SHA_SEL, 1 );
+     f3c:	83 e0       	ldi	r24, 0x03	; 3
+     f3e:	68 e0       	ldi	r22, 0x08	; 8
+     f40:	43 e0       	ldi	r20, 0x03	; 3
+     f42:	21 e0       	ldi	r18, 0x01	; 1
+     f44:	04 c0       	rjmp	.+8      	; 0xf4e <tat_set_clock_speed+0x34>
+    } else {
+        hal_subregister_write( SR_CLKM_SHA_SEL, 0 );
+     f46:	83 e0       	ldi	r24, 0x03	; 3
+     f48:	68 e0       	ldi	r22, 0x08	; 8
+     f4a:	43 e0       	ldi	r20, 0x03	; 3
+     f4c:	20 e0       	ldi	r18, 0x00	; 0
+     f4e:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+    } // end: if (direct == false) ...
+            
+    hal_subregister_write( SR_CLKM_CTRL, clock_speed );
+     f52:	83 e0       	ldi	r24, 0x03	; 3
+     f54:	67 e0       	ldi	r22, 0x07	; 7
+     f56:	40 e0       	ldi	r20, 0x00	; 0
+     f58:	21 2f       	mov	r18, r17
+     f5a:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+     f5e:	80 e4       	ldi	r24, 0x40	; 64
+                
+    return TAT_SUCCESS;
+}
+     f60:	1f 91       	pop	r17
+     f62:	0f 91       	pop	r16
+     f64:	08 95       	ret
+
+00000f66 <tat_batmon_configure>:
+ *  \retval TAT_WRONG_STATE The device is sleeping.
+ *  \retval TAT_INVALID_ARGUMENT The voltage_threshold parameter is out of 
+ *                               bounds (Not within [0 - 15]).
+ *  \ingroup tat
+ */
+tat_status_t tat_batmon_configure( bool range, uint8_t voltage_threshold ){
+     f66:	1f 93       	push	r17
+     f68:	16 2f       	mov	r17, r22
+     
+    /*Check function parameters and state.*/
+    if (voltage_threshold > BATTERY_MONITOR_HIGHEST_VOLTAGE) {
+     f6a:	60 31       	cpi	r22, 0x10	; 16
+     f6c:	10 f0       	brcs	.+4      	; 0xf72 <tat_batmon_configure+0xc>
+     f6e:	82 e4       	ldi	r24, 0x42	; 66
+     f70:	18 c0       	rjmp	.+48     	; 0xfa2 <tat_batmon_configure+0x3c>
+    
+    bool sleeping = false;
+    
+    //The radio transceiver will be at SLEEP or one of the *_NOCLK states only if
+    //the SLP_TR pin is high.
+    if (hal_get_slptr( ) != 0) {
+     f72:	b5 9b       	sbis	0x16, 5	; 22
+     f74:	02 c0       	rjmp	.+4      	; 0xf7a <tat_batmon_configure+0x14>
+     f76:	84 e4       	ldi	r24, 0x44	; 68
+     f78:	14 c0       	rjmp	.+40     	; 0xfa2 <tat_batmon_configure+0x3c>
+    }   
+    
+    if (is_sleeping( ) == true) { return TAT_WRONG_STATE; }
+    
+    /*Write new voltage range and voltage level.*/
+    if (range == true) {
+     f7a:	88 23       	and	r24, r24
+     f7c:	29 f0       	breq	.+10     	; 0xf88 <tat_batmon_configure+0x22>
+        hal_subregister_write( SR_BATMON_HR, BATTERY_MONITOR_HIGH_VOLTAGE );
+     f7e:	81 e1       	ldi	r24, 0x11	; 17
+     f80:	60 e1       	ldi	r22, 0x10	; 16
+     f82:	44 e0       	ldi	r20, 0x04	; 4
+     f84:	21 e0       	ldi	r18, 0x01	; 1
+     f86:	04 c0       	rjmp	.+8      	; 0xf90 <tat_batmon_configure+0x2a>
+    } else {
+        hal_subregister_write( SR_BATMON_HR, BATTERY_MONITOR_LOW_VOLTAGE );
+     f88:	81 e1       	ldi	r24, 0x11	; 17
+     f8a:	60 e1       	ldi	r22, 0x10	; 16
+     f8c:	44 e0       	ldi	r20, 0x04	; 4
+     f8e:	20 e0       	ldi	r18, 0x00	; 0
+     f90:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+    } // end: if (range == true) ...
+    
+    hal_subregister_write( SR_BATMON_VTH, voltage_threshold );
+     f94:	81 e1       	ldi	r24, 0x11	; 17
+     f96:	6f e0       	ldi	r22, 0x0F	; 15
+     f98:	40 e0       	ldi	r20, 0x00	; 0
+     f9a:	21 2f       	mov	r18, r17
+     f9c:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+     fa0:	80 e4       	ldi	r24, 0x40	; 64
+       
+    return TAT_SUCCESS;
+}
+     fa2:	1f 91       	pop	r17
+     fa4:	08 95       	ret
+
+00000fa6 <tat_set_cca_mode>:
+ *  \retval TAT_INVALID_ARGUMENT If one of the three function arguments are out 
+ *                               of bounds.
+ *
+ *  \ingroup tat
+ */
+tat_status_t tat_set_cca_mode( uint8_t mode, uint8_t ed_threshold ){
+     fa6:	1f 93       	push	r17
+     fa8:	28 2f       	mov	r18, r24
+     faa:	16 2f       	mov	r17, r22
+    
+    /*Check function parameters and state.*/
+    if ((mode != CCA_ED) && (mode != CCA_CARRIER_SENSE) && 
+     fac:	83 30       	cpi	r24, 0x03	; 3
+     fae:	98 f4       	brcc	.+38     	; 0xfd6 <tat_set_cca_mode+0x30>
+        (mode != CCA_CARRIER_SENSE_WITH_ED)) {
+        return TAT_INVALID_ARGUMENT;
+    } 
+       
+    //Ensure that the ED threshold is within bounds.
+    if (ed_threshold > RF231_MAX_ED_THRESHOLD) { return TAT_INVALID_ARGUMENT; } 
+     fb0:	60 31       	cpi	r22, 0x10	; 16
+     fb2:	88 f4       	brcc	.+34     	; 0xfd6 <tat_set_cca_mode+0x30>
+    
+    bool sleeping = false;
+    
+    //The radio transceiver will be at SLEEP or one of the *_NOCLK states only if
+    //the SLP_TR pin is high.
+    if (hal_get_slptr( ) != 0) {
+     fb4:	b5 9b       	sbis	0x16, 5	; 22
+     fb6:	02 c0       	rjmp	.+4      	; 0xfbc <tat_set_cca_mode+0x16>
+     fb8:	84 e4       	ldi	r24, 0x44	; 68
+     fba:	0e c0       	rjmp	.+28     	; 0xfd8 <tat_set_cca_mode+0x32>
+            
+    //Ensure that the radio transceiver is not sleeping.
+    if (is_sleeping( ) == true) { return TAT_WRONG_STATE; } 
+                
+    /*Change cca mode and ed threshold.*/
+    hal_subregister_write( SR_CCA_MODE, mode );
+     fbc:	88 e0       	ldi	r24, 0x08	; 8
+     fbe:	60 e6       	ldi	r22, 0x60	; 96
+     fc0:	45 e0       	ldi	r20, 0x05	; 5
+     fc2:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+    hal_subregister_write( SR_CCA_ED_THRES, ed_threshold );
+     fc6:	89 e0       	ldi	r24, 0x09	; 9
+     fc8:	6f e0       	ldi	r22, 0x0F	; 15
+     fca:	40 e0       	ldi	r20, 0x00	; 0
+     fcc:	21 2f       	mov	r18, r17
+     fce:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+     fd2:	80 e4       	ldi	r24, 0x40	; 64
+     fd4:	01 c0       	rjmp	.+2      	; 0xfd8 <tat_set_cca_mode+0x32>
+        
+    return TAT_SUCCESS;
+     fd6:	82 e4       	ldi	r24, 0x42	; 66
+}
+     fd8:	1f 91       	pop	r17
+     fda:	08 95       	ret
+
+00000fdc <tat_set_tx_power_level>:
+ *  \retval TAT_WRONG_STATE It is not possible to change the TX power when the 
+ *                          device is sleeping.
+ *
+ *  \ingroup tat
+ */
+tat_status_t tat_set_tx_power_level( uint8_t power_level ){
+     fdc:	28 2f       	mov	r18, r24
+        
+    /*Check function parameter and state.*/
+    if (power_level > TX_PWR_17_2DBM) { return TAT_INVALID_ARGUMENT; }
+     fde:	80 31       	cpi	r24, 0x10	; 16
+     fe0:	10 f0       	brcs	.+4      	; 0xfe6 <tat_set_tx_power_level+0xa>
+     fe2:	82 e4       	ldi	r24, 0x42	; 66
+     fe4:	08 95       	ret
+    
+    bool sleeping = false;
+    
+    //The radio transceiver will be at SLEEP or one of the *_NOCLK states only if
+    //the SLP_TR pin is high.
+    if (hal_get_slptr( ) != 0) {
+     fe6:	b5 9b       	sbis	0x16, 5	; 22
+     fe8:	02 c0       	rjmp	.+4      	; 0xfee <tat_set_tx_power_level+0x12>
+     fea:	84 e4       	ldi	r24, 0x44	; 68
+     fec:	08 95       	ret
+    if (power_level > TX_PWR_17_2DBM) { return TAT_INVALID_ARGUMENT; }
+    
+    if (is_sleeping( ) == true) { return TAT_WRONG_STATE; }
+    
+    /*Set new power level*/
+    hal_subregister_write( SR_TX_PWR, power_level );
+     fee:	85 e0       	ldi	r24, 0x05	; 5
+     ff0:	6f e0       	ldi	r22, 0x0F	; 15
+     ff2:	40 e0       	ldi	r20, 0x00	; 0
+     ff4:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+     ff8:	80 e4       	ldi	r24, 0x40	; 64
+        
+    return TAT_SUCCESS;
+}
+     ffa:	08 95       	ret
+
+00000ffc <tat_set_operating_channel>:
+ *  \retval TAT_INVALID_ARGUMENT Channel argument is out of bounds.
+ *  \retval TAT_TIMED_OUT The PLL did not lock within the specified time.
+ *
+ *  \ingroup tat
+ */
+tat_status_t tat_set_operating_channel( uint8_t channel ){
+     ffc:	1f 93       	push	r17
+     ffe:	18 2f       	mov	r17, r24
+    
+    /*Do function parameter and state check.*/
+    if ((channel < RF231_MIN_CHANNEL) || (channel > RF231_MAX_CHANNEL)) {
+    1000:	8b 50       	subi	r24, 0x0B	; 11
+    1002:	80 31       	cpi	r24, 0x10	; 16
+    1004:	10 f0       	brcs	.+4      	; 0x100a <tat_set_operating_channel+0xe>
+    1006:	82 e4       	ldi	r24, 0x42	; 66
+    1008:	28 c0       	rjmp	.+80     	; 0x105a <tat_set_operating_channel+0x5e>
+    
+    bool sleeping = false;
+    
+    //The radio transceiver will be at SLEEP or one of the *_NOCLK states only if
+    //the SLP_TR pin is high.
+    if (hal_get_slptr( ) != 0) {
+    100a:	b5 9b       	sbis	0x16, 5	; 22
+    100c:	02 c0       	rjmp	.+4      	; 0x1012 <tat_set_operating_channel+0x16>
+    100e:	84 e4       	ldi	r24, 0x44	; 68
+    1010:	24 c0       	rjmp	.+72     	; 0x105a <tat_set_operating_channel+0x5e>
+ *  \return Current channel, 11 to 26.
+ *
+ *  \ingroup tat
+ */
+uint8_t tat_get_operating_channel( void ){
+    return hal_subregister_read( SR_CHANNEL );
+    1012:	88 e0       	ldi	r24, 0x08	; 8
+    1014:	6f e1       	ldi	r22, 0x1F	; 31
+    1016:	40 e0       	ldi	r20, 0x00	; 0
+    1018:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+        return TAT_INVALID_ARGUMENT;
+    }
+    
+    if (is_sleeping( ) == true) { return TAT_WRONG_STATE; }
+    
+    if (tat_get_operating_channel( ) == channel) { return TAT_SUCCESS; }
+    101c:	81 17       	cp	r24, r17
+    101e:	e1 f0       	breq	.+56     	; 0x1058 <tat_set_operating_channel+0x5c>
+    
+    /*Set new operating channel.*/        
+    hal_subregister_write( SR_CHANNEL, channel );
+    1020:	88 e0       	ldi	r24, 0x08	; 8
+    1022:	6f e1       	ldi	r22, 0x1F	; 31
+    1024:	40 e0       	ldi	r20, 0x00	; 0
+    1026:	21 2f       	mov	r18, r17
+    1028:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+ *                                 transition between two states.
+ *   
+ *  \ingroup tat
+ */
+uint8_t tat_get_trx_state( void ){
+    return hal_subregister_read( SR_TRX_STATUS );
+    102c:	81 e0       	ldi	r24, 0x01	; 1
+    102e:	6f e1       	ldi	r22, 0x1F	; 31
+    1030:	40 e0       	ldi	r20, 0x00	; 0
+    1032:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+                
+    //Read current state and wait for the PLL_LOCK interrupt if the
+    //radio transceiver is in either RX_ON or PLL_ON.
+    uint8_t trx_state = tat_get_trx_state( );
+                
+    if ((trx_state == RX_ON) || (trx_state == PLL_ON)) {
+    1036:	86 30       	cpi	r24, 0x06	; 6
+    1038:	11 f0       	breq	.+4      	; 0x103e <tat_set_operating_channel+0x42>
+    103a:	89 30       	cpi	r24, 0x09	; 9
+    103c:	21 f4       	brne	.+8      	; 0x1046 <tat_set_operating_channel+0x4a>
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+    103e:	8c e2       	ldi	r24, 0x2C	; 44
+    1040:	91 e0       	ldi	r25, 0x01	; 1
+    1042:	01 97       	sbiw	r24, 0x01	; 1
+    1044:	f1 f7       	brne	.-4      	; 0x1042 <tat_set_operating_channel+0x46>
+ *  \return Current channel, 11 to 26.
+ *
+ *  \ingroup tat
+ */
+uint8_t tat_get_operating_channel( void ){
+    return hal_subregister_read( SR_CHANNEL );
+    1046:	88 e0       	ldi	r24, 0x08	; 8
+    1048:	6f e1       	ldi	r22, 0x1F	; 31
+    104a:	40 e0       	ldi	r20, 0x00	; 0
+    104c:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+    }
+    
+    tat_status_t channel_set_status = TAT_TIMED_OUT;
+    
+    //Check that the channel was set properly.
+    if (tat_get_operating_channel( ) == channel) {
+    1050:	81 17       	cp	r24, r17
+    1052:	11 f0       	breq	.+4      	; 0x1058 <tat_set_operating_channel+0x5c>
+    1054:	83 e4       	ldi	r24, 0x43	; 67
+    1056:	01 c0       	rjmp	.+2      	; 0x105a <tat_set_operating_channel+0x5e>
+    1058:	80 e4       	ldi	r24, 0x40	; 64
+        channel_set_status = TAT_SUCCESS;
+    }
+    
+    return channel_set_status;
+}
+    105a:	1f 91       	pop	r17
+    105c:	08 95       	ret
+
+0000105e <tat_configure_csma>:
+ *  \retval TAT_WRONG_STATE This function should not be called in the 
+ *                          SLEEP state.
+ *
+ *  \ingroup tat
+ */
+tat_status_t tat_configure_csma( uint8_t seed0, uint8_t be_csma_seed1 ){
+    105e:	0f 93       	push	r16
+    1060:	1f 93       	push	r17
+    1062:	08 2f       	mov	r16, r24
+    1064:	16 2f       	mov	r17, r22
+    
+    bool sleeping = false;
+    
+    //The radio transceiver will be at SLEEP or one of the *_NOCLK states only if
+    //the SLP_TR pin is high.
+    if (hal_get_slptr( ) != 0) {
+    1066:	b5 9b       	sbis	0x16, 5	; 22
+    1068:	02 c0       	rjmp	.+4      	; 0x106e <tat_configure_csma+0x10>
+    106a:	84 e4       	ldi	r24, 0x44	; 68
+    106c:	2a c0       	rjmp	.+84     	; 0x10c2 <tat_configure_csma+0x64>
+    /*Extract parameters, and configure the CSMA-CA algorithm.*/
+    uint8_t back_off_exponent = ( be_csma_seed1 & 0xC0 ) >> 6;
+    uint8_t csma_retries      = ( be_csma_seed1 & 0x38 ) >> 3;
+    uint8_t seed1             = ( be_csma_seed1 & 0x07 );
+            
+    hal_subregister_write( SR_MAX_FRAME_RETRIES, 0 ); //AT86RF231 rev A errata.
+    106e:	8c e2       	ldi	r24, 0x2C	; 44
+    1070:	60 ef       	ldi	r22, 0xF0	; 240
+    1072:	44 e0       	ldi	r20, 0x04	; 4
+    1074:	20 e0       	ldi	r18, 0x00	; 0
+    1076:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+    hal_subregister_write( SR_MAX_CSMA_RETRIES, csma_retries );
+    107a:	21 2f       	mov	r18, r17
+    107c:	30 e0       	ldi	r19, 0x00	; 0
+    107e:	28 73       	andi	r18, 0x38	; 56
+    1080:	30 70       	andi	r19, 0x00	; 0
+    1082:	83 e0       	ldi	r24, 0x03	; 3
+    1084:	35 95       	asr	r19
+    1086:	27 95       	ror	r18
+    1088:	8a 95       	dec	r24
+    108a:	e1 f7       	brne	.-8      	; 0x1084 <tat_configure_csma+0x26>
+    108c:	8c e2       	ldi	r24, 0x2C	; 44
+    108e:	6e e0       	ldi	r22, 0x0E	; 14
+    1090:	41 e0       	ldi	r20, 0x01	; 1
+    1092:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+    hal_subregister_write( SR_MIN_BE, back_off_exponent );
+    1096:	21 2f       	mov	r18, r17
+    1098:	22 95       	swap	r18
+    109a:	26 95       	lsr	r18
+    109c:	26 95       	lsr	r18
+    109e:	23 70       	andi	r18, 0x03	; 3
+    10a0:	8f e2       	ldi	r24, 0x2F	; 47
+    10a2:	6f e0       	ldi	r22, 0x0F	; 15
+    10a4:	40 e0       	ldi	r20, 0x00	; 0
+    10a6:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+    hal_register_write( RG_CSMA_SEED_0, seed0 );
+    10aa:	8d e2       	ldi	r24, 0x2D	; 45
+    10ac:	60 2f       	mov	r22, r16
+    10ae:	0e 94 4f 02 	call	0x49e	; 0x49e <hal_register_write>
+    hal_subregister_write( SR_CSMA_SEED_1, seed1 );
+    10b2:	17 70       	andi	r17, 0x07	; 7
+    10b4:	8e e2       	ldi	r24, 0x2E	; 46
+    10b6:	67 e0       	ldi	r22, 0x07	; 7
+    10b8:	40 e0       	ldi	r20, 0x00	; 0
+    10ba:	21 2f       	mov	r18, r17
+    10bc:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+    10c0:	80 e4       	ldi	r24, 0x40	; 64
+            
+    return TAT_SUCCESS;
+}
+    10c2:	1f 91       	pop	r17
+    10c4:	0f 91       	pop	r16
+    10c6:	08 95       	ret
+
+000010c8 <tat_set_extended_address>:
+ *
+ *  \param  new_extended_address Extended address to be used by the address filter. 
+ *
+ *  \ingroup tat
+ */
+__x void tat_set_extended_address( uint8_t *extended_address ){
+    10c8:	af 92       	push	r10
+    10ca:	bf 92       	push	r11
+    10cc:	cf 92       	push	r12
+    10ce:	df 92       	push	r13
+    10d0:	ef 92       	push	r14
+    10d2:	ff 92       	push	r15
+    10d4:	0f 93       	push	r16
+    10d6:	1f 93       	push	r17
+    10d8:	8c 01       	movw	r16, r24
+    
+    hal_register_write( RG_IEEE_ADDR_7, *extended_address++ );
+    10da:	7c 01       	movw	r14, r24
+    10dc:	08 94       	sec
+    10de:	e1 1c       	adc	r14, r1
+    10e0:	f1 1c       	adc	r15, r1
+    10e2:	8b e2       	ldi	r24, 0x2B	; 43
+    10e4:	f8 01       	movw	r30, r16
+    10e6:	60 81       	ld	r22, Z
+    10e8:	0e 94 4f 02 	call	0x49e	; 0x49e <hal_register_write>
+    hal_register_write( RG_IEEE_ADDR_6, *extended_address++ );
+    10ec:	67 01       	movw	r12, r14
+    10ee:	08 94       	sec
+    10f0:	c1 1c       	adc	r12, r1
+    10f2:	d1 1c       	adc	r13, r1
+    10f4:	8a e2       	ldi	r24, 0x2A	; 42
+    10f6:	f8 01       	movw	r30, r16
+    10f8:	61 81       	ldd	r22, Z+1	; 0x01
+    10fa:	0e 94 4f 02 	call	0x49e	; 0x49e <hal_register_write>
+    hal_register_write( RG_IEEE_ADDR_5, *extended_address++ );
+    10fe:	56 01       	movw	r10, r12
+    1100:	08 94       	sec
+    1102:	a1 1c       	adc	r10, r1
+    1104:	b1 1c       	adc	r11, r1
+    1106:	89 e2       	ldi	r24, 0x29	; 41
+    1108:	f7 01       	movw	r30, r14
+    110a:	61 81       	ldd	r22, Z+1	; 0x01
+    110c:	0e 94 4f 02 	call	0x49e	; 0x49e <hal_register_write>
+    hal_register_write( RG_IEEE_ADDR_4, *extended_address++ );
+    1110:	75 01       	movw	r14, r10
+    1112:	08 94       	sec
+    1114:	e1 1c       	adc	r14, r1
+    1116:	f1 1c       	adc	r15, r1
+    1118:	88 e2       	ldi	r24, 0x28	; 40
+    111a:	f6 01       	movw	r30, r12
+    111c:	61 81       	ldd	r22, Z+1	; 0x01
+    111e:	0e 94 4f 02 	call	0x49e	; 0x49e <hal_register_write>
+    hal_register_write( RG_IEEE_ADDR_3, *extended_address++ );
+    1122:	87 01       	movw	r16, r14
+    1124:	0f 5f       	subi	r16, 0xFF	; 255
+    1126:	1f 4f       	sbci	r17, 0xFF	; 255
+    1128:	87 e2       	ldi	r24, 0x27	; 39
+    112a:	f5 01       	movw	r30, r10
+    112c:	61 81       	ldd	r22, Z+1	; 0x01
+    112e:	0e 94 4f 02 	call	0x49e	; 0x49e <hal_register_write>
+    hal_register_write( RG_IEEE_ADDR_2, *extended_address++ );
+    1132:	86 e2       	ldi	r24, 0x26	; 38
+    1134:	f7 01       	movw	r30, r14
+    1136:	61 81       	ldd	r22, Z+1	; 0x01
+    1138:	0e 94 4f 02 	call	0x49e	; 0x49e <hal_register_write>
+    hal_register_write( RG_IEEE_ADDR_1, *extended_address++ );
+    113c:	85 e2       	ldi	r24, 0x25	; 37
+    113e:	f8 01       	movw	r30, r16
+    1140:	61 81       	ldd	r22, Z+1	; 0x01
+    1142:	0e 94 4f 02 	call	0x49e	; 0x49e <hal_register_write>
+    hal_register_write( RG_IEEE_ADDR_0, *extended_address++ );
+    1146:	84 e2       	ldi	r24, 0x24	; 36
+    hal_register_write( RG_IEEE_ADDR_7, *extended_address++ );
+    hal_register_write( RG_IEEE_ADDR_6, *extended_address++ );
+    hal_register_write( RG_IEEE_ADDR_5, *extended_address++ );
+    hal_register_write( RG_IEEE_ADDR_4, *extended_address++ );
+    hal_register_write( RG_IEEE_ADDR_3, *extended_address++ );
+    hal_register_write( RG_IEEE_ADDR_2, *extended_address++ );
+    1148:	0f 5f       	subi	r16, 0xFF	; 255
+    114a:	1f 4f       	sbci	r17, 0xFF	; 255
+    hal_register_write( RG_IEEE_ADDR_1, *extended_address++ );
+    hal_register_write( RG_IEEE_ADDR_0, *extended_address++ );
+    114c:	f8 01       	movw	r30, r16
+    114e:	61 81       	ldd	r22, Z+1	; 0x01
+    1150:	0e 94 4f 02 	call	0x49e	; 0x49e <hal_register_write>
+}
+    1154:	1f 91       	pop	r17
+    1156:	0f 91       	pop	r16
+    1158:	ff 90       	pop	r15
+    115a:	ef 90       	pop	r14
+    115c:	df 90       	pop	r13
+    115e:	cf 90       	pop	r12
+    1160:	bf 90       	pop	r11
+    1162:	af 90       	pop	r10
+    1164:	08 95       	ret
+
+00001166 <tat_set_short_address>:
+ *
+ *  \param  new_short_address Short address to be used by the address filter. 
+ *
+ *  \ingroup tat
+ */
+void tat_set_short_address( uint16_t new_short_address ){
+    1166:	1f 93       	push	r17
+    1168:	68 2f       	mov	r22, r24
+    116a:	19 2f       	mov	r17, r25
+    
+    uint8_t short_address_byte = new_short_address & 0xFF; // Extract short_address_7_0.
+    hal_register_write( RG_SHORT_ADDR_0, short_address_byte );
+    116c:	80 e2       	ldi	r24, 0x20	; 32
+    116e:	0e 94 4f 02 	call	0x49e	; 0x49e <hal_register_write>
+    
+    short_address_byte = (new_short_address >> 8*1) & 0xFF; // Extract short_address_15_8.
+    hal_register_write( RG_SHORT_ADDR_1, short_address_byte );
+    1172:	81 e2       	ldi	r24, 0x21	; 33
+    1174:	61 2f       	mov	r22, r17
+    1176:	0e 94 4f 02 	call	0x49e	; 0x49e <hal_register_write>
+}
+    117a:	1f 91       	pop	r17
+    117c:	08 95       	ret
+
+0000117e <tat_set_pan_id>:
+ *
+ *  \param  new_pan_id Desired PANID. Can be any value from 0x0000 to 0xFFFF 
+ *
+ *  \ingroup tat
+ */
+void tat_set_pan_id( uint16_t new_pan_id ){
+    117e:	1f 93       	push	r17
+    1180:	68 2f       	mov	r22, r24
+    1182:	19 2f       	mov	r17, r25
+    
+    uint8_t pan_byte = new_pan_id & 0xFF; // Extract new_pan_id_7_0.
+    hal_register_write( RG_PAN_ID_0, pan_byte );
+    1184:	82 e2       	ldi	r24, 0x22	; 34
+    1186:	0e 94 4f 02 	call	0x49e	; 0x49e <hal_register_write>
+    
+    pan_byte = (new_pan_id >> 8*1) & 0xFF;  // Extract new_pan_id_15_8.
+    hal_register_write( RG_PAN_ID_1, pan_byte );    
+    118a:	83 e2       	ldi	r24, 0x23	; 35
+    118c:	61 2f       	mov	r22, r17
+    118e:	0e 94 4f 02 	call	0x49e	; 0x49e <hal_register_write>
+}
+    1192:	1f 91       	pop	r17
+    1194:	08 95       	ret
+
+00001196 <tat_get_extended_address>:
+ *
+ *  \return Extended Address, any 64-bit value.
+ *
+ *  \ingroup tat
+ */
+__x void tat_get_extended_address( uint8_t *extended_address ){
+    1196:	ef 92       	push	r14
+    1198:	ff 92       	push	r15
+    119a:	0f 93       	push	r16
+    119c:	1f 93       	push	r17
+    119e:	7c 01       	movw	r14, r24
+    
+    *extended_address++ = hal_register_read( RG_IEEE_ADDR_7 ); // Read ieee_address_63_56.
+    11a0:	8b e2       	ldi	r24, 0x2B	; 43
+    11a2:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+    11a6:	f7 01       	movw	r30, r14
+    11a8:	81 93       	st	Z+, r24
+    11aa:	8f 01       	movw	r16, r30
+    *extended_address++ = hal_register_read( RG_IEEE_ADDR_6 ); // Read ieee_address_55_48.
+    11ac:	8a e2       	ldi	r24, 0x2A	; 42
+    11ae:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+    11b2:	f7 01       	movw	r30, r14
+    11b4:	81 83       	std	Z+1, r24	; 0x01
+    11b6:	78 01       	movw	r14, r16
+    11b8:	08 94       	sec
+    11ba:	e1 1c       	adc	r14, r1
+    11bc:	f1 1c       	adc	r15, r1
+    *extended_address++ = hal_register_read( RG_IEEE_ADDR_5 ); // Read ieee_address_47_40.
+    11be:	89 e2       	ldi	r24, 0x29	; 41
+    11c0:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+    11c4:	f8 01       	movw	r30, r16
+    11c6:	81 83       	std	Z+1, r24	; 0x01
+    11c8:	87 01       	movw	r16, r14
+    11ca:	0f 5f       	subi	r16, 0xFF	; 255
+    11cc:	1f 4f       	sbci	r17, 0xFF	; 255
+    *extended_address++ = hal_register_read( RG_IEEE_ADDR_4 ); // Read ieee_address_39_32.
+    11ce:	88 e2       	ldi	r24, 0x28	; 40
+    11d0:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+    11d4:	f7 01       	movw	r30, r14
+    11d6:	81 83       	std	Z+1, r24	; 0x01
+    11d8:	78 01       	movw	r14, r16
+    11da:	08 94       	sec
+    11dc:	e1 1c       	adc	r14, r1
+    11de:	f1 1c       	adc	r15, r1
+    *extended_address++ = hal_register_read( RG_IEEE_ADDR_3 ); // Read ieee_address_31_24.
+    11e0:	87 e2       	ldi	r24, 0x27	; 39
+    11e2:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+    11e6:	f8 01       	movw	r30, r16
+    11e8:	81 83       	std	Z+1, r24	; 0x01
+    11ea:	87 01       	movw	r16, r14
+    11ec:	0f 5f       	subi	r16, 0xFF	; 255
+    11ee:	1f 4f       	sbci	r17, 0xFF	; 255
+    *extended_address++ = hal_register_read( RG_IEEE_ADDR_2 ); // Read ieee_address_23_16.
+    11f0:	86 e2       	ldi	r24, 0x26	; 38
+    11f2:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+    11f6:	f7 01       	movw	r30, r14
+    11f8:	81 83       	std	Z+1, r24	; 0x01
+    *extended_address++ = hal_register_read( RG_IEEE_ADDR_1 ); // Read ieee_address_15_8.
+    11fa:	85 e2       	ldi	r24, 0x25	; 37
+    11fc:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+    1200:	f8 01       	movw	r30, r16
+    1202:	81 83       	std	Z+1, r24	; 0x01
+    *extended_address   = hal_register_read( RG_IEEE_ADDR_0 ); // Read ieee_address_7_0.
+    1204:	84 e2       	ldi	r24, 0x24	; 36
+    1206:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+    *extended_address++ = hal_register_read( RG_IEEE_ADDR_7 ); // Read ieee_address_63_56.
+    *extended_address++ = hal_register_read( RG_IEEE_ADDR_6 ); // Read ieee_address_55_48.
+    *extended_address++ = hal_register_read( RG_IEEE_ADDR_5 ); // Read ieee_address_47_40.
+    *extended_address++ = hal_register_read( RG_IEEE_ADDR_4 ); // Read ieee_address_39_32.
+    *extended_address++ = hal_register_read( RG_IEEE_ADDR_3 ); // Read ieee_address_31_24.
+    *extended_address++ = hal_register_read( RG_IEEE_ADDR_2 ); // Read ieee_address_23_16.
+    120a:	0f 5f       	subi	r16, 0xFF	; 255
+    120c:	1f 4f       	sbci	r17, 0xFF	; 255
+    *extended_address++ = hal_register_read( RG_IEEE_ADDR_1 ); // Read ieee_address_15_8.
+    *extended_address   = hal_register_read( RG_IEEE_ADDR_0 ); // Read ieee_address_7_0.
+    120e:	f8 01       	movw	r30, r16
+    1210:	81 83       	std	Z+1, r24	; 0x01
+}
+    1212:	1f 91       	pop	r17
+    1214:	0f 91       	pop	r16
+    1216:	ff 90       	pop	r15
+    1218:	ef 90       	pop	r14
+    121a:	08 95       	ret
+
+0000121c <tat_get_short_address>:
+ *
+ *  \retval Any value from 0x0000 to 0xFFFF
+ *
+ *  \ingroup tat
+ */
+uint16_t tat_get_short_address( void ){
+    121c:	1f 93       	push	r17
+
+    uint8_t short_address_15_8 = hal_register_read( RG_SHORT_ADDR_1 ); // Read short_address_15_8.
+    121e:	81 e2       	ldi	r24, 0x21	; 33
+    1220:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+    1224:	18 2f       	mov	r17, r24
+    uint8_t short_address_7_0  = hal_register_read( RG_SHORT_ADDR_1 ); // Read short_address_7_0.
+    1226:	81 e2       	ldi	r24, 0x21	; 33
+    1228:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+    122c:	51 2f       	mov	r21, r17
+    122e:	40 e0       	ldi	r20, 0x00	; 0
+    1230:	28 2f       	mov	r18, r24
+    1232:	30 e0       	ldi	r19, 0x00	; 0
+    1234:	24 2b       	or	r18, r20
+    1236:	35 2b       	or	r19, r21
+    
+    uint16_t short_address = ((uint16_t)(short_address_15_8 << 8)) | short_address_7_0;
+    
+    return short_address;
+}
+    1238:	c9 01       	movw	r24, r18
+    123a:	1f 91       	pop	r17
+    123c:	08 95       	ret
+
+0000123e <tat_get_pan_id>:
+ *
+ *  \retval Any value from 0 to 0xFFFF.
+ *
+ *  \ingroup tat
+ */
+uint16_t tat_get_pan_id( void ){
+    123e:	1f 93       	push	r17
+    
+    uint8_t pan_id_15_8 = hal_register_read( RG_PAN_ID_1 ); // Read pan_id_15_8.
+    1240:	83 e2       	ldi	r24, 0x23	; 35
+    1242:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+    1246:	18 2f       	mov	r17, r24
+    uint8_t pan_id_7_0 = hal_register_read( RG_PAN_ID_0 ); // Read pan_id_7_0.
+    1248:	82 e2       	ldi	r24, 0x22	; 34
+    124a:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+    124e:	51 2f       	mov	r21, r17
+    1250:	40 e0       	ldi	r20, 0x00	; 0
+    1252:	28 2f       	mov	r18, r24
+    1254:	30 e0       	ldi	r19, 0x00	; 0
+    1256:	24 2b       	or	r18, r20
+    1258:	35 2b       	or	r19, r21
+    
+    uint16_t pan_id = ((uint16_t)(pan_id_15_8 << 8)) | pan_id_7_0;
+    
+    return pan_id;
+}
+    125a:	c9 01       	movw	r24, r18
+    125c:	1f 91       	pop	r17
+    125e:	08 95       	ret
+
+00001260 <tat_do_cca>:
+ *                                 transition between two states.
+ *   
+ *  \ingroup tat
+ */
+uint8_t tat_get_trx_state( void ){
+    return hal_subregister_read( SR_TRX_STATUS );
+    1260:	81 e0       	ldi	r24, 0x01	; 1
+    1262:	6f e1       	ldi	r22, 0x1F	; 31
+    1264:	40 e0       	ldi	r20, 0x00	; 0
+    1266:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+ *  \ingroup tat
+ */
+tat_status_t tat_do_cca( void ){
+
+    /*Check state. CCA measurement only possible form PLL_ON state.*/
+    if (tat_get_trx_state( ) != PLL_ON) { return TAT_WRONG_STATE; }
+    126a:	89 30       	cpi	r24, 0x09	; 9
+    126c:	11 f0       	breq	.+4      	; 0x1272 <tat_do_cca+0x12>
+    126e:	84 e4       	ldi	r24, 0x44	; 68
+    1270:	08 95       	ret
+    
+    /*Ensure that it is possible to enter RX_ON*/
+    if (tat_set_trx_state( RX_ON ) != TAT_SUCCESS) { return TAT_TIMED_OUT; }
+    1272:	86 e0       	ldi	r24, 0x06	; 6
+    1274:	0e 94 12 07 	call	0xe24	; 0xe24 <tat_set_trx_state>
+    1278:	80 34       	cpi	r24, 0x40	; 64
+    127a:	a9 f4       	brne	.+42     	; 0x12a6 <tat_do_cca+0x46>
+            
+    //The CCA is initiated by writing 1 to the CCA_REQUEST subregister.
+    hal_subregister_write( SR_CCA_REQUEST, TAT_START_CCA );
+    127c:	88 e0       	ldi	r24, 0x08	; 8
+    127e:	60 e8       	ldi	r22, 0x80	; 128
+    1280:	47 e0       	ldi	r20, 0x07	; 7
+    1282:	21 e0       	ldi	r18, 0x01	; 1
+    1284:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+    1288:	88 e1       	ldi	r24, 0x18	; 24
+    128a:	91 e0       	ldi	r25, 0x01	; 1
+    128c:	01 97       	sbiw	r24, 0x01	; 1
+    128e:	f1 f7       	brne	.-4      	; 0x128c <tat_do_cca+0x2c>
+            
+    //The CCA is measured over 128 us + 12 us computation time.
+    delay_us( TIME_CCA );
+    
+    uint8_t status = hal_register_read( RG_TRX_STATUS ); //Read cca status.
+    1290:	81 e0       	ldi	r24, 0x01	; 1
+    1292:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+    tat_status_t cca_status = TAT_CCA_BUSY; //Return variable.
+    
+    //Check if the algorithm finished -> CCA_DONE == 1.
+    if ((status & TAT_CCA_DONE_MASK) != TAT_CCA_DONE_MASK) {
+    1296:	87 ff       	sbrs	r24, 7
+    1298:	06 c0       	rjmp	.+12     	; 0x12a6 <tat_do_cca+0x46>
+        cca_status = TAT_TIMED_OUT;
+    } else {
+                
+        //CCA done, but check if the channel is busy or not.
+        if ((status & TAT_CCA_IDLE_MASK) != TAT_CCA_IDLE_MASK) {
+    129a:	86 fd       	sbrc	r24, 6
+    129c:	02 c0       	rjmp	.+4      	; 0x12a2 <tat_do_cca+0x42>
+    129e:	88 e4       	ldi	r24, 0x48	; 72
+    12a0:	08 95       	ret
+    12a2:	87 e4       	ldi	r24, 0x47	; 71
+    12a4:	08 95       	ret
+    12a6:	83 e4       	ldi	r24, 0x43	; 67
+            cca_status = TAT_CCA_IDLE;
+        } // end: if ((status & TAT_CCA_IDLE_MASK) ...
+    } // end: if ((status & TAT_CCA_DONE_MASK) ...
+    
+    return cca_status;
+}
+    12a8:	08 95       	ret
+
+000012aa <tat_do_ed_scan>:
+ *  \retval TAT_SUCCESS The detection was successful.
+ *  \retval TAT_WRONG_STATE The energy detection can only be done if the radio
+ *                          transceiver's state is RX_ON or BUSY_RX.
+ *  \ingroup tat
+ */
+tat_status_t tat_do_ed_scan( uint8_t *ed_level ){
+    12aa:	cf 93       	push	r28
+    12ac:	df 93       	push	r29
+    12ae:	ec 01       	movw	r28, r24
+ *                                 transition between two states.
+ *   
+ *  \ingroup tat
+ */
+uint8_t tat_get_trx_state( void ){
+    return hal_subregister_read( SR_TRX_STATUS );
+    12b0:	81 e0       	ldi	r24, 0x01	; 1
+    12b2:	6f e1       	ldi	r22, 0x1F	; 31
+    12b4:	40 e0       	ldi	r20, 0x00	; 0
+    12b6:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+tat_status_t tat_do_ed_scan( uint8_t *ed_level ){
+
+    uint8_t current_state = tat_get_trx_state( );
+
+    /*Check state. Only possible to do ed measurement from RX_ON or BUSY_RX.*/
+    if ((current_state != RX_ON ) && (current_state != BUSY_RX)) {
+    12ba:	86 30       	cpi	r24, 0x06	; 6
+    12bc:	21 f0       	breq	.+8      	; 0x12c6 <tat_do_ed_scan+0x1c>
+    12be:	81 30       	cpi	r24, 0x01	; 1
+    12c0:	11 f0       	breq	.+4      	; 0x12c6 <tat_do_ed_scan+0x1c>
+    12c2:	84 e4       	ldi	r24, 0x44	; 68
+    12c4:	0d c0       	rjmp	.+26     	; 0x12e0 <tat_do_ed_scan+0x36>
+        return TAT_WRONG_STATE;
+    }
+    
+    /*Do ED measurement.*/    
+    //Initiate the measurement by writing to the PHY_ED_LEVEL register.
+    hal_register_write( RG_PHY_ED_LEVEL, 0 );
+    12c6:	87 e0       	ldi	r24, 0x07	; 7
+    12c8:	60 e0       	ldi	r22, 0x00	; 0
+    12ca:	0e 94 4f 02 	call	0x49e	; 0x49e <hal_register_write>
+    12ce:	88 e1       	ldi	r24, 0x18	; 24
+    12d0:	91 e0       	ldi	r25, 0x01	; 1
+    12d2:	01 97       	sbiw	r24, 0x01	; 1
+    12d4:	f1 f7       	brne	.-4      	; 0x12d2 <tat_do_ed_scan+0x28>
+    delay_us( TIME_ED_MEASUREMENT ); //Wait 128 us + 12 us computation time.
+    *ed_level = hal_register_read( RG_PHY_ED_LEVEL ); //Write ED level to pointer.
+    12d6:	87 e0       	ldi	r24, 0x07	; 7
+    12d8:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+    12dc:	88 83       	st	Y, r24
+    12de:	80 e4       	ldi	r24, 0x40	; 64
+
+    return TAT_SUCCESS;
+}
+    12e0:	df 91       	pop	r29
+    12e2:	cf 91       	pop	r28
+    12e4:	08 95       	ret
+
+000012e6 <tat_calibrate_pll>:
+ *                                 transition between two states.
+ *   
+ *  \ingroup tat
+ */
+uint8_t tat_get_trx_state( void ){
+    return hal_subregister_read( SR_TRX_STATUS );
+    12e6:	81 e0       	ldi	r24, 0x01	; 1
+    12e8:	6f e1       	ldi	r22, 0x1F	; 31
+    12ea:	40 e0       	ldi	r20, 0x00	; 0
+    12ec:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+ *  \ingroup tat
+ */
+tat_status_t tat_calibrate_pll( void ){
+    
+    /*Check current state. Only possible to calibrate PLL from PLL_ON state*/
+    if (tat_get_trx_state( ) != PLL_ON) { return TAT_WRONG_STATE; }
+    12f0:	89 30       	cpi	r24, 0x09	; 9
+    12f2:	11 f0       	breq	.+4      	; 0x12f8 <tat_calibrate_pll+0x12>
+    12f4:	84 e4       	ldi	r24, 0x44	; 68
+    12f6:	08 95       	ret
+    
+    //Initiate the DCU and CF calibration loops.
+    hal_subregister_write( SR_PLL_DCU_START, 1 );
+    12f8:	8b e1       	ldi	r24, 0x1B	; 27
+    12fa:	60 e8       	ldi	r22, 0x80	; 128
+    12fc:	47 e0       	ldi	r20, 0x07	; 7
+    12fe:	21 e0       	ldi	r18, 0x01	; 1
+    1300:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+    hal_subregister_write( SR_PLL_CF_START, 1 );
+    1304:	8a e1       	ldi	r24, 0x1A	; 26
+    1306:	60 e8       	ldi	r22, 0x80	; 128
+    1308:	47 e0       	ldi	r20, 0x07	; 7
+    130a:	21 e0       	ldi	r18, 0x01	; 1
+    130c:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+        
+    //Wait maximum 150 us for the PLL to lock.
+    hal_clear_pll_lock_flag( );
+    1310:	0e 94 28 02 	call	0x450	; 0x450 <hal_clear_pll_lock_flag>
+    1314:	8c e2       	ldi	r24, 0x2C	; 44
+    1316:	91 e0       	ldi	r25, 0x01	; 1
+    1318:	01 97       	sbiw	r24, 0x01	; 1
+    131a:	f1 f7       	brne	.-4      	; 0x1318 <tat_calibrate_pll+0x32>
+    delay_us( TIME_PLL_LOCK );
+    
+    tat_status_t pll_calibration_status = TAT_TIMED_OUT;
+    
+    if (hal_get_pll_lock_flag( ) > 0) {
+    131c:	0e 94 25 02 	call	0x44a	; 0x44a <hal_get_pll_lock_flag>
+    1320:	88 23       	and	r24, r24
+    1322:	81 f0       	breq	.+32     	; 0x1344 <tat_calibrate_pll+0x5e>
+    
+        if (hal_subregister_read( SR_PLL_DCU_START ) == PLL_DCU_CALIBRATION_DONE) {
+    1324:	8b e1       	ldi	r24, 0x1B	; 27
+    1326:	60 e8       	ldi	r22, 0x80	; 128
+    1328:	47 e0       	ldi	r20, 0x07	; 7
+    132a:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+    132e:	88 23       	and	r24, r24
+    1330:	49 f4       	brne	.+18     	; 0x1344 <tat_calibrate_pll+0x5e>
+        
+            if (hal_subregister_read( SR_PLL_CF_START ) == PLL_CF_CALIBRATION_DONE) {
+    1332:	8a e1       	ldi	r24, 0x1A	; 26
+    1334:	60 e8       	ldi	r22, 0x80	; 128
+    1336:	47 e0       	ldi	r20, 0x07	; 7
+    1338:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+    133c:	88 23       	and	r24, r24
+    133e:	11 f4       	brne	.+4      	; 0x1344 <tat_calibrate_pll+0x5e>
+    1340:	80 e4       	ldi	r24, 0x40	; 64
+    1342:	08 95       	ret
+    1344:	83 e4       	ldi	r24, 0x43	; 67
+            } // end: if (hal_subregister_read( SR_PLL_CF_START ) ...
+        } // end: if (hal_subregister_read( SR_PLL_DCU_START ) ...
+    } // end: if ((hal_get_pll_lock_flag( ) ...
+    
+    return pll_calibration_status;
+}
+    1346:	08 95       	ret
+
+00001348 <tat_init>:
+ *  \retval TAT_TIMED_OUT   The radio transceiver was not able to initialize and 
+ *                          enter TRX_OFF state within the specified time.
+ *
+ *  \ingroup tat
+ */
+tat_status_t tat_init( void ){
+    1348:	0f 93       	push	r16
+    134a:	1f 93       	push	r17
+    134c:	0c ef       	ldi	r16, 0xFC	; 252
+    134e:	13 e0       	ldi	r17, 0x03	; 3
+    1350:	c8 01       	movw	r24, r16
+    1352:	01 97       	sbiw	r24, 0x01	; 1
+    1354:	f1 f7       	brne	.-4      	; 0x1352 <tat_init+0xa>
+    tat_status_t init_status = TAT_SUCCESS;
+    
+    delay_us( TIME_TO_ENTER_P_ON );
+        
+    //Initialize Hardware Abstraction Layer.
+    hal_init( );
+    1356:	0e 94 42 01 	call	0x284	; 0x284 <hal_init>
+    
+    tat_reset_trx( ); //Do HW reset of radio transeiver.
+    135a:	0e 94 0c 06 	call	0xc18	; 0xc18 <tat_reset_trx>
+    
+    //Force transition to TRX_OFF.
+    hal_subregister_write( SR_TRX_CMD, CMD_FORCE_TRX_OFF );
+    135e:	82 e0       	ldi	r24, 0x02	; 2
+    1360:	6f e1       	ldi	r22, 0x1F	; 31
+    1362:	40 e0       	ldi	r20, 0x00	; 0
+    1364:	23 e0       	ldi	r18, 0x03	; 3
+    1366:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <hal_subregister_write>
+    136a:	c8 01       	movw	r24, r16
+    136c:	01 97       	sbiw	r24, 0x01	; 1
+    136e:	f1 f7       	brne	.-4      	; 0x136c <tat_init+0x24>
+ *                                 transition between two states.
+ *   
+ *  \ingroup tat
+ */
+uint8_t tat_get_trx_state( void ){
+    return hal_subregister_read( SR_TRX_STATUS );
+    1370:	81 e0       	ldi	r24, 0x01	; 1
+    1372:	6f e1       	ldi	r22, 0x1F	; 31
+    1374:	40 e0       	ldi	r20, 0x00	; 0
+    1376:	0e 94 67 02 	call	0x4ce	; 0x4ce <hal_subregister_read>
+    
+    //Force transition to TRX_OFF.
+    hal_subregister_write( SR_TRX_CMD, CMD_FORCE_TRX_OFF );
+    delay_us( TIME_P_ON_TO_TRX_OFF ); //Wait for the transition to be complete.
+    
+    if (tat_get_trx_state( ) != TRX_OFF) {
+    137a:	88 30       	cpi	r24, 0x08	; 8
+    137c:	11 f0       	breq	.+4      	; 0x1382 <tat_init+0x3a>
+    137e:	83 e4       	ldi	r24, 0x43	; 67
+    1380:	11 c0       	rjmp	.+34     	; 0x13a4 <tat_init+0x5c>
+        init_status = TAT_TIMED_OUT;    
+    } else {
+    
+        //Read Version Number
+        uint8_t version_number = hal_register_read( RG_VERSION_NUM );
+    1382:	8d e1       	ldi	r24, 0x1D	; 29
+    1384:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+        
+        if (version_number != AT86RF231_VERSION_NUM) {
+    1388:	82 30       	cpi	r24, 0x02	; 2
+    138a:	59 f4       	brne	.+22     	; 0x13a2 <tat_init+0x5a>
+            init_status = TAT_UNSUPPORTED_DEVICE;
+        } else {
+        
+            if (hal_register_read( RG_MAN_ID_0 ) != SUPPORTED_MANUFACTURER_ID) {
+    138c:	8e e1       	ldi	r24, 0x1E	; 30
+    138e:	0e 94 37 02 	call	0x46e	; 0x46e <hal_register_read>
+    1392:	8f 31       	cpi	r24, 0x1F	; 31
+    1394:	31 f4       	brne	.+12     	; 0x13a2 <tat_init+0x5a>
+                init_status = TAT_UNSUPPORTED_DEVICE;
+            } else {
+                hal_register_write( RG_IRQ_MASK, RF231_SUPPORTED_INTERRUPT_MASK );
+    1396:	8e e0       	ldi	r24, 0x0E	; 14
+    1398:	6f ef       	ldi	r22, 0xFF	; 255
+    139a:	0e 94 4f 02 	call	0x49e	; 0x49e <hal_register_write>
+    139e:	80 e4       	ldi	r24, 0x40	; 64
+    13a0:	01 c0       	rjmp	.+2      	; 0x13a4 <tat_init+0x5c>
+    13a2:	81 e4       	ldi	r24, 0x41	; 65
+            } // end: if (hal_register_read( RG_MAN_ID_0 ) != ...
+        } // end: if ((version_number != RF231_REVA ) ...
+    } // end: if (tat_get_trx_state( ) ...
+    
+    return init_status;
+}
+    13a4:	1f 91       	pop	r17
+    13a6:	0f 91       	pop	r16
+    13a8:	08 95       	ret
+
+000013aa <system_init>:
+		break;
+	case PORT_DIR_OUT:
+		DDRA |= mask;
+		break;
+	case PORT_DIR_OFF:
+		DDRA &= ~mask;
+    13aa:	8a b3       	in	r24, 0x1a	; 26
+    13ac:	1a ba       	out	0x1a, r1	; 26
+
+		PORTA |= mask;
+    13ae:	8b b3       	in	r24, 0x1b	; 27
+    13b0:	8f ef       	ldi	r24, 0xFF	; 255
+    13b2:	8b bb       	out	0x1b, r24	; 27
+		break;
+	case PORT_DIR_OUT:
+		DDRB |= mask;
+		break;
+	case PORT_DIR_OFF:
+		DDRB &= ~mask;
+    13b4:	97 b3       	in	r25, 0x17	; 23
+    13b6:	17 ba       	out	0x17, r1	; 23
+
+		PORTB |= mask;
+    13b8:	98 b3       	in	r25, 0x18	; 24
+    13ba:	88 bb       	out	0x18, r24	; 24
+		break;
+	case PORT_DIR_OUT:
+		DDRC |= mask;
+		break;
+	case PORT_DIR_OFF:
+		DDRC &= ~mask;
+    13bc:	94 b3       	in	r25, 0x14	; 20
+    13be:	14 ba       	out	0x14, r1	; 20
+
+		PORTC |= mask;
+    13c0:	95 b3       	in	r25, 0x15	; 21
+    13c2:	85 bb       	out	0x15, r24	; 21
+		break;
+	case PORT_DIR_OUT:
+		DDRD |= mask;
+		break;
+	case PORT_DIR_OFF:
+		DDRD &= ~mask;
+    13c4:	91 b3       	in	r25, 0x11	; 17
+    13c6:	11 ba       	out	0x11, r1	; 17
+
+		PORTD |= mask;
+    13c8:	92 b3       	in	r25, 0x12	; 18
+    13ca:	82 bb       	out	0x12, r24	; 18
+		break;
+	case PORT_DIR_OUT:
+		DDRE |= mask;
+		break;
+	case PORT_DIR_OFF:
+		DDRE &= ~mask;
+    13cc:	92 b1       	in	r25, 0x02	; 2
+    13ce:	12 b8       	out	0x02, r1	; 2
+
+		PORTE |= mask;
+    13d0:	93 b1       	in	r25, 0x03	; 3
+    13d2:	83 b9       	out	0x03, r24	; 3
+		break;
+	case PORT_DIR_OUT:
+		DDRF |= mask;
+		break;
+	case PORT_DIR_OFF:
+		DDRF &= ~mask;
+    13d4:	e1 e6       	ldi	r30, 0x61	; 97
+    13d6:	f0 e0       	ldi	r31, 0x00	; 0
+    13d8:	90 81       	ld	r25, Z
+    13da:	10 82       	st	Z, r1
+
+		PORTF |= mask;
+    13dc:	e2 e6       	ldi	r30, 0x62	; 98
+    13de:	f0 e0       	ldi	r31, 0x00	; 0
+    13e0:	90 81       	ld	r25, Z
+    13e2:	80 83       	st	Z, r24
+		break;
+	case PORT_DIR_OUT:
+		DDRG |= mask;
+		break;
+	case PORT_DIR_OFF:
+		DDRG &= ~mask;
+    13e4:	e4 e6       	ldi	r30, 0x64	; 100
+    13e6:	f0 e0       	ldi	r31, 0x00	; 0
+    13e8:	80 81       	ld	r24, Z
+    13ea:	80 7e       	andi	r24, 0xE0	; 224
+    13ec:	80 83       	st	Z, r24
+
+		PORTG |= mask;
+    13ee:	e5 e6       	ldi	r30, 0x65	; 101
+    13f0:	f0 e0       	ldi	r31, 0x00	; 0
+    13f2:	80 81       	ld	r24, Z
+    13f4:	8f 61       	ori	r24, 0x1F	; 31
+    13f6:	80 83       	st	Z, r24
+void system_init()
+{
+	mcu_init();
+
+	sysctrl_init();
+}
+    13f8:	08 95       	ret
+
+000013fa <protected_write_io>:
+#if defined(__GNUC__)
+	/*
+	 * We need to disable interrupts globally before the protected
+	 * sequence. In order to do that we must save SREG first.
+	 */
+	in      r18,    _SFR_IO_ADDR(SREG)
+    13fa:	2f b7       	in	r18, 0x3f	; 63
+	cli
+    13fc:	f8 94       	cli
+  
+#ifdef RAMPZ
+	out     _SFR_IO_ADDR(RAMPZ), r1         // Clear bits 23:16 of Z
+    13fe:	1b be       	out	0x3b, r1	; 59
+#endif
+	movw    r30, r24                // Load addr into Z
+    1400:	fc 01       	movw	r30, r24
+	st      Z, r22                  // Write protection bit to I/O register
+    1402:	60 83       	st	Z, r22
+	st      Z, r20                  // Write value to I/O register
+    1404:	40 83       	st	Z, r20
+	out     _SFR_IO_ADDR(SREG), r18
+    1406:	2f bf       	out	0x3f, r18	; 63
+
+	ret                             // Return to caller
+    1408:	08 95       	ret
+
+0000140a <_exit>:
+    140a:	f8 94       	cli
+
+0000140c <__stop_program>:
+    140c:	ff cf       	rjmp	.-2      	; 0x140c <__stop_program>

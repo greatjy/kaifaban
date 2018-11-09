@@ -1,0 +1,543 @@
+Archive member included because of file (symbol)
+
+d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+                              d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o (exit)
+d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+                              com.o (__do_clear_bss)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+LOAD atmel_start.o
+LOAD com.o
+LOAD driver_isr.o
+LOAD hal_avr.o
+LOAD main.o
+LOAD tat.o
+LOAD driver_init.o
+LOAD protected_io.o
+LOAD d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
+LOAD d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libc.a
+LOAD d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x140e
+ *(.vectors)
+ .vectors       0x00000000       0x8c d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x0000008c                . = ALIGN (0x2)
+                0x0000008c                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x0000008c        0x0 linker stubs
+ *(.trampolines*)
+                0x0000008c                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x0000008c                __ctors_start = .
+ *(.ctors)
+                0x0000008c                __ctors_end = .
+                0x0000008c                __dtors_start = .
+ *(.dtors)
+                0x0000008c                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x0000008c        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+                0x0000008c                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x0000008c        0xc d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000098       0x1a d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+                0x00000098                __do_copy_data
+ .init4         0x000000b2       0x10 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+                0x000000b2                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x000000c2        0x8 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+ *(.init9)
+ *(.text)
+ .text          0x000000ca        0x4 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+                0x000000ca                __vector_22
+                0x000000ca                __vector_28
+                0x000000ca                __vector_1
+                0x000000ca                __vector_32
+                0x000000ca                __vector_34
+                0x000000ca                __vector_24
+                0x000000ca                __vector_12
+                0x000000ca                __bad_interrupt
+                0x000000ca                __vector_6
+                0x000000ca                __vector_31
+                0x000000ca                __vector_3
+                0x000000ca                __vector_23
+                0x000000ca                __vector_30
+                0x000000ca                __vector_25
+                0x000000ca                __vector_13
+                0x000000ca                __vector_17
+                0x000000ca                __vector_19
+                0x000000ca                __vector_7
+                0x000000ca                __vector_27
+                0x000000ca                __vector_5
+                0x000000ca                __vector_33
+                0x000000ca                __vector_4
+                0x000000ca                __vector_9
+                0x000000ca                __vector_2
+                0x000000ca                __vector_21
+                0x000000ca                __vector_15
+                0x000000ca                __vector_29
+                0x000000ca                __vector_8
+                0x000000ca                __vector_26
+                0x000000ca                __vector_10
+                0x000000ca                __vector_16
+                0x000000ca                __vector_20
+ .text          0x000000ce        0x6 atmel_start.o
+                0x000000ce                atmel_start_init
+ .text          0x000000d4      0x16a com.o
+                0x0000016a                com_reset_receiver
+                0x00000104                com_send_hex
+                0x0000014e                com_get_number_of_received_bytes
+                0x000000f2                com_send_string
+                0x000000d4                com_init
+                0x00000138                com_get_received_data
+                0x0000017c                __vector_18
+ .text          0x0000023e        0x0 driver_isr.o
+ .text          0x0000023e      0x690 hal_avr.o
+                0x00000402                hal_get_unknown_isr_flag
+                0x00000300                hal_clear_trx_ur_flag
+                0x0000036e                hal_clear_trx_end_event_handler
+                0x0000042c                hal_clear_pll_unlock_flag
+                0x000004ce                hal_subregister_read
+                0x000002dc                hal_clear_bat_low_flag
+                0x00000622                hal_sram_read
+                0x00000324                hal_clear_trx_end_flag
+                0x000003be                hal_set_rx_start_event_handler
+                0x0000023e                hal_reset_flags
+                0x0000034c                hal_set_trx_end_event_handler
+                0x0000044a                hal_get_pll_lock_flag
+                0x00000408                hal_clear_unknown_isr_flag
+                0x000005de                hal_frame_write
+                0x00000396                hal_clear_rx_start_flag
+                0x000003e0                hal_clear_rx_start_event_handler
+                0x00000342                hal_get_trx_end_event_handler
+                0x0000031e                hal_get_trx_end_flag
+                0x00000756                __vector_11
+                0x0000049e                hal_register_write
+                0x00000390                hal_get_rx_start_flag
+                0x000006a8                hal_trx_aes_wrrd
+                0x00000666                hal_sram_write
+                0x000002d6                hal_get_bat_low_flag
+                0x0000070e                hal_get_system_time
+                0x000004f4                hal_subregister_write
+                0x000003b4                hal_get_rx_start_event_handler
+                0x00000426                hal_get_pll_unlock_flag
+                0x00000532                hal_frame_read
+                0x00000450                hal_clear_pll_lock_flag
+                0x000008a0                __vector_14
+                0x0000046e                hal_register_read
+                0x000002fa                hal_get_trx_ur_flag
+                0x00000284                hal_init
+ .text          0x000008ce      0x34a main.o
+                0x000008ce                main
+ .text          0x00000c18      0x792 tat.o
+                0x00000e24                tat_set_trx_state
+                0x00000ede                tat_calibrate_filter
+                0x00001260                tat_do_cca
+                0x00000dc8                tat_use_auto_tx_crc
+                0x00000de4                tat_reset_state_machine
+                0x0000105e                tat_configure_csma
+                0x00000c18                tat_reset_trx
+                0x00000d8a                tat_get_ed_threshold
+                0x00000d20                tat_get_clock_speed
+                0x000012e6                tat_calibrate_pll
+                0x0000117e                tat_set_pan_id
+                0x00000d42                tat_batmon_get_voltage_range
+                0x00000ffc                tat_set_operating_channel
+                0x000010c8                tat_set_extended_address
+                0x0000121c                tat_get_short_address
+                0x00000dba                tat_set_device_role
+                0x00001196                tat_get_extended_address
+                0x00000e00                tat_enter_sleep_mode
+                0x00000dae                tat_get_operating_channel
+                0x00000c3e                tat_send_data_with_retry
+                0x000012aa                tat_do_ed_scan
+                0x0000123e                tat_get_pan_id
+                0x00000cfc                tat_leave_sleep_mode
+                0x00000d2c                tat_batmon_get_status
+                0x00000d96                tat_get_cca_mode
+                0x00000d5a                tat_get_rssi_value
+                0x00001166                tat_set_short_address
+                0x00000f1a                tat_set_clock_speed
+                0x00000fa6                tat_set_cca_mode
+                0x00000cc2                tat_send_data
+                0x00000c26                tat_get_device_role
+                0x00000fdc                tat_set_tx_power_level
+                0x00000c32                tat_get_trx_state
+                0x00001348                tat_init
+                0x00000d4e                tat_batmon_get_voltage_threshold
+                0x00000da2                tat_get_tx_power_level
+                0x00000f66                tat_batmon_configure
+ .text          0x000013aa       0x50 driver_init.o
+                0x000013aa                system_init
+ .text          0x000013fa        0x0 protected_io.o
+ .text          0x000013fa        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .text          0x000013fa        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+                0x000013fa                . = ALIGN (0x2)
+ *(.text.*)
+ .text.protected_write_io
+                0x000013fa       0x10 protected_io.o
+                0x000013fa                protected_write_io
+ .text.libgcc   0x0000140a        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .text.libgcc   0x0000140a        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+                0x0000140a                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x0000140a        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+                0x0000140a                exit
+                0x0000140a                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x0000140a        0x4 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ *(.fini0)
+                0x0000140e                _etext = .
+
+.data           0x00800100       0x66 load address 0x0000140e
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+ .data          0x00800100        0x0 atmel_start.o
+ .data          0x00800100       0x13 com.o
+ .data          0x00800113        0x0 driver_isr.o
+ .data          0x00800113        0x0 hal_avr.o
+ .data          0x00800113       0x52 main.o
+ .data          0x00800165        0x0 tat.o
+ .data          0x00800165        0x0 driver_init.o
+ .data          0x00800165        0x0 protected_io.o
+ .data          0x00800165        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .data          0x00800165        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x00800166                . = ALIGN (0x2)
+ *fill*         0x00800165        0x1 00
+                0x00800166                _edata = .
+                0x00800166                PROVIDE (__data_end, .)
+
+.bss            0x00800166      0x315
+                0x00800166                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x00800166        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+ .bss           0x00800166        0x0 atmel_start.o
+ .bss           0x00800166       0xf1 com.o
+ .bss           0x00800257        0x0 driver_isr.o
+ .bss           0x00800257        0xd hal_avr.o
+ .bss           0x00800264      0x217 main.o
+ .bss           0x0080047b        0x0 tat.o
+ .bss           0x0080047b        0x0 driver_init.o
+ .bss           0x0080047b        0x0 protected_io.o
+ .bss           0x0080047b        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .bss           0x0080047b        0x0 d:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+ *(.bss*)
+ *(COMMON)
+                0x0080047b                PROVIDE (__bss_end, .)
+                0x0000140e                __data_load_start = LOADADDR (.data)
+                0x00001474                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x0080047b        0x0
+                0x0080047b                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x0080047b                PROVIDE (__noinit_end, .)
+                0x0080047b                _end = .
+                0x0080047b                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0xe0
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 atmel_start.o
+ .debug_aranges
+                0x00000020       0x20 com.o
+ .debug_aranges
+                0x00000040       0x20 hal_avr.o
+ .debug_aranges
+                0x00000060       0x20 main.o
+ .debug_aranges
+                0x00000080       0x20 tat.o
+ .debug_aranges
+                0x000000a0       0x20 driver_init.o
+ .debug_aranges
+                0x000000c0       0x20 protected_io.o
+
+.debug_pubnames
+                0x00000000      0x81c
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x27 atmel_start.o
+ .debug_pubnames
+                0x00000027       0xaa com.o
+ .debug_pubnames
+                0x000000d1      0x37b hal_avr.o
+ .debug_pubnames
+                0x0000044c       0x1b main.o
+ .debug_pubnames
+                0x00000467      0x393 tat.o
+ .debug_pubnames
+                0x000007fa       0x22 driver_init.o
+
+.debug_info     0x00000000     0x267f
+ *(.debug_info)
+ .debug_info    0x00000000       0x75 atmel_start.o
+ .debug_info    0x00000075      0x2ae com.o
+ .debug_info    0x00000323       0x61 driver_isr.o
+ .debug_info    0x00000384      0xb35 hal_avr.o
+ .debug_info    0x00000eb9      0x40d main.o
+ .debug_info    0x000012c6     0x102f tat.o
+ .debug_info    0x000022f5      0x32b driver_init.o
+ .debug_info    0x00002620       0x5f protected_io.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x887
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0x48 atmel_start.o
+ .debug_abbrev  0x00000048       0xf1 com.o
+ .debug_abbrev  0x00000139       0x33 driver_isr.o
+ .debug_abbrev  0x0000016c      0x271 hal_avr.o
+ .debug_abbrev  0x000003dd      0x14d main.o
+ .debug_abbrev  0x0000052a      0x24e tat.o
+ .debug_abbrev  0x00000778       0xfb driver_init.o
+ .debug_abbrev  0x00000873       0x14 protected_io.o
+
+.debug_line     0x00000000     0x1d2d
+ *(.debug_line)
+ .debug_line    0x00000000       0x6a atmel_start.o
+ .debug_line    0x0000006a      0x28f com.o
+ .debug_line    0x000002f9       0x3e driver_isr.o
+ .debug_line    0x00000337      0xa99 hal_avr.o
+ .debug_line    0x00000dd0      0x390 main.o
+ .debug_line    0x00001160      0xa28 tat.o
+ .debug_line    0x00001b88      0x15c driver_init.o
+ .debug_line    0x00001ce4       0x49 protected_io.o
+
+.debug_frame    0x00000000      0x580
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x20 atmel_start.o
+ .debug_frame   0x00000020       0x80 com.o
+ .debug_frame   0x000000a0      0x230 hal_avr.o
+ .debug_frame   0x000002d0       0x30 main.o
+ .debug_frame   0x00000300      0x260 tat.o
+ .debug_frame   0x00000560       0x20 driver_init.o
+
+.debug_str      0x00000000     0x1213
+ *(.debug_str)
+ .debug_str     0x00000000       0x84 atmel_start.o
+                                 0xb8 (size before relaxing)
+ .debug_str     0x00000084      0x1e6 com.o
+                                0x281 (size before relaxing)
+ .debug_str     0x0000026a       0x10 driver_isr.o
+                                 0xa6 (size before relaxing)
+ .debug_str     0x0000027a      0x54e hal_avr.o
+                                0x61d (size before relaxing)
+ .debug_str     0x000007c8      0x2e2 main.o
+                                0x439 (size before relaxing)
+ .debug_str     0x00000aaa      0x67d tat.o
+                                0xa0d (size before relaxing)
+ .debug_str     0x00001127       0xec driver_init.o
+                                0x19f (size before relaxing)
+
+.debug_loc      0x00000000     0x1061
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x87 com.o
+ .debug_loc     0x00000087      0x66e hal_avr.o
+ .debug_loc     0x000006f5       0x34 main.o
+ .debug_loc     0x00000729      0x938 tat.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(testreceive.elf elf32-avr)
+LOAD linker stubs
+
+.debug_ranges   0x00000000       0x18
+ .debug_ranges  0x00000000       0x18 main.o
