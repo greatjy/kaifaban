@@ -1,0 +1,23 @@
+LIB/                          : Top Level Folder.
+|
+|-- library.htm               : This page.
+|
+|-- lib_organization.txt      : Generated folder organization file.
+|
+|-- AVR                       : Folder containing libraries for the AVR microcontroller.
+|   |
+|   |-- IAR                   : IAR EW v4.30 version.
+|   |
+|   |-- GCC                   : AVR-GCC version.
+|   |
+|-- AVR32                     : Folder containing libraries for the AVR32 microcontroller.
+|   |
+|   |-- IAR                   : Not available yet.
+|   |
+|   |-- GCC                   : Not available yet.
+|   |
+|-- SAM7                      : Folder containing libraries for the SAM7 microcontroller.
+|   |
+|   |-- IAR                   : Not available yet.
+|   |
+|   |-- GCC                   : Not available yet.
